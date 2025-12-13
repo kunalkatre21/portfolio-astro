@@ -1,0 +1,90 @@
+---
+import "../styles/global.css";
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Kunal Katre – Lead Product Designer</title>
+		<!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+	</head>
+	<body class="antialiased font-sans" data-theme="light">
+		<!-- Background handled by body CSS (Aura Atmosphere) -->
+
+		<div class="page-shell relative z-0">
+		<!-- Drawer Wrapper -->
+    <div class="drawer">
+      <input id="main-drawer" type="checkbox" class="drawer-toggle" />
+      <div class="drawer-content flex flex-col">
+        <!-- Page Content -->
+        <slot />
+      </div>
+      <div class="drawer-side z-40">
+        <label for="main-drawer" aria-label="close sidebar" class="drawer-overlay"></label>
+        <ul class="menu bg-base-200 min-h-full w-80 p-4 gap-2">
+          <!-- Sidebar content here -->
+          <li><a href="#hero" class="text-lg font-medium">Home</a></li>
+          <li><a href="#work" class="text-lg font-medium">Work</a></li>
+          <li><a href="#about" class="text-lg font-medium">About</a></li>
+          <li><a href="#contact" class="text-lg font-medium">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <script is:inline>
+      // Theme initialization
+      // Check localStorage first, then system preference
+      const getTheme = () => {
+        const stored = localStorage.getItem('kk-theme');
+        if (stored) return stored;
+        return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      };
+
+      const theme = getTheme();
+      document.body.setAttribute('data-theme', theme);
+      document.documentElement.setAttribute('data-theme', theme); // DaisyUI often checks root
+    </script>
+
+    <script>
+      // Intersection Observer for fade-in animations
+      const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+      };
+
+      const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target); // Only animate once
+          }
+        });
+      }, observerOptions);
+
+      document.addEventListener('DOMContentLoaded', () => {
+        const fadeElements = document.querySelectorAll('.fade-in');
+        fadeElements.forEach(el => observer.observe(el));
+      });
+    </script>
+
+		<style>
+			.fade-in {
+				opacity: 0;
+				transform: translateY(28px);
+				transition: opacity 0.7s ease, transform 0.7s ease;
+			}
+			.fade-in.visible {
+				opacity: 1;
+				transform: translateY(0);
+			}
+		</style>
+	</body>
+</html>

@@ -1,0 +1,94 @@
+---
+import { House, Grid2X2, User, Send, Moon, Sun, Menu as MenuIcon } from 'lucide-astro';
+---
+
+<div class="navbar fixed top-0 z-30 px-6 py-4 bg-transparent pointer-events-none">
+  <div class="navbar glass rounded-[var(--radius-xl)] shadow-sm pointer-events-auto max-w-[1200px] mx-auto w-full">
+    
+    <div class="navbar-start">
+      <!-- Hamburger Menu (Mobile Only) -->
+      <div class="flex-none lg:hidden mr-2">
+        <label for="main-drawer" aria-label="open sidebar" class="btn btn-square btn-ghost">
+          <MenuIcon size={24} />
+        </label>
+      </div>
+
+      <div class="flex items-center gap-3.5 px-2">
+        <div class="avatar placeholder">
+          <div class="bg-gradient-to-br from-primary to-accent text-neutral-content rounded-full w-[38px]">
+            <span class="text-sm font-bold">KK</span>
+          </div>
+        </div>
+        <div class="flex flex-col gap-0.5">
+          <span class="text-[0.9rem] font-semibold text-base-content" style="text-wrap: nowrap;">Kunal Katre</span>
+          <span class="text-[0.78rem] text-base-content/60" style="text-wrap: nowrap;">Lead Product Designer</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="navbar-center hidden lg:flex">
+      <ul class="menu menu-horizontal px-1 gap-2">
+        <li>
+          <a href="#hero" class="rounded-full text-base-content/70 hover:text-primary hover:bg-primary/10">
+            <House size={16} />
+            Home
+          </a>
+        </li>
+        <li>
+          <a href="#work" class="rounded-full text-base-content/70 hover:text-primary hover:bg-primary/10">
+            <Grid2X2 size={16} />
+            Work
+          </a>
+        </li>
+        <li>
+          <a href="#about" class="rounded-full text-base-content/70 hover:text-primary hover:bg-primary/10">
+            <User size={16} />
+            About
+          </a>
+        </li>
+        <li>
+          <a href="#contact" class="rounded-full text-base-content/70 hover:text-primary hover:bg-primary/10">
+            <Send size={16} />
+            Contact
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="navbar-end flex-none gap-4">
+      <!-- Theme Controller -->
+      <label class="swap swap-rotate btn btn-ghost btn-circle">
+        <!-- this hidden checkbox controls the state -->
+        <input type="checkbox" class="theme-controller" value="dark" />
+  
+        <!-- sun icon -->
+        <Sun class="swap-off fill-current w-5 h-5" />
+  
+        <!-- moon icon -->
+        <Moon class="swap-on fill-current w-5 h-5" />
+      </label>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Sync theme controller with current theme
+  const themeController = document.querySelector('.theme-controller') as HTMLInputElement;
+  
+  const syncTheme = () => {
+    const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+    if (themeController) {
+      themeController.checked = currentTheme === 'dark';
+    }
+  };
+
+  syncTheme();
+
+  // Listen for changes
+  themeController?.addEventListener('change', (e) => {
+    const newTheme = (e.target as HTMLInputElement).checked ? 'dark' : 'light';
+    document.documentElement.setAttribute('data-theme', newTheme);
+    document.body.setAttribute('data-theme', newTheme);
+    localStorage.setItem('kk-theme', newTheme);
+  });
+</script>

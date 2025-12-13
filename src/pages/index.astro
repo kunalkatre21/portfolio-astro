@@ -1,0 +1,39 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Hero from '../components/Hero.astro';
+import Skills from '../components/Skills.astro';
+import Work from '../components/Work.astro';
+import About from '../components/About.astro';
+import Testimonials from '../components/Testimonials.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout>
+  <Navbar />
+  <main>
+    <div>
+      <Hero />
+      <Skills />
+    </div>
+    
+    <div class="divider"></div>
+
+    <div class="bg-base-200/50">
+      <Work />
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="bg-base-100">
+      <About />
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="bg-base-200/50">
+      <Testimonials />
+    </div>
+  </main>
+  <Footer />
+</Layout>

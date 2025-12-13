@@ -1,0 +1,304 @@
+---
+import CaseStudyLayout from '../../layouts/CaseStudyLayout.astro';
+---
+
+<CaseStudyLayout title="Case Study: Designing for a Nation in Crisis | Kunal Katre">
+    
+    <!-- Hero Section -->
+    <div class="not-prose mb-12 animate-fade-in">
+        <div class="flex flex-col lg:flex-row gap-12 items-center">
+            <div class="flex-1 space-y-6">
+                 <a href="/#work" class="btn btn-ghost btn-sm gap-2 pl-0 hover:bg-transparent hover:text-primary transition-colors duration-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="M12 19l-7-7 7-7"/></svg>
+                    Back to Work
+                </a>
+                
+                <div class="flex items-center gap-3 text-sm font-medium text-base-content/70">
+                    <span>Project for</span>
+                    <img src="/assets/eka-logo.svg" alt="Eka Care logo" class="h-6 w-auto" />
+                </div>
+
+                <h1 class="text-4xl lg:text-5xl font-serif font-bold leading-tight">
+                    Designing for a Nation in Crisis
+                </h1>
+                
+                <p class="text-xl text-base-content/80 leading-relaxed max-w-2xl">
+                    I led the design for a platform that navigated extreme public anxiety and technical chaos to facilitate over 2 crore vaccine certificate downloads.
+                </p>
+
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-6 pt-4">
+                    <div class="p-4 rounded-xl bg-base-200/50 border border-base-300 backdrop-blur-sm">
+                        <div class="text-2xl font-bold text-primary">+2 Crore</div>
+                        <div class="text-sm text-base-content/70">Vaccine Certificates</div>
+                    </div>
+                    <div class="p-4 rounded-xl bg-base-200/50 border border-base-300 backdrop-blur-sm">
+                        <div class="text-2xl font-bold text-secondary">#1</div>
+                        <div class="text-sm text-base-content/70">on Google Search</div>
+                    </div>
+                    <div class="p-4 rounded-xl bg-base-200/50 border border-base-300 backdrop-blur-sm">
+                        <div class="text-2xl font-bold text-accent">~2 Months</div>
+                        <div class="text-sm text-base-content/70">Initial Launch</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex-1 w-full max-w-md lg:max-w-full flex justify-center">
+                <div class="mockup-phone border-primary">
+                    <div class="camera"></div> 
+                    <div class="display">
+                        <div class="artboard artboard-demo phone-1 bg-base-100">
+                            <!-- Placeholder for Hero Image -->
+                            <img src="/assets/cowin/cowin-hero-visual.png" alt="Eka Care app showing the Co-WIN certificate download interface" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="space-y-16">
+        
+        <!-- Section 1 -->
+        <section id="setup">
+            <h2>1. The Setup: A High-Stakes Mandate</h2>
+            <p>In 2021, India faced a monumental challenge: vaccinating its population amidst a devastating pandemic wave. The government released the Co-WIN APIs, creating a sudden, urgent opportunity. The business goal for Eka.Care was clear: leverage these APIs to build a superior, trustworthy public utility that could capture a massive, anxious user base and establish us as a key player in India's digital health ecosystem.</p>
+            
+            <h3>The User's Reality: A State of Panic</h3>
+            <p>The public sentiment was not one of simple "user needs"; it was a state of crisis. My rapid research into online forums, social media, and news reports revealed the core user anxieties:</p>
+            
+            <div class="grid md:grid-cols-3 gap-6 my-8 not-prose">
+                <div class="card bg-base-200/50 border border-base-300 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="card-body p-6">
+                        <div class="w-10 h-10 rounded-lg bg-primary/10 text-primary flex items-center justify-center mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+                        </div>
+                        <h4 class="card-title text-base mb-2">Availability Anxiety</h4>
+                        <p class="text-sm italic text-base-content/80">"Will I ever find a slot for my elderly parents? I've been trying for days."</p>
+                    </div>
+                </div>
+                
+                <div class="card bg-base-200/50 border border-base-300 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="card-body p-6">
+                        <div class="w-10 h-10 rounded-lg bg-secondary/10 text-secondary flex items-center justify-center mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+                        </div>
+                        <h4 class="card-title text-base mb-2">Trust & Legitimacy</h4>
+                        <p class="text-sm italic text-base-content/80">"Is this third-party app even legitimate? How do I know it's safe to give them my Aadhar number?"</p>
+                    </div>
+                </div>
+
+                <div class="card bg-base-200/50 border border-base-300 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="card-body p-6">
+                        <div class="w-10 h-10 rounded-lg bg-accent/10 text-accent flex items-center justify-center mb-4">
+                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+                        </div>
+                        <h4 class="card-title text-base mb-2">Information Gaps</h4>
+                        <p class="text-sm italic text-base-content/80">"How do I know this information is real and not a waste of my time? Is the slot even still there?"</p>
+                    </div>
+                </div>
+            </div>
+            
+            <h3>My Role: Designer as a De-risking Agent</h3>
+            <p>As the sole designer on this initiative, I was tasked with creating a functional UX under an extreme "one-day delivery mode" timeline. With no PM, my role expanded significantly. I was responsible for de-risking the project by defining requirements, analyzing technical constraints, and creating a clear plan of action that the entire cross-functional team could rally behind.</p>
+        </section>
+
+        <!-- Section 2 -->
+        <section id="discovery">
+             <h2>2. Discovery: Finding Signal in the Noise</h2>
+            <p>The existing official portal was functional but overwhelmed, creating a significant "trust gap." Users were desperate for an alternative that was not just faster, but clearer and more reliable. My discovery process started with the technology itself to understand our exact capabilities.</p>
+
+            <h3>Deconstructing the Technical Foundation</h3>
+            <p>My first step was a deep dive into the technical foundation—the Co-WIN APIs. Instead of just reading the docs, I deconstructed them into a clear, grouped list to understand our building blocks. This helped the entire team, including non-technical stakeholders, grasp what was possible.</p>
+
+            <!-- API Docs Component -->
+            <div class="my-8 not-prose space-y-4">
+                <div class="collapse collapse-plus bg-base-200/50 border border-base-300 rounded-xl">
+                    <input type="checkbox" /> 
+                    <div class="collapse-title text-lg font-semibold">
+                        Metadata APIs
+                    </div>
+                    <div class="collapse-content"> 
+                        <div class="space-y-2 pt-2">
+                             <div class="flex items-center gap-3 p-2 hover:bg-base-200 rounded-lg transition-colors">
+                                <span class="badge badge-info font-bold">GET</span>
+                                <code class="text-sm font-mono opacity-80">/v2/admin/location/states</code>
+                                <span class="ml-auto text-sm opacity-60">Get states</span>
+                            </div>
+                            <div class="flex items-center gap-3 p-2 hover:bg-base-200 rounded-lg transition-colors">
+                                <span class="badge badge-info font-bold">GET</span>
+                                <code class="text-sm font-mono opacity-80">/v2/admin/location/districts/&#123;state_id&#125;</code>
+                                <span class="ml-auto text-sm opacity-60">Get list of districts</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="collapse collapse-plus bg-base-200/50 border border-base-300 rounded-xl" checked>
+                    <input type="checkbox" checked /> 
+                    <div class="collapse-title text-lg font-semibold">
+                        Appointment Availability APIs
+                    </div>
+                    <div class="collapse-content"> 
+                        <div class="space-y-2 pt-2">
+                            <div class="flex items-center gap-3 p-2 hover:bg-base-200 rounded-lg transition-colors">
+                                <span class="badge badge-info font-bold">GET</span>
+                                <code class="text-sm font-mono opacity-80">/v2/appointment/sessions/public/findByPin</code>
+                                <span class="ml-auto text-sm opacity-60">Get vaccination sessions by PIN</span>
+                            </div>
+                            <div class="flex items-center gap-3 p-2 hover:bg-base-200 rounded-lg transition-colors">
+                                <span class="badge badge-info font-bold">GET</span>
+                                <code class="text-sm font-mono opacity-80">/v2/appointment/sessions/public/findByDistrict</code>
+                                <span class="ml-auto text-sm opacity-60">Get vaccination sessions by district</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="alert shadow-lg bg-base-200/80 border-l-4 border-accent not-prose my-8">
+                <div>
+                     <h3 class="font-bold text-lg mb-2">The "Search Near Me" Insight</h3>
+                     <p class="text-base-content/80"><strong>Key Insight:</strong> While the APIs provided basic search by PIN and District, I identified a critical gap: there was no single API for a simple, location-aware "search near me." Competitors were just replicating the basic government portal forms.</p>
+                     <div class="divider my-2"></div>
+                     <p class="text-base-content/80"><strong>My Strategic Solution:</strong> I proposed a new user flow. By first requesting the user's device location (with permission), we could programmatically determine their current Pincode and feed it into the existing API. This seemingly small step created a "one-tap" search experience that was vastly superior.</p>
+                </div>
+            </div>
+            
+            <h3>Mapping the Anxiety Journey</h3>
+             <p>This technical understanding, combined with the "Search Near Me" insight, allowed me to frame the user's emotional state. I synthesized this into a journey map that became our team's guiding star.</p>
+            
+            <figure>
+                <img src="/assets/cowin/fig2-failure-map.png" alt="User Journey Map showing stages like 'Initial Panic' and 'Search for Hope'" class="w-full h-auto rounded-xl shadow-lg border border-base-300">
+                <figcaption>Fig.1 - I mapped the user's emotional journey to align the team on our primary goal: reducing anxiety.</figcaption>
+            </figure>
+        </section>
+
+        <!-- Section 3 -->
+        <section id="goals">
+            <h2>3. The Three Pillars of Trust</h2>
+            <p>Based on the journey map and user anxieties, I established three core design principles that became our unwavering guide for every feature and decision.</p>
+
+            <div class="grid md:grid-cols-3 gap-6 my-8 not-prose">
+                <div class="card bg-base-100/50 border border-base-300">
+                    <div class="card-body">
+                        <div class="text-6xl font-serif text-base-content/10 absolute top-4 right-4">1</div>
+                        <h3 class="card-title text-xl mb-2 relative z-10">Radical Transparency</h3>
+                        <p class="relative z-10 text-base-content/80">Show everything, hide nothing. To build trust, we had to be more comprehensive and forthcoming than the official sources, even if it meant showing "bad news."</p>
+                    </div>
+                </div>
+                <div class="card bg-base-100/50 border border-base-300">
+                    <div class="card-body">
+                          <div class="text-6xl font-serif text-base-content/10 absolute top-4 right-4">2</div>
+                        <h3 class="card-title text-xl mb-2 relative z-10">Honest Expectations</h3>
+                        <p class="relative z-10 text-base-content/80">Never overpromise. Be explicit about data freshness and potential failures to prevent the user frustration that comes from chasing non-existent "ghost" slots.</p>
+                    </div>
+                </div>
+                <div class="card bg-base-100/50 border border-base-300">
+                    <div class="card-body">
+                          <div class="text-6xl font-serif text-base-content/10 absolute top-4 right-4">3</div>
+                        <h3 class="card-title text-xl mb-2 relative z-10">Anxiety-Proof Confirmation</h3>
+                        <p class="relative z-10 text-base-content/80">The end of the flow must be a definitive, reassuring "contract" that contains every piece of necessary information, leaving absolutely no room for doubt.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Section 4 -->
+        <section id="design">
+             <h2>4. Design & Execution</h2>
+             <p>Guided by our three pillars of trust, I designed the two most critical user journeys: booking a slot and downloading a certificate. The execution focused on providing clarity and control at every step.</p>
+             
+             <!-- Flow 1 -->
+             <h3>4.1 Flow: Booking a Vaccination Slot</h3>
+             <p>The slot booking process was the epicenter of user anxiety. My goal was to create a flow that was not only functional but actively worked to calm the user.</p>
+             
+            <figure>
+                <img src="/assets/cowin/book-flow-1.png" alt="The complete user flow for booking a vaccination slot" class="w-full h-auto rounded-xl shadow-lg border border-base-300">
+                <figcaption>Fig. 2 - The final booking flow, designed for clarity, transparency, and anxiety reduction at every step.</figcaption>
+            </figure>
+
+             <div class="not-prose space-y-6 my-8">
+                <div class="border-l-4 border-primary pl-6 py-2">
+                    <h5 class="text-lg font-bold mb-2">1. Proactive Filtering & Absolute Transparency</h5>
+                    <p class="text-base-content/80">Instead of hiding "bad news," we embraced it. The search results page showed <strong>all</strong> vaccination centers, clearly marking those with no available slots. This upheld our "Radical Transparency" principle.</p>
+                </div>
+                <div class="border-l-4 border-primary pl-6 py-2">
+                    <h5 class="text-lg font-bold mb-2">2. Automated Slot Reservation</h5>
+                    <p class="text-base-content/80">To combat "ghost slots," I designed an intermediate "booking in progress" screen. When a user selected a center, our system would attempt to hold a slot for a short period, creating a buffer that transformed the experience from frantic to controlled.</p>
+                </div>
+                 <div class="border-l-4 border-primary pl-6 py-2">
+                    <h5 class="text-lg font-bold mb-2">3. The Anxiety-Proof Confirmation</h5>
+                    <p class="text-base-content/80">The final confirmation screen was designed as an "anxiety-proof contract." It contained every critical piece of information: Hospital Name, Address, Date, Time, Beneficiary Name, leaving no room for doubt.</p>
+                </div>
+            </div>
+
+            <!-- Flow 2 -->
+             <h3>4.2 Flows: Downloading the Vaccine Certificate</h3>
+             <p>The certificate download was our single biggest user acquisition channel. I designed two distinct "smart" flows to get users their certificate as frictionlessly as possible.</p>
+             
+              <figure>
+                <img src="/assets/cowin/download-flow-1.png" alt="The user flow for directly downloading a Co-WIN certificate" class="w-full h-auto rounded-xl shadow-lg border border-base-300">
+                <figcaption>Fig. 3 - The explicit download flow, initiated by the user from a clear call-to-action on the homepage.</figcaption>
+            </figure>
+            
+             <figure>
+                <img src="/assets/cowin/download-flow-2.png" alt="The automated flow where the app proactively downloads certificates" class="w-full h-auto rounded-xl shadow-lg border border-base-300">
+                <figcaption>Fig. 4 - The proactive, automated flow that fetches certificates in the background, turning a chore into a delightful surprise.</figcaption>
+            </figure>
+
+        </section>
+
+        <!-- Section 5 -->
+        <section id="impact">
+             <h2>5. Impact: Dominating the Market Through Trust</h2>
+             <p>Our principle-led approach was a monumental success. By focusing relentlessly on user anxiety, we built one of the most trusted and widely-used vaccination tools in the country.</p>
+             
+             <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 not-prose my-8">
+                 <div class="p-4 rounded-xl bg-primary/5 border border-primary/20 text-center">
+                     <div class="text-3xl font-bold text-primary mb-1">#1</div>
+                     <div class="text-xs uppercase tracking-wider opacity-70">App Store Rank</div>
+                 </div>
+                 <div class="p-4 rounded-xl bg-primary/5 border border-primary/20 text-center">
+                     <div class="text-3xl font-bold text-primary mb-1">1.4L+</div>
+                     <div class="text-xs uppercase tracking-wider opacity-70">Daily Certs</div>
+                 </div>
+                  <div class="p-4 rounded-xl bg-primary/5 border border-primary/20 text-center">
+                     <div class="text-3xl font-bold text-primary mb-1">~8K</div>
+                     <div class="text-xs uppercase tracking-wider opacity-70">Organic Installs</div>
+                 </div>
+                  <div class="p-4 rounded-xl bg-primary/5 border border-primary/20 text-center">
+                     <div class="text-3xl font-bold text-primary mb-1">2 Cr+</div>
+                     <div class="text-xs uppercase tracking-wider opacity-70">Total Downloads</div>
+                 </div>
+             </div>
+
+             <h3>Key Learnings</h3>
+             <ul>
+                 <li><strong>In a Crisis, Clarity is the Most Valuable Feature.</strong> The "best" design isn't always the cleanest or most minimal; in this case, it was the most explicit and reassuring.</li>
+                 <li><strong>Lead with Artifacts.</strong> In a high-speed environment, well-designed artifacts (journey maps, flows) are the fastest way to create alignment and de-risk development.</li>
+                 <li><strong>Design the System.</strong> Our biggest wins came from thinking about the entire user journey—from managing expectations *before* the search to providing value *after* the download.</li>
+             </ul>
+        </section>
+
+        <!-- Next Project CTA -->
+        <div class="not-prose mt-24">
+             <div class="divider"></div>
+            <div class="card bg-base-200/50 hover:bg-base-200 transition-colors border border-base-300 cursor-pointer group">
+                <a href="/case-studies/heart-rate" class="card-body flex-row items-center gap-6">
+                    <div class="flex-1">
+                        <div class="text-sm font-bold opacity-60 uppercase tracking-widest mb-1">Next Case Study</div>
+                        <h3 class="text-2xl font-serif font-bold group-hover:text-primary transition-colors">Architecting an Engagement Engine</h3>
+                        <p class="mt-2 text-base-content/70">See how I transformed a failing feature into a core driver of user retention.</p>
+                    </div>
+                    <div class="hidden md:block">
+                         <span class="btn btn-primary btn-circle">
+                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
+                         </span>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+    </div>
+</CaseStudyLayout>

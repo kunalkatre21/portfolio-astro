@@ -1,0 +1,25 @@
+---
+import { Linkedin, Github } from 'lucide-astro';
+---
+
+<footer class="footer footer-center p-10 bg-base-200 text-base-content rounded mt-[3.8rem]">
+  <div class="max-w-[1200px] mx-auto flex flex-col md:flex-row justify-between items-center gap-[1.6rem] w-full">
+    <aside>
+      <p class="font-bold">
+        Kunal Katre <br/>
+        <span class="font-normal text-base-content/60">Lead Product Designer</span>
+      </p> 
+      <p>© 2025 · Designed & coded by Kunal Katre.</p>
+    </aside> 
+    <nav>
+      <div class="grid grid-flow-col gap-4">
+        <a href="https://www.linkedin.com/pub/dir/Kunal/Katre" class="btn btn-ghost btn-circle" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+          <Linkedin size={20} />
+        </a>
+        <a href="https://github.com/kunalkatre21" class="btn btn-ghost btn-circle" target="_blank" rel="noreferrer" aria-label="GitHub">
+          <Github size={20} />
+        </a>
+      </div>
+    </nav>
+  </div>
+</footer>

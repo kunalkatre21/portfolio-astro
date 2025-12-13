@@ -1,0 +1,67 @@
+---
+import { Spline, Layers, FlaskConical, Smartphone, Activity, Users } from 'lucide-astro';
+---
+
+<section class="px-6 pt-[1.2rem]">
+  <div class="max-w-[1200px] mx-auto overflow-hidden rounded-full border border-dashed border-base-300 bg-base-100/90 shadow-sm fade-in">
+    <div class="flex items-center gap-[1.4rem] py-2.5 px-[1.4rem] whitespace-nowrap animate-[marquee_28s_linear_infinite]">
+      <span class="badge badge-lg badge-soft gap-2 h-auto py-1.5 px-3.5 shadow-sm">
+        <Spline size={14} class="text-primary" />
+        Interaction design
+      </span>
+      <span class="badge badge-lg badge-soft gap-2 h-auto py-1.5 px-3.5 shadow-sm">
+        <Layers size={14} class="text-primary" />
+        Design systems
+      </span>
+      <span class="badge badge-lg badge-soft gap-2 h-auto py-1.5 px-3.5 shadow-sm">
+        <FlaskConical size={14} class="text-primary" />
+        User research
+      </span>
+      <span class="badge badge-lg badge-soft gap-2 h-auto py-1.5 px-3.5 shadow-sm">
+        <Smartphone size={14} class="text-primary" />
+        Mobile UX
+      </span>
+      <span class="badge badge-lg badge-soft gap-2 h-auto py-1.5 px-3.5 shadow-sm">
+        <Activity size={14} class="text-primary" />
+        Data‑driven UX
+      </span>
+      <span class="badge badge-lg badge-soft gap-2 h-auto py-1.5 px-3.5 shadow-sm">
+        <Users size={14} class="text-primary" />
+        Cross‑functional facilitation
+      </span>
+      
+      <!-- Duplicate for loop -->
+      <span class="badge badge-lg badge-soft gap-2 h-auto py-1.5 px-3.5 shadow-sm">
+        <Spline size={14} class="text-primary" />
+        Interaction design
+      </span>
+      <span class="badge badge-lg badge-soft gap-2 h-auto py-1.5 px-3.5 shadow-sm">
+        <Layers size={14} class="text-primary" />
+        Design systems
+      </span>
+      <span class="badge badge-lg badge-soft gap-2 h-auto py-1.5 px-3.5 shadow-sm">
+        <FlaskConical size={14} class="text-primary" />
+        User research
+      </span>
+      <span class="badge badge-lg badge-soft gap-2 h-auto py-1.5 px-3.5 shadow-sm">
+        <Smartphone size={14} class="text-primary" />
+        Mobile UX
+      </span>
+      <span class="badge badge-lg badge-soft gap-2 h-auto py-1.5 px-3.5 shadow-sm">
+        <Activity size={14} class="text-primary" />
+        Data‑driven UX
+      </span>
+      <span class="badge badge-lg badge-soft gap-2 h-auto py-1.5 px-3.5 shadow-sm">
+        <Users size={14} class="text-primary" />
+        Cross‑functional facilitation
+      </span>
+    </div>
+  </div>
+</section>
+
+<style>
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+</style>

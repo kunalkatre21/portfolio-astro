@@ -1,0 +1,126 @@
+---
+import { Sparkles, MapPin, Clock, Activity, FolderGit2, FileText, HeartPulse, Landmark, Zap } from 'lucide-astro';
+import AuraBackground from './AuraBackground.astro';
+---
+
+<section id="hero" class="pt-[7.6rem] px-6 pb-[4.5rem] relative overflow-hidden">
+  <AuraBackground />
+  <div class="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-[1.3fr_1fr] gap-[3.4rem] items-center fade-in relative z-10">
+    
+    <!-- Left Content -->
+    <div>
+      <div class="badge badge-soft badge-primary badge-lg gap-2 mb-[1.4rem] py-4 shadow-sm">
+        <Sparkles size={14} />
+        Open for thoughtful product problems
+      </div>
+
+      <h1 class="text-[clamp(2.6rem,4vw,3.5rem)] leading-[1.05] tracking-tight mb-[1.1rem] bg-gradient-to-r from-base-content via-primary to-accent bg-clip-text text-transparent font-bold">
+        Designing calm, confident healthcare experiences.
+      </h1>
+
+      <p class="text-[1.02rem] max-w-[34rem] text-base-content/70 leading-[1.7] mb-[1.6rem]">
+        Kunal Katre is a lead product designer focused on turning complex health
+        journeys into simple, trustworthy experiences across mobile and web products.
+      </p>
+
+      <div class="flex flex-wrap gap-[0.9rem] mb-[2.1rem] text-base-content/80 text-[0.9rem]">
+        <span class="badge badge-lg badge-soft gap-1.5 h-auto">
+          <MapPin size={14} class="text-primary" />
+          Bengaluru · India
+        </span>
+        <span class="badge badge-lg badge-soft gap-1.5 h-auto">
+          <Clock size={14} class="text-primary" />
+          8+ years in product design
+        </span>
+        <span class="badge badge-lg badge-soft gap-1.5 h-auto">
+          <Activity size={14} class="text-primary" />
+          Healthcare · Platforms · Tools
+        </span>
+      </div>
+
+      <div class="flex flex-wrap gap-[0.9rem] mb-[1.8rem]">
+        <a href="#work" class="btn btn-primary gap-2 rounded-full shadow-md hover:shadow-lg transition-all">
+          <FolderGit2 size={16} />
+          View case studies
+        </a>
+        <a href="cv.html" class="btn btn-outline gap-2 rounded-full" target="_blank" rel="noreferrer">
+          <FileText size={16} />
+          View CV
+        </a>
+      </div>
+
+      <div class="flex flex-col gap-2.5 text-[0.88rem] text-base-content/60">
+        <span>Designing products with:</span>
+        <div class="flex flex-wrap gap-2.5">
+          <div class="badge badge-lg badge-outline border-dashed border-base-300 bg-base-100/50 gap-2 h-auto py-1.5 px-3.5 shadow-sm">
+            <HeartPulse size={14} class="text-primary" />
+            eka.care
+          </div>
+          <div class="badge badge-lg badge-outline border-dashed border-base-300 bg-base-100/50 gap-2 h-auto py-1.5 px-3.5 shadow-sm">
+            <Landmark size={14} class="text-primary" />
+            IIT Guwahati
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Content (Paper Dashboard) -->
+    <div class="relative order-first md:order-last animate-fade-in delay-[300ms]">
+      <div class="glass glass-card rounded-[var(--radius-xl)] overflow-hidden relative group">
+        <!-- Border Beam -->
+        <div class="absolute inset-0 rounded-[inherit] border border-transparent [mask-clip:padding-box,border-box] [mask-composite:intersect] [mask-image:linear-gradient(transparent,transparent),linear-gradient(#000,#000)]">
+           <div class="absolute aspect-square w-full bg-[conic-gradient(from_0deg,transparent_0_340deg,white_360deg)] opacity-20 group-hover:opacity-50 transition-opacity motion-safe:animate-[border-beam_4s_linear_infinite] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></div>
+        </div>
+
+        <div class="card-body p-6 relative z-10">
+          
+          <div class="flex justify-between items-center mb-4 relative z-10">
+            <span class="text-[0.82rem] text-base-content/60 inline-flex gap-1.5 items-center">
+              <Zap size={14} class="text-primary" />
+              Snapshot of impact
+            </span>
+            <span class="text-[0.82rem] text-base-content/60">2025</span>
+          </div>
+
+          <div class="flex gap-2 mb-5 flex-wrap relative z-10">
+            <div class="badge badge-soft badge-primary">Product metrics</div>
+            <div class="badge badge-soft">Team enablement</div>
+            <div class="badge badge-soft">Craft</div>
+          </div>
+
+          <div class="grid grid-cols-2 gap-3.5 relative z-10">
+            <div class="p-4 rounded-box bg-base-200/50 border border-dashed border-base-300 shadow-sm group">
+              <p class="text-[0.76rem] text-base-content/60 mb-1">Patients onboarded</p>
+              <p class="text-[1.3rem] font-bold text-base-content skeleton-text">+1M</p>
+            </div>
+            <div class="p-4 rounded-box bg-base-200/50 border border-dashed border-base-300 shadow-sm group">
+              <p class="text-[0.76rem] text-base-content/60 mb-1">Task completion</p>
+              <p class="text-[1.3rem] font-bold text-base-content skeleton-text">−40%</p>
+            </div>
+            <div class="p-4 rounded-box bg-base-200/50 border border-dashed border-base-300 shadow-sm group">
+              <p class="text-[0.76rem] text-base-content/60 mb-1">Design systems</p>
+              <p class="text-[1.3rem] font-bold text-base-content skeleton-text">3</p>
+            </div>
+            <div class="p-4 rounded-box bg-base-200/50 border border-dashed border-base-300 shadow-sm group">
+              <p class="text-[0.76rem] text-base-content/60 mb-1">Cross‑functional teams</p>
+              <p class="text-[1.3rem] font-bold text-base-content skeleton-text">5+</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  // Simulate skeleton loading
+  document.addEventListener('DOMContentLoaded', () => {
+    const skeletons = document.querySelectorAll('.skeleton-text');
+    skeletons.forEach(el => {
+      el.classList.add('skeleton', 'h-8', 'w-20', 'text-transparent', 'rounded');
+      setTimeout(() => {
+        el.classList.remove('skeleton', 'h-8', 'w-20', 'text-transparent', 'rounded');
+      }, 1500);
+    });
+  });
+</script>

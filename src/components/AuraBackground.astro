@@ -1,0 +1,129 @@
+---
+---
+
+<div class="aura-background-container absolute inset-0 -z-10 overflow-hidden pointer-events-none select-none">
+  <!-- Gradient Orbs -->
+  <div class="orb-wrapper orb-1-wrapper"><div class="orb orb-1"></div></div>
+  <div class="orb-wrapper orb-2-wrapper"><div class="orb orb-2"></div></div>
+  <div class="orb-wrapper orb-3-wrapper"><div class="orb orb-3"></div></div>
+
+  <!-- Noise Overlay (Optional Texture) -->
+  <div class="absolute inset-0 opacity-[0.03] mix-blend-overlay" 
+       style="background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIj48ZmlsdGVyIGlkPSJnoiPjxmZVR1cmJ1bGVuY2UgdHlwZT0iZnJhY3RhbE5vaXNlIiBiYXNlRnJlcXVlbmN5PSIwLjY1IiBudW1PY3RhdmVzPSIzIiBzdGl0Y2hUaWxlcz0ic3RpdGNoIi8+PC9maWx0ZXI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsdGVyPSJ1cmwoI24pIiBvcGFjaXR5PSIwLjUiLz48L3N2Zz4=');">
+  </div>
+</div>
+
+<style>
+  .aura-background-container {
+    perspective: 1000px;
+    background-color: var(--bg-color);
+    transition: background-color 0.5s ease;
+  }
+
+  .orb-wrapper {
+    position: absolute;
+    will-change: transform;
+  }
+
+  .orb {
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.6;
+    will-change: transform;
+  }
+
+  /* Orb 1: Primary Color (Blue) */
+  .orb-1-wrapper {
+    top: -10%;
+    left: -10%;
+    width: 70vw;
+    height: 70vw;
+  }
+  .orb-1 {
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, var(--color-primary), transparent 70%);
+    mix-blend-mode: screen;
+    animation: float-1 18s infinite ease-in-out alternate;
+  }
+
+  /* Orb 2: Secondary Color (Cyan) */
+  .orb-2-wrapper {
+    top: 10%;
+    right: -20%;
+    width: 60vw;
+    height: 60vw;
+  }
+  .orb-2 {
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, var(--color-secondary), transparent 70%);
+    mix-blend-mode: screen;
+    animation: float-2 22s infinite ease-in-out alternate-reverse;
+  }
+
+  /* Orb 3: Accent Color (Violet/Fuchsia) */
+  .orb-3-wrapper {
+    bottom: -20%;
+    left: 10%;
+    width: 50vw;
+    height: 50vw;
+  }
+  .orb-3 {
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, var(--color-accent), transparent 70%);
+    mix-blend-mode: screen;
+    animation: float-3 26s infinite ease-in-out alternate;
+  }
+
+  /* Dark mode specific adjustments */
+  :global([data-theme="dark"]) .orb {
+    opacity: 0.45;
+    mix-blend-mode: screen;
+  }
+  
+   :global([data-theme="light"]) .orb {
+    opacity: 0.5;
+    mix-blend-mode: multiply;
+    filter: blur(100px);
+  }
+
+  /* Unique keyframes for organic movement */
+  @keyframes float-1 {
+    0% { transform: translate(0, 0) scale(1) rotate(0deg); }
+    33% { transform: translate(50px, -50px) scale(1.1) rotate(10deg); }
+    66% { transform: translate(-30px, 40px) scale(0.95) rotate(-5deg); }
+    100% { transform: translate(20px, -20px) scale(1.05) rotate(5deg); }
+  }
+
+  @keyframes float-2 {
+    0% { transform: translate(0, 0) scale(1) rotate(0deg); }
+    50% { transform: translate(-60px, 30px) scale(1.15) rotate(-15deg); }
+    100% { transform: translate(40px, -40px) scale(0.9) rotate(10deg); }
+  }
+
+  @keyframes float-3 {
+    0% { transform: translate(0, 0) scale(1) rotate(0deg); }
+    40% { transform: translate(40px, 60px) scale(0.9) rotate(20deg); }
+    80% { transform: translate(-50px, -30px) scale(1.1) rotate(-10deg); }
+    100% { transform: translate(0, 0) scale(1) rotate(0deg); }
+  }
+</style>
+
+<script>
+  // Simple Mouse Parallax Effect on Wrappers
+  document.addEventListener('mousemove', (e) => {
+    const wrappers = document.querySelectorAll('.orb-wrapper');
+    const x = e.clientX / window.innerWidth;
+    const y = e.clientY / window.innerHeight;
+
+    wrappers.forEach((wrapper, index) => {
+      const speed = (index + 1) * 25; // Slightly increased parallax speed
+      const moveX = (x - 0.5) * speed;
+      const moveY = (y - 0.5) * speed;
+      
+      (wrapper as HTMLElement).style.transform = `translate(${moveX}px, ${moveY}px)`;
+    });
+  });
+</script>

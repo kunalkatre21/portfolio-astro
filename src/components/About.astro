@@ -1,0 +1,69 @@
+---
+import { Compass, Grid, MessageSquare } from 'lucide-astro';
+---
+
+<section id="about" class="pt-[4.8rem] px-6">
+  <div class="max-w-[760px] mx-auto mb-[2.6rem] text-center fade-in">
+    <h2 class="text-[2.1rem] tracking-tight mb-[0.6rem] font-bold">How Kunal works</h2>
+    <p class="text-[0.98rem] text-base-content/70 leading-[1.75]">
+      From messy problem spaces to quietly confident products, the process stays
+      anchored in teams, evidence and thoughtful craft.
+    </p>
+  </div>
+
+  <div class="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-[1.6rem] fade-in">
+    
+    <article class="glass glass-card rounded-[var(--radius-xl)] overflow-hidden">
+      <div class="card-body p-6 relative">
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_0_0,var(--color-base-300),transparent_60%)] opacity-20 pointer-events-none"></div>
+        
+        <div class="badge badge-soft gap-1.5 h-auto py-1 px-3 mb-3 relative z-10 shadow-sm">
+          <Compass size={14} class="text-primary" />
+          Discovery
+        </div>
+        
+        <h3 class="card-title text-[1.15rem] font-semibold mb-2 relative z-10">Make the problem smaller</h3>
+        <p class="relative z-10 text-[0.92rem] text-base-content/70 leading-[1.7]">
+          Ground decisions in interviews, flows and data before sketching UI. Aligns
+          product, engineering and ops around the same constraints and success
+          measures.
+        </p>
+      </div>
+    </article>
+
+    <article class="glass glass-card rounded-[var(--radius-xl)] overflow-hidden">
+      <div class="card-body p-6 relative">
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_0_0,var(--color-base-300),transparent_60%)] opacity-20 pointer-events-none"></div>
+        
+        <div class="badge badge-soft gap-1.5 h-auto py-1 px-3 mb-3 relative z-10 shadow-sm">
+          <Grid size={14} class="text-primary" />
+          Systems
+        </div>
+        
+        <h3 class="card-title text-[1.15rem] font-semibold mb-2 relative z-10">Design once, reuse with care</h3>
+        <p class="relative z-10 text-[0.92rem] text-base-content/70 leading-[1.7]">
+          Uses systems thinking and shared primitives so new features feel familiar,
+          accessible and easy to ship across multiple products.
+        </p>
+      </div>
+    </article>
+
+    <article class="glass glass-card rounded-[var(--radius-xl)] overflow-hidden">
+      <div class="card-body p-6 relative">
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_0_0,var(--color-base-300),transparent_60%)] opacity-20 pointer-events-none"></div>
+        
+        <div class="badge badge-soft gap-1.5 h-auto py-1 px-3 mb-3 relative z-10 shadow-sm">
+          <MessageSquare size={14} class="text-primary" />
+          Collaboration
+        </div>
+        
+        <h3 class="card-title text-[1.15rem] font-semibold mb-2 relative z-10">Bring teams into the room</h3>
+        <p class="relative z-10 text-[0.92rem] text-base-content/70 leading-[1.7]">
+          Co‑creates with PMs, engineers and clinicians through workshops, async
+          artifacts and design crits, keeping everyone close to patients.
+        </p>
+      </div>
+    </article>
+
+  </div>
+</section>
