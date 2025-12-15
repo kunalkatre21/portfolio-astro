@@ -42,12 +42,34 @@ import { Linkedin, Github } from "lucide-astro";
       <div>
         <h3 class="font-bold mb-2">Navigation</h3>
         <ul class="flex flex-col gap-2 text-left">
-          <li><a href="/#hero" aria-label="Go to Home section">Home</a></li>
-          <li><a href="/#work" aria-label="Go to Work section">Work</a></li>
-          <li><a href="/#about" aria-label="Go to About section">About</a></li>
-          <li><a href="/cv" aria-label="View CV page">CV</a></li>
           <li>
-            <a href="/#contact" aria-label="Go to Contact section">Contact</a>
+            <a
+              href={import.meta.env.BASE_URL + "/#hero"}
+              aria-label="Go to Home section">Home</a
+            >
+          </li>
+          <li>
+            <a
+              href={import.meta.env.BASE_URL + "/#work"}
+              aria-label="Go to Work section">Work</a
+            >
+          </li>
+          <li>
+            <a
+              href={import.meta.env.BASE_URL + "/#about"}
+              aria-label="Go to About section">About</a
+            >
+          </li>
+          <li>
+            <a href={import.meta.env.BASE_URL + "/cv"} aria-label="View CV page"
+              >CV</a
+            >
+          </li>
+          <li>
+            <a
+              href={import.meta.env.BASE_URL + "/#contact"}
+              aria-label="Go to Contact section">Contact</a
+            >
           </li>
         </ul>
       </div>
@@ -55,26 +77,28 @@ import { Linkedin, Github } from "lucide-astro";
         <h3 class="font-bold mb-2">Case Studies</h3>
         <ul class="flex flex-col gap-2 text-left">
           <li>
-            <a href="/case-studies/cowin" aria-label="View CoWIN case study"
-              >CoWIN</a
+            <a
+              href={import.meta.env.BASE_URL + "/case-studies/cowin"}
+              aria-label="View CoWIN case study">CoWIN</a
             >
           </li>
           <li>
             <a
-              href="/case-studies/design-system"
+              href={import.meta.env.BASE_URL + "/case-studies/design-system"}
               aria-label="View Design System case study">Design System</a
             >
           </li>
           <li>
             <a
-              href="/case-studies/heart-rate"
+              href={import.meta.env.BASE_URL + "/case-studies/heart-rate"}
               aria-label="View Heart Rate Monitor case study"
               >Heart Rate Monitor</a
             >
           </li>
           <li>
             <a
-              href="/case-studies/web-infrastructure"
+              href={import.meta.env.BASE_URL +
+                "/case-studies/web-infrastructure"}
               aria-label="View Web Infrastructure case study"
               >Web Infrastructure</a
             >

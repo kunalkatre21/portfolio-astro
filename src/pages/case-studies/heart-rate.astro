@@ -1,6 +1,13 @@
 ---
 import CaseStudyLayout from "../../layouts/CaseStudyLayout.astro";
 import { ArrowLeft, ArrowRight } from "@lucide/astro";
+import ekaLogo from "../../public/assets/eka-logo.svg";
+import instructionVideo from "../../assets/hr/instruction video-1.mp4";
+import resultFinal from "../../assets/hr/result-final-dashboard.png";
+import research from "../../assets/hr/research.png";
+import ftuxJourneyMap from "../../assets/hr/FTUX-journey-map.webp";
+import rtuxJourneyMap from "../../assets/hr/RTUX-journey-map.webp";
+import actionableTrends from "../../assets/hr/actionable-trends.png";
 ---
 
 <CaseStudyLayout
@@ -14,7 +21,7 @@ import { ArrowLeft, ArrowRight } from "@lucide/astro";
         <div class="flex flex-col lg:flex-row gap-12 items-center">
             <div class="flex-1 space-y-6">
                 <a
-                    href="/#work"
+                    href={import.meta.env.BASE_URL + "/#work"}
                     class="btn btn-ghost btn-sm gap-2 pl-0 hover:bg-transparent hover:text-primary transition-colors duration-300"
                 >
                     <ArrowLeft />
@@ -26,7 +33,7 @@ import { ArrowLeft, ArrowRight } from "@lucide/astro";
                 >
                     <span>Project for</span>
                     <img
-                        src="/assets/eka-logo.svg"
+                        src={ekaLogo.src}
                         alt="Eka Care logo"
                         class="h-6 w-auto"
                     />
@@ -89,12 +96,12 @@ import { ArrowLeft, ArrowRight } from "@lucide/astro";
                         >
                             <!-- Video Content -->
                             <video
-                                src="/src/assets/hr/instruction video-1.mp4"
+                                src={instructionVideo}
                                 autoplay
                                 loop
                                 muted
                                 playsinline
-                                poster="/src/assets/hr/result-final-dashboard.png"
+                                poster={resultFinal.src}
                                 class="w-full h-full object-cover"></video>
                         </div>
                     </div>
@@ -149,7 +156,7 @@ import { ArrowLeft, ArrowRight } from "@lucide/astro";
 
             <figure>
                 <img
-                    src="/src/assets/hr/research.png"
+                    src={research.src}
                     alt="Guerilla Research in progress"
                     class="w-full h-auto rounded-xl shadow-lg border border-base-300"
                 />
@@ -274,7 +281,7 @@ import { ArrowLeft, ArrowRight } from "@lucide/astro";
 
             <figure>
                 <img
-                    src="/src/assets/hr/FTUX-journey-map.webp"
+                    src={ftuxJourneyMap.src}
                     alt="Emotional journey map diagnosing the V1 experience"
                     class="w-full h-auto rounded-xl shadow-lg border border-base-300"
                 />
@@ -293,7 +300,7 @@ import { ArrowLeft, ArrowRight } from "@lucide/astro";
 
             <figure>
                 <img
-                    src="/src/assets/hr/RTUX-journey-map.webp"
+                    src={rtuxJourneyMap.src}
                     alt="V1 Returning User Experience journey map"
                     class="w-full h-auto rounded-xl shadow-lg border border-base-300"
                 />
@@ -625,7 +632,7 @@ import { ArrowLeft, ArrowRight } from "@lucide/astro";
 
             <figure>
                 <img
-                    src="/src/assets/hr/actionable-trends.png"
+                    src={actionableTrends.src}
                     alt="Heart rate trends dashboard showing historical data and insights"
                     class="w-full h-auto rounded-xl shadow-lg border border-base-300"
                 />
@@ -888,7 +895,8 @@ import { ArrowLeft, ArrowRight } from "@lucide/astro";
                 class="card bg-base-200/50 hover:bg-base-200 transition-colors border border-base-300 cursor-pointer group"
             >
                 <a
-                    href="/case-studies/web-infrastructure"
+                    href={import.meta.env.BASE_URL +
+                        "/case-studies/web-infrastructure"}
                     class="card-body flex-row items-center gap-6"
                 >
                     <div class="flex-1">

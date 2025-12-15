@@ -473,7 +473,8 @@ import Navbar from "../components/Navbar.astro";
             <!-- Download Resume Button -->
             <div class="text-center">
                 <a
-                    href="/assets/Kunal_Katre_Resume.pdf"
+                    href={import.meta.env.BASE_URL +
+                        "/assets/Kunal_Katre_Resume.pdf"}
                     download="Kunal_Katre_Resume.pdf"
                     class="inline-flex items-center gap-2 bg-primary hover:bg-primary/80 text-primary-content font-semibold py-3 px-6 rounded-lg transition-colors shadow-lg"
                 >

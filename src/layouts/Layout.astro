@@ -1,5 +1,6 @@
 ---
 import "../styles/global.css";
+import profileImage from "../assets/kunal-katre-photo.webp";
 const { title } = Astro.props;
 ---
 
@@ -35,7 +36,7 @@ const { title } = Astro.props;
     <meta property="og:type" content="website" />
     <meta
       property="og:image"
-      content={new URL("/assets/kunal-katre-photo.webp", Astro.url.origin)}
+      content={new URL(profileImage.src, Astro.url.origin)}
     />
     <meta property="og:url" content={Astro.url.href} />
     <meta property="og:site_name" content="Kunal Katre Portfolio" />
@@ -79,7 +80,7 @@ const { title } = Astro.props;
     />
 
     <!-- Preload Profile Image -->
-    <link rel="preload" href="/assets/kunal-katre-photo.webp" as="image" />
+    <link rel="preload" href={profileImage.src} as="image" />
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -133,7 +134,7 @@ const { title } = Astro.props;
 
             <li>
               <a
-                href="/#hero"
+                href={import.meta.env.BASE_URL + "/#hero"}
                 class="menu-item text-lg font-medium relative overflow-hidden group"
               >
                 <span class="relative z-10 flex items-center gap-3 px-4 py-3">
@@ -159,7 +160,7 @@ const { title } = Astro.props;
 
             <li>
               <a
-                href="/#work"
+                href={import.meta.env.BASE_URL + "/#work"}
                 class="menu-item text-base relative overflow-hidden group"
               >
                 <span class="relative z-10 flex items-center gap-3 px-4 py-3">
@@ -185,7 +186,7 @@ const { title } = Astro.props;
 
             <li>
               <a
-                href="/case-studies/cowin"
+                href={import.meta.env.BASE_URL + "/case-studies/cowin"}
                 class="menu-item text-base relative overflow-hidden group"
               >
                 <span class="relative z-10 flex items-center gap-3 px-4 py-3">
@@ -209,7 +210,7 @@ const { title } = Astro.props;
 
             <li>
               <a
-                href="/case-studies/design-system"
+                href={import.meta.env.BASE_URL + "/case-studies/design-system"}
                 class="menu-item text-base relative overflow-hidden group"
               >
                 <span class="relative z-10 flex items-center gap-3 px-4 py-3">
@@ -233,7 +234,7 @@ const { title } = Astro.props;
 
             <li>
               <a
-                href="/case-studies/heart-rate"
+                href={import.meta.env.BASE_URL + "/case-studies/heart-rate"}
                 class="menu-item text-base relative overflow-hidden group"
               >
                 <span class="relative z-10 flex items-center gap-3 px-4 py-3">
@@ -257,7 +258,8 @@ const { title } = Astro.props;
 
             <li>
               <a
-                href="/case-studies/web-infrastructure"
+                href={import.meta.env.BASE_URL +
+                  "/case-studies/web-infrastructure"}
                 class="menu-item text-base relative overflow-hidden group"
               >
                 <span class="relative z-10 flex items-center gap-3 px-4 py-3">
@@ -283,7 +285,7 @@ const { title } = Astro.props;
 
             <li>
               <a
-                href="/#about"
+                href={import.meta.env.BASE_URL + "/#about"}
                 class="menu-item text-lg font-medium relative overflow-hidden group"
               >
                 <span class="relative z-10 flex items-center gap-3 px-4 py-3">
@@ -302,7 +304,7 @@ const { title } = Astro.props;
 
             <li>
               <a
-                href="/cv"
+                href={import.meta.env.BASE_URL + "/cv"}
                 class="menu-item text-lg font-medium relative overflow-hidden group"
               >
                 <span class="relative z-10 flex items-center gap-3 px-4 py-3">
@@ -321,7 +323,7 @@ const { title } = Astro.props;
 
             <li>
               <a
-                href="/#contact"
+                href={import.meta.env.BASE_URL + "/#contact"}
                 class="menu-item text-lg font-medium relative overflow-hidden group"
               >
                 <span class="relative z-10 flex items-center gap-3 px-4 py-3">
