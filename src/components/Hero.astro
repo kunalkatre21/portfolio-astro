@@ -6,24 +6,21 @@ import {
   Activity,
   FolderGit2,
   FileText,
-  HeartPulse,
-  Landmark,
-  Zap,
 } from "lucide-astro";
 import AuraBackground from "./AuraBackground.astro";
 ---
 
 <section
   id="hero"
-  class="hero-section min-h-[var(--hero-height-mobile)] md:min-h-[var(--hero-height-tablet)] lg:min-h-[var(--hero-height-desktop)] px-6 pt-24 pb-[4.5rem] relative overflow-hidden"
+  class="flex hero-section min-h-[var(--hero-height-mobile)] md:min-h-[var(--hero-height-tablet)] lg:min-h-[var(--hero-height-desktop)] px-6 pt-24 pb-[4.5rem] relative overflow-hidden"
 >
   <AuraBackground />
 
   <div
-    class="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-[1.3fr_1fr] gap-[3.4rem] items-center fade-in relative z-10"
+    class="max-w-[800px] mx-auto flex flex-col items-center justify-center text-center fade-in relative z-10"
   >
     <!-- Left Content -->
-    <div>
+    <div class="flex flex-col items-center">
       <div
         class="badge badge-soft badge-primary badge-lg gap-2 mb-[1.4rem] py-4 shadow-sm"
       >
@@ -69,116 +66,13 @@ import AuraBackground from "./AuraBackground.astro";
           <FolderGit2 size={16} />
           View case studies
         </a>
-        <a href="/cv" class="btn btn-outline gap-2 rounded-full">
+        <a
+          href={import.meta.env.BASE_URL + "/cv"}
+          class="btn btn-outline gap-2 rounded-full"
+        >
           <FileText size={16} />
           View CV
         </a>
-      </div>
-
-      <div class="flex flex-col gap-2.5 text-[0.88rem] text-base-content/60">
-        <span>Designing products with:</span>
-        <div class="flex flex-wrap gap-2.5">
-          <div
-            class="badge badge-lg badge-outline border-dashed border-base-300 bg-base-100/50 gap-2 h-auto py-1.5 px-3.5 shadow-sm"
-          >
-            <HeartPulse size={14} class="text-primary" />
-            eka.care
-          </div>
-          <div
-            class="badge badge-lg badge-outline border-dashed border-base-300 bg-base-100/50 gap-2 h-auto py-1.5 px-3.5 shadow-sm"
-          >
-            <Landmark size={14} class="text-primary" />
-            IIT Guwahati
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Right Content (Paper Dashboard) -->
-    <div
-      class="relative order-first md:order-last animate-fade-in delay-[300ms]"
-    >
-      <div
-        class="glass glass-card rounded-[var(--radius-xl)] overflow-hidden relative group"
-      >
-        <!-- Border Beam -->
-        <div
-          class="absolute inset-0 rounded-[inherit] border border-transparent [mask-clip:padding-box,border-box] [mask-composite:intersect] [mask-image:linear-gradient(transparent,transparent),linear-gradient(#000,#000)]"
-        >
-          <div
-            class="absolute aspect-square w-full bg-[conic-gradient(from_0deg,transparent_0_340deg,white_360deg)] opacity-20 group-hover:opacity-50 transition-opacity motion-safe:animate-[border-beam_4s_linear_infinite] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
-          >
-          </div>
-        </div>
-
-        <div class="card-body p-6 relative z-10">
-          <div class="flex justify-between items-center mb-4 relative z-10">
-            <span
-              class="text-[0.82rem] text-base-content/60 inline-flex gap-1.5 items-center"
-            >
-              <Zap size={14} class="text-primary" />
-              Snapshot of impact
-            </span>
-            <span class="text-[0.82rem] text-base-content/60">2025</span>
-          </div>
-
-          <div class="flex gap-2 mb-5 flex-wrap relative z-10">
-            <div class="badge badge-soft badge-primary">Product metrics</div>
-            <div class="badge badge-soft">Team enablement</div>
-            <div class="badge badge-soft">Craft</div>
-          </div>
-
-          <div class="grid grid-cols-2 gap-3.5 relative z-10">
-            <div
-              class="p-4 rounded-box bg-base-200/50 border border-dashed border-base-300 shadow-sm group"
-            >
-              <p class="text-[0.76rem] text-base-content/60 mb-1">
-                Patients onboarded
-              </p>
-              <p
-                class="text-[1.3rem] font-bold text-base-content skeleton-text"
-              >
-                +1M
-              </p>
-            </div>
-            <div
-              class="p-4 rounded-box bg-base-200/50 border border-dashed border-base-300 shadow-sm group"
-            >
-              <p class="text-[0.76rem] text-base-content/60 mb-1">
-                Task completion
-              </p>
-              <p
-                class="text-[1.3rem] font-bold text-base-content skeleton-text"
-              >
-                −40%
-              </p>
-            </div>
-            <div
-              class="p-4 rounded-box bg-base-200/50 border border-dashed border-base-300 shadow-sm group"
-            >
-              <p class="text-[0.76rem] text-base-content/60 mb-1">
-                Design systems
-              </p>
-              <p
-                class="text-[1.3rem] font-bold text-base-content skeleton-text"
-              >
-                3
-              </p>
-            </div>
-            <div
-              class="p-4 rounded-box bg-base-200/50 border border-dashed border-base-300 shadow-sm group"
-            >
-              <p class="text-[0.76rem] text-base-content/60 mb-1">
-                Cross‑functional teams
-              </p>
-              <p
-                class="text-[1.3rem] font-bold text-base-content skeleton-text"
-              >
-                5+
-              </p>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   </div>
