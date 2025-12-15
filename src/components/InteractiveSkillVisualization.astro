@@ -1,0 +1,118 @@
+---
+// src/components/TechOrbit.astro
+const icons = [
+    { label: "TS", color: "#3178c6" },
+    { label: "React", color: "#61dafb" },
+    { label: "Astro", color: "#ff5d01" },
+    { label: "GSAP", color: "#88ce02" },
+    { label: "Node", color: "#339933" },
+];
+---
+
+<div id="orbit-container" class="orbit-wrapper">
+    {
+        icons.map((icon, index) => (
+            <div
+                class="orbit-item"
+                data-index={index}
+                style={`background-color: ${icon.color}20; border-color: ${icon.color}; color: ${icon.color};`}
+            >
+                {icon.label}
+            </div>
+        ))
+    }
+</div>
+
+<style>
+    .orbit-wrapper {
+        position: relative;
+        width: 100%;
+        height: 500px; /* Adjust height to fit your hero */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+    }
+
+    .orbit-item {
+        position: absolute;
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        border: 2px solid;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;
+        font-family: sans-serif;
+        backdrop-filter: blur(5px);
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+        will-change: transform;
+    }
+</style>
+
+<script>
+    import gsap from "gsap";
+
+    const container = document.getElementById("orbit-container");
+    // Select all elements with the class .orbit-item and cast them as an array of HTMLElements
+    const items = gsap.utils.toArray<HTMLElement>(".orbit-item");
+
+    if (container && items.length > 0) {
+        // 1. Initial Floating Animation (Random movement)
+        items.forEach((item) => {
+            // Random starting position
+            gsap.set(item, {
+                x: gsap.utils.random(-100, 100),
+                y: gsap.utils.random(-100, 100),
+            });
+
+            // Float continuously
+            // We use a function to create a unique floating path for each item
+            const floatAnim = () => {
+                gsap.to(item, {
+                    x: gsap.utils.random(-150, 150),
+                    y: gsap.utils.random(-150, 150),
+                    rotation: gsap.utils.random(-45, 45),
+                    duration: gsap.utils.random(3, 6),
+                    ease: "sine.inOut",
+                    onComplete: floatAnim, // Loop indefinitely
+                });
+            };
+            floatAnim();
+        });
+
+        // 2. Mouse Interaction
+        container.addEventListener("mousemove", (e: MouseEvent) => {
+            const { clientX, clientY } = e;
+            const rect = container.getBoundingClientRect();
+            const mouseX = clientX - rect.left - rect.width / 2;
+            const mouseY = clientY - rect.top - rect.height / 2;
+
+            // Move items away from mouse slightly (magnetic repulsion)
+            items.forEach((item) => {
+                const speed = 0.1; // lower = more laggy/smooth
+                gsap.to(item, {
+                    x: `+=${mouseX * speed * -0.5}`, // Invert direction for repulsion
+                    y: `+=${mouseY * speed * -0.5}`,
+                    duration: 1,
+                    ease: "power2.out",
+                    overwrite: "auto", // Important: prevents conflict with the float loop
+                });
+            });
+        });
+
+        // Resume floating when mouse leaves
+        container.addEventListener("mouseleave", () => {
+            items.forEach((item) => {
+                gsap.to(item, {
+                    x: gsap.utils.random(-100, 100),
+                    y: gsap.utils.random(-100, 100),
+                    duration: 2,
+                    ease: "power2.inOut",
+                });
+            });
+        });
+    }
+</script>

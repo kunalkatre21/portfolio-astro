@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Navbar from "../components/Navbar.astro";
+import profileImage from "../assets/kunal-katre-photo.webp";
 ---
 
 <Layout title="Résumé | Kunal Katre">
@@ -20,9 +21,10 @@ import Navbar from "../components/Navbar.astro";
                     <!-- Photo -->
                     <div class="flex-shrink-0">
                         <img
-                            src="/assets/kunal-katre-photo.webp"
+                            src={profileImage.src}
                             alt="Kunal Katre"
                             class="w-32 h-32 lg:w-40 lg:h-40 rounded-full object-cover border-4 border-primary shadow-lg"
+                            loading="lazy"
                         />
                     </div>
 

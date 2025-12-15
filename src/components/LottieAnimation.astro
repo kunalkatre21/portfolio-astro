@@ -1,0 +1,49 @@
+---
+import lottie from "lottie-web";
+
+interface LottieAnimationProps {
+    animationPath: string;
+    width?: number;
+    height?: number;
+    loop?: boolean;
+    autoplay?: boolean;
+    className?: string;
+}
+
+const {
+    animationPath,
+    width = 400,
+    height = 400,
+    loop = true,
+    autoplay = true,
+    className = "",
+} = Astro.props;
+---
+
+<div
+    id="lottie-container"
+    class={className}
+    style={{ width: `${width}px`, height: `${height}px` }}
+>
+</div>
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const container = document.getElementById("lottie-container");
+        if (container) {
+            fetch("{Astro.site}{animationPath}")
+                .then((res) => res.json())
+                .then((animationData) => {
+                    const animation = lottie.loadAnimation({
+                        container: container,
+                        renderer: "svg",
+                        loop: { loop },
+                        autoplay: { autoplay },
+                        animationData: animationData,
+                    });
+                })
+                .catch((error) => {
+                    console.error("Error loading Lottie animation:", error);
+                });
+        }
+    });
+</script>

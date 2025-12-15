@@ -27,7 +27,7 @@ import designSystemMockup from "../assets/images/design-system-mockup.png";
     class="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 fade-in"
   >
     <!-- Case Study 1: CoWIN -->
-    <a href="/case-studies/cowin" class="group">
+    <a href={import.meta.env.BASE_URL + "/case-studies/cowin"} class="group">
       <article
         class="glass glass-card rounded-[2.5rem] overflow-hidden group-hover:-translate-y-1 transition-transform duration-500 relative min-h-[400px] flex flex-col"
       >
@@ -73,7 +73,10 @@ import designSystemMockup from "../assets/images/design-system-mockup.png";
     </a>
 
     <!-- Case Study 2: Heart Rate -->
-    <a href="/case-studies/heart-rate" class="group">
+    <a
+      href={import.meta.env.BASE_URL + "/case-studies/heart-rate"}
+      class="group"
+    >
       <article
         class="glass glass-card rounded-[2.5rem] overflow-hidden group-hover:-translate-y-1 transition-transform duration-500 relative min-h-[400px] flex flex-col"
       >
@@ -112,7 +115,10 @@ import designSystemMockup from "../assets/images/design-system-mockup.png";
     </a>
 
     <!-- Case Study 3: Design System -->
-    <a href="/case-studies/design-system" class="group">
+    <a
+      href={import.meta.env.BASE_URL + "/case-studies/design-system"}
+      class="group"
+    >
       <article
         class="glass glass-card rounded-[2.5rem] overflow-hidden group-hover:-translate-y-1 transition-transform duration-500 relative min-h-[400px] flex flex-col"
       >
@@ -150,7 +156,10 @@ import designSystemMockup from "../assets/images/design-system-mockup.png";
     </a>
 
     <!-- Case Study 4: Web Infrastructure -->
-    <a href="/case-studies/web-infrastructure" class="group">
+    <a
+      href={import.meta.env.BASE_URL + "/case-studies/web-infrastructure"}
+      class="group"
+    >
       <article
         class="glass glass-card rounded-[2.5rem] overflow-hidden group-hover:-translate-y-1 transition-transform duration-500 relative min-h-[400px] flex flex-col"
       >
