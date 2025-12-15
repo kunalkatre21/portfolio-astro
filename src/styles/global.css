@@ -3,7 +3,45 @@
 @plugin "@tailwindcss/typography";
 
 @theme {
-    /* Aura Palette */
+    /* ===========================================
+       AURA BACKGROUND COLOR SYSTEM
+       Extracted from AuraBackground.astro component
+       Integrated with DaisyUI theme system
+       =========================================== */
+
+    /* Hero Heights */
+    --hero-height-mobile: 70vh;
+    --hero-height-tablet: 80vh;
+    --hero-height-desktop: 85vh;
+
+    /* Phone Mockup Sizes */
+    --phone-width-mobile: 280px;
+    --phone-width-tablet: 320px;
+    --phone-width-desktop: 360px;
+    --phone-height-mobile: 500px;
+    --phone-height-tablet: 568px;
+    --phone-height-desktop: 640px;
+
+    /* Aura Background Gradient Colors */
+    --aura-bg-gradient-1: #ffe8f3;
+    --aura-bg-gradient-2: #d9f3ff;
+
+    /* Aura Conic Gradient Colors */
+    --aura-conic-pink: #ff9aa2;
+    --aura-conic-peach: #ffb7b2;
+    --aura-conic-yellow: #ffdac1;
+    --aura-conic-mint: #e2f0cb;
+    --aura-conic-blue: #a2e4ff;
+    --aura-conic-lavender: #c9afff;
+
+    /* Day Sky Atmosphere */
+    --bg-aura: radial-gradient(circle at 50% 0%, rgba(59, 130, 246, 0.08) 0%, transparent 60%),
+        radial-gradient(circle at 85% 30%, rgba(6, 182, 212, 0.08) 0%, transparent 50%),
+        linear-gradient(rgba(15, 23, 42, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(15, 23, 42, 0.03) 1px, transparent 1px);
+    --bg-aura-size: 100% 100%, 100% 100%, 30px 30px, 30px 30px;
+
+    /* Aura Palette (Existing) */
     --color-aura-black: #020617;
     --color-aura-dark: #0B1120;
     --color-aura-muted: #1e293b;
@@ -11,6 +49,7 @@
     --color-aura-cyan: #06b6d4;
     --color-aura-violet: #8b5cf6;
     --color-aura-fuchsia: #d946ef;
+
 
     /* Animations */
     --animate-border-beam: border-beam calc(var(--duration, 4)*1s) infinite linear;
@@ -65,12 +104,12 @@
     --color-base-300: #e0f2fe;
     --color-base-content: #0f172a;
 
-    /* Day Sky Atmosphere */
-    --bg-aura: radial-gradient(circle at 50% 0%, rgba(59, 130, 246, 0.08) 0%, transparent 60%),
-        radial-gradient(circle at 85% 30%, rgba(6, 182, 212, 0.08) 0%, transparent 50%),
-        linear-gradient(rgba(15, 23, 42, 0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(15, 23, 42, 0.03) 1px, transparent 1px);
-    --bg-aura-size: 100% 100%, 100% 100%, 30px 30px, 30px 30px;
+    /* Day Sky Atmosphere with Notebook Grid 
+    --bg-aura: linear-gradient(0deg, transparent 24%, var(--color1) 25%, var(--color1) 26%, transparent 27%, transparent 74%, var(--color1) 75%, var(--color1) 76%, transparent 77%, transparent),
+        linear-gradient(90deg, transparent 24%, var(--color1) 25%, var(--color1) 26%, transparent 27%, transparent 74%, var(--color1) 75%, var(--color1) 76%, transparent 77%, transparent);
+
+*/
+
     --bg-color: #f8fafc;
 
     /* Glass Config (Light) */
@@ -96,20 +135,19 @@
     --color-primary-content: #ffffff;
     --color-secondary: #06b6d4;
     /* Aura Cyan */
-    --color-accent: #d946ef;
-    /* Aura Fuchsia */
+    --color-accent: #8b5cf6;
+    /* Aura Violet */
     --color-base-100: #020617;
     /* Aura Black */
     --color-base-200: #0B1120;
     --color-base-300: #1e293b;
     --color-base-content: #f1f5f9;
 
-    /* Northern Lights Atmosphere */
-    --bg-aura: radial-gradient(circle at 50% 0%, rgba(59, 130, 246, 0.15) 0%, transparent 60%),
-        radial-gradient(circle at 85% 30%, rgba(139, 92, 246, 0.15) 0%, transparent 50%),
-        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-    --bg-aura-size: 100% 100%, 100% 100%, 40px 40px, 40px 40px;
+    /* Northern Lights Atmosphere with Notebook Grid 
+    --bg-aura: linear-gradient(0deg, transparent 24%, var(--color1) 25%, var(--color1) 26%, transparent 27%, transparent 74%, var(--color1) 75%, var(--color1) 76%, transparent 77%, transparent),
+        linear-gradient(90deg, transparent 24%, var(--color1) 25%, var(--color1) 26%, transparent 27%, transparent 74%, var(--color1) 75%, var(--color1) 76%, transparent 77%, transparent);
+*/
+
     --bg-color: #020617;
 
     /* Glass Config (Dark) */
@@ -126,7 +164,15 @@
     --glass-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.05), 0 20px 40px rgba(0, 0, 0, 0.4);
 
     --radius-xl: 24px;
+
+    --aura-conic-pink: #690056;
+    --aura-conic-peach: #6E0030;
+    --aura-conic-yellow: #761F00;
+    --aura-conic-mint: #10b981;
+    --aura-conic-blue: #0ea5e9;
+    --aura-conic-lavender: #8b5cf6;
 }
+
 
 body {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
@@ -146,7 +192,11 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: "Playfair Display", serif;
+    font-family: inherit;
+    /* Use the system sans-serif stack defined in body */
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    /* Tight tracking for that "Apple" look */
 }
 
 /* Custom Utilities */
@@ -173,6 +223,15 @@ h6 {
     border-color: color-mix(in srgb, var(--color-accent) 20%, transparent);
 }
 
+/* Smooth Transitions */
+.hero-section {
+    transition: min-height 0.3s ease-in-out;
+}
+
+.phone-mockup {
+    transition: width 0.3s ease-in-out, height 0.3s ease-in-out;
+}
+
 .card-gradient {
     position: relative;
     background-image: var(--bg-aura);
@@ -196,7 +255,7 @@ h6 {
 .glass {
     background-image: radial-gradient(circle at 50% 0%, rgba(59, 130, 246, 0.15) 0%, transparent 60%),
         radial-gradient(circle at 85% 30%, rgba(139, 92, 246, 0.15) 0%, transparent 50%),
-        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-    --bg-aura-size: 100% 100%, 100% 100%, 40px 40px, 40px 40px;
+        linear-gradient(rgba(59, 130, 246, 0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(148, 163, 184, 0.15) 1px, transparent 1px);
+    --bg-aura-size: 100% 100%, 100% 100%, 25px 25px, 25px 25px;
 }

@@ -1,69 +1,192 @@
 ---
-import { Compass, Grid, MessageSquare } from 'lucide-astro';
+import { User, Briefcase, GraduationCap, Globe, Gamepad2 } from "lucide-astro";
 ---
 
-<section id="about" class="pt-[4.8rem] px-6">
-  <div class="max-w-[760px] mx-auto mb-[2.6rem] text-center fade-in">
-    <h2 class="text-[2.1rem] tracking-tight mb-[0.6rem] font-bold">How Kunal works</h2>
-    <p class="text-[0.98rem] text-base-content/70 leading-[1.75]">
-      From messy problem spaces to quietly confident products, the process stays
-      anchored in teams, evidence and thoughtful craft.
-    </p>
-  </div>
+<section id="about" class="py-[4.8rem] px-6">
+  <div class="max-w-[1200px] mx-auto fade-in">
+    <div class="mb-[2.6rem] text-center">
+      <h2 class="text-[2.1rem] tracking-tight mb-[0.6rem] font-bold">
+        Professional Identification
+      </h2>
+      <p class="text-[0.98rem] text-base-content/70 leading-[1.75]">
+        Kunal Katre - Systems Thinker & AI Enthusiast
+      </p>
+    </div>
 
-  <div class="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-[1.6rem] fade-in">
-    
-    <article class="glass glass-card rounded-[var(--radius-xl)] overflow-hidden">
-      <div class="card-body p-6 relative">
-        <div class="absolute inset-0 bg-[radial-gradient(circle_at_0_0,var(--color-base-300),transparent_60%)] opacity-20 pointer-events-none"></div>
-        
-        <div class="badge badge-soft gap-1.5 h-auto py-1 px-3 mb-3 relative z-10 shadow-sm">
-          <Compass size={14} class="text-primary" />
-          Discovery
+    <!-- ID Card Container -->
+    <div
+      class="glass glass-card rounded-[var(--radius-xl)] overflow-hidden shadow-2xl border border-white/20 fade-in"
+    >
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-0">
+        <!-- Left Content Section -->
+        <div class="lg:col-span-2 p-8 lg:p-12">
+          <!-- ID Header -->
+          <div class="flex items-center justify-between mb-8">
+            <div class="flex items-center gap-3">
+              <div
+                class="w-12 h-12 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center"
+              >
+                <User size={24} class="text-white" />
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-base-content">KUNAL KATRE</h3>
+                <p class="text-sm text-base-content/60">IDENTIFICATION CARD</p>
+              </div>
+            </div>
+            <div class="text-right">
+              <p class="text-xs text-base-content/50">ID: KK-2024</p>
+              <p class="text-xs text-base-content/50">VALID: INDEFINITE</p>
+            </div>
+          </div>
+
+          <!-- Professional Profile -->
+          <div class="mb-8">
+            <h4 class="text-lg font-semibold mb-3 flex items-center gap-2">
+              <Briefcase size={18} class="text-primary" />
+              Professional Profile
+            </h4>
+            <p class="text-base text-base-content/80 leading-relaxed">
+              Systems thinker with a passion for AI design implications and
+              global affairs analysis. Specialized in understanding complex
+              systems and their interconnected relationships.
+            </p>
+          </div>
+
+          <!-- Key Information Grid -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+            <div class="space-y-4">
+              <div>
+                <h5 class="text-sm font-semibold text-primary mb-1">
+                  Expertise
+                </h5>
+                <p class="text-sm text-base-content/70">
+                  Systems Thinking • AI Design • Global Analysis
+                </p>
+              </div>
+              <div>
+                <h5 class="text-sm font-semibold text-primary mb-1">
+                  Focus Areas
+                </h5>
+                <p class="text-sm text-base-content/70">
+                  Geopolitics • Economics • Technology Trends
+                </p>
+              </div>
+            </div>
+            <div class="space-y-4">
+              <div>
+                <h5 class="text-sm font-semibold text-secondary mb-1">
+                  Personal Interests
+                </h5>
+                <p class="text-sm text-base-content/70">
+                  PC Gaming • Anime • Custom Tech Builds
+                </p>
+              </div>
+              <div>
+                <h5 class="text-sm font-semibold text-secondary mb-1">
+                  Activities
+                </h5>
+                <p class="text-sm text-base-content/70">
+                  Strategy Gaming • Manga • Tech Architecture
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Skills & Attributes -->
+          <div class="mb-8">
+            <h4 class="text-lg font-semibold mb-4 flex items-center gap-2">
+              <GraduationCap size={18} class="text-primary" />
+              Core Attributes
+            </h4>
+            <div class="flex flex-wrap gap-2">
+              <span class="badge badge-soft badge-primary px-3 py-1 text-xs"
+                >Systems Analysis</span
+              >
+              <span class="badge badge-soft badge-primary px-3 py-1 text-xs"
+                >AI Research</span
+              >
+              <span class="badge badge-soft badge-secondary px-3 py-1 text-xs"
+                >Global Affairs</span
+              >
+              <span class="badge badge-soft badge-secondary px-3 py-1 text-xs"
+                >Economic Analysis</span
+              >
+              <span class="badge badge-soft badge-accent px-3 py-1 text-xs"
+                >Problem Solving</span
+              >
+              <span class="badge badge-soft badge-accent px-3 py-1 text-xs"
+                >Strategic Thinking</span
+              >
+            </div>
+          </div>
+
+          <!-- Personal Statement -->
+          <div
+            class="bg-gradient-to-r from-primary/10 to-secondary/10 rounded-lg p-4 border border-primary/20"
+          >
+            <h4 class="text-sm font-semibold mb-2 flex items-center gap-2">
+              <Globe size={16} class="text-primary" />
+              Philosophy
+            </h4>
+            <p class="text-sm text-base-content/80 italic">
+              "Exploring the intersection of technology, systems, and human
+              behavior to create meaningful impact in an ever-evolving world."
+            </p>
+          </div>
         </div>
-        
-        <h3 class="card-title text-[1.15rem] font-semibold mb-2 relative z-10">Make the problem smaller</h3>
-        <p class="relative z-10 text-[0.92rem] text-base-content/70 leading-[1.7]">
-          Ground decisions in interviews, flows and data before sketching UI. Aligns
-          product, engineering and ops around the same constraints and success
-          measures.
-        </p>
-      </div>
-    </article>
 
-    <article class="glass glass-card rounded-[var(--radius-xl)] overflow-hidden">
-      <div class="card-body p-6 relative">
-        <div class="absolute inset-0 bg-[radial-gradient(circle_at_0_0,var(--color-base-300),transparent_60%)] opacity-20 pointer-events-none"></div>
-        
-        <div class="badge badge-soft gap-1.5 h-auto py-1 px-3 mb-3 relative z-10 shadow-sm">
-          <Grid size={14} class="text-primary" />
-          Systems
+        <!-- Right Image Section -->
+        <div
+          class="relative bg-gradient-to-br from-primary/20 to-secondary/20 p-8 flex items-center justify-center"
+        >
+          <!-- Photo Frame -->
+          <div class="relative">
+            <img
+              src="/assets/kunal-katre-photo.webp"
+              alt="Kunal Katre"
+              class="w-48 h-48 lg:w-56 lg:h-56 object-cover rounded-lg shadow-2xl border-4 border-white/30"
+            />
+            <!-- Photo Corner Decorations -->
+            <div
+              class="absolute -top-2 -left-2 w-6 h-6 border-t-4 border-l-4 border-primary rounded-tl-lg"
+            >
+            </div>
+            <div
+              class="absolute -top-2 -right-2 w-6 h-6 border-t-4 border-r-4 border-secondary rounded-tr-lg"
+            >
+            </div>
+            <div
+              class="absolute -bottom-2 -left-2 w-6 h-6 border-b-4 border-l-4 border-secondary rounded-bl-lg"
+            >
+            </div>
+            <div
+              class="absolute -bottom-2 -right-2 w-6 h-6 border-b-4 border-r-4 border-primary rounded-br-lg"
+            >
+            </div>
+          </div>
+
+          <!-- Gaming Interest Badge -->
+          <div class="absolute bottom-8 right-8">
+            <div
+              class="bg-gradient-to-br from-accent to-purple-600 rounded-full p-3 shadow-lg"
+            >
+              <Gamepad2 size={20} class="text-white" />
+            </div>
+          </div>
         </div>
-        
-        <h3 class="card-title text-[1.15rem] font-semibold mb-2 relative z-10">Design once, reuse with care</h3>
-        <p class="relative z-10 text-[0.92rem] text-base-content/70 leading-[1.7]">
-          Uses systems thinking and shared primitives so new features feel familiar,
-          accessible and easy to ship across multiple products.
-        </p>
       </div>
-    </article>
 
-    <article class="glass glass-card rounded-[var(--radius-xl)] overflow-hidden">
-      <div class="card-body p-6 relative">
-        <div class="absolute inset-0 bg-[radial-gradient(circle_at_0_0,var(--color-base-300),transparent_60%)] opacity-20 pointer-events-none"></div>
-        
-        <div class="badge badge-soft gap-1.5 h-auto py-1 px-3 mb-3 relative z-10 shadow-sm">
-          <MessageSquare size={14} class="text-primary" />
-          Collaboration
+      <!-- ID Card Footer -->
+      <div
+        class="bg-gradient-to-r from-primary/10 to-secondary/10 px-8 py-4 border-t border-white/10"
+      >
+        <div
+          class="flex justify-between items-center text-xs text-base-content/60"
+        >
+          <p>© 2024 Kunal Katre | All rights reserved</p>
+          <p>Systems Thinker • AI Enthusiast • Global Citizen</p>
         </div>
-        
-        <h3 class="card-title text-[1.15rem] font-semibold mb-2 relative z-10">Bring teams into the room</h3>
-        <p class="relative z-10 text-[0.92rem] text-base-content/70 leading-[1.7]">
-          Co‑creates with PMs, engineers and clinicians through workshops, async
-          artifacts and design crits, keeping everyone close to patients.
-        </p>
       </div>
-    </article>
-
+    </div>
   </div>
 </section>

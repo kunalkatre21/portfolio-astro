@@ -1,0 +1,67 @@
+---
+import { Search, PenTool, Layout, Box } from 'lucide-astro';
+---
+
+<section id="methodology" class="py-20 px-6 relative overflow-hidden">
+  <!-- Background Decoration -->
+  <div class="absolute inset-0 bg-base-200/30 -z-10 skew-y-1"></div>
+
+  <div class="max-w-[760px] mx-auto mb-16 text-center fade-in">
+    <h2 class="text-[2.2rem] tracking-tight mb-3 font-bold">My Design Methodology</h2>
+    <p class="text-[1rem] text-base-content/70 leading-relaxed">
+      A structured approach to solving ambiguity, ensuring every pixel serves a purpose.
+    </p>
+  </div>
+
+  <div class="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-4 gap-6 fade-in">
+    
+    <!-- Step 1 -->
+    <div class="group relative p-8 rounded-[2rem] bg-base-100 border border-base-200 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1">
+      <div class="absolute top-8 right-8 text-6xl font-black text-base-200/50 -z-10 group-hover:text-primary/10 transition-colors">01</div>
+      <div class="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center text-primary mb-6 group-hover:scale-110 transition-transform">
+        <Search size={24} />
+      </div>
+      <h3 class="text-xl font-bold mb-3">Discover</h3>
+      <p class="text-sm text-base-content/70 leading-relaxed">
+        Understanding the core problem through user interviews, data analysis, and competitive audits. We don't guess; we inquire.
+      </p>
+    </div>
+
+    <!-- Step 2 -->
+    <div class="group relative p-8 rounded-[2rem] bg-base-100 border border-base-200 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1">
+      <div class="absolute top-8 right-8 text-6xl font-black text-base-200/50 -z-10 group-hover:text-secondary/10 transition-colors">02</div>
+      <div class="w-12 h-12 rounded-2xl bg-secondary/10 flex items-center justify-center text-secondary mb-6 group-hover:scale-110 transition-transform">
+        <Layout size={24} />
+      </div>
+      <h3 class="text-xl font-bold mb-3">Define</h3>
+      <p class="text-sm text-base-content/70 leading-relaxed">
+        Synthesizing insights into clear user flows and requirements. Mapping out the "happy path" and the edge cases.
+      </p>
+    </div>
+
+    <!-- Step 3 -->
+    <div class="group relative p-8 rounded-[2rem] bg-base-100 border border-base-200 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1">
+      <div class="absolute top-8 right-8 text-6xl font-black text-base-200/50 -z-10 group-hover:text-accent/10 transition-colors">03</div>
+      <div class="w-12 h-12 rounded-2xl bg-accent/10 flex items-center justify-center text-accent mb-6 group-hover:scale-110 transition-transform">
+        <PenTool size={24} />
+      </div>
+      <h3 class="text-xl font-bold mb-3">Design</h3>
+      <p class="text-sm text-base-content/70 leading-relaxed">
+        Iterative prototyping from low-fi wireframes to high-fidelity UI. Focusing on interaction, accessibility, and delight.
+      </p>
+    </div>
+
+    <!-- Step 4 -->
+    <div class="group relative p-8 rounded-[2rem] bg-base-100 border border-base-200 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1">
+      <div class="absolute top-8 right-8 text-6xl font-black text-base-200/50 -z-10 group-hover:text-primary/10 transition-colors">04</div>
+      <div class="w-12 h-12 rounded-2xl bg-base-content/5 flex items-center justify-center text-base-content mb-6 group-hover:scale-110 transition-transform">
+        <Box size={24} />
+      </div>
+      <h3 class="text-xl font-bold mb-3">Deliver</h3>
+      <p class="text-sm text-base-content/70 leading-relaxed">
+        Handing off production-ready assets and specs. Collaborating with devs for QA to ensure the vision lands 1:1.
+      </p>
+    </div>
+
+  </div>
+</section>

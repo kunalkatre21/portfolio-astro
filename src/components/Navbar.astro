@@ -1,53 +1,184 @@
 ---
-import { House, Grid2X2, User, Send, Moon, Sun, Menu as MenuIcon } from 'lucide-astro';
+import {
+  House,
+  Grid2X2,
+  User,
+  FileText,
+  Send,
+  Moon,
+  Sun,
+  Menu as MenuIcon,
+} from "lucide-astro";
 ---
 
-<div class="navbar fixed top-0 z-30 px-6 py-4 bg-transparent pointer-events-none">
-  <div class="navbar glass rounded-[var(--radius-xl)] shadow-sm pointer-events-auto max-w-[1200px] mx-auto w-full">
-    
+<div
+  class="navbar fixed top-0 z-30 px-6 py-4 bg-transparent pointer-events-none"
+>
+  <div
+    class="navbar glass rounded-[var(--radius-xl)] shadow-sm pointer-events-auto max-w-[1200px] mx-auto w-full"
+  >
     <div class="navbar-start">
       <!-- Hamburger Menu (Mobile Only) -->
       <div class="flex-none lg:hidden mr-2">
-        <label for="main-drawer" aria-label="open sidebar" class="btn btn-square btn-ghost">
+        <label
+          for="main-drawer"
+          aria-label="open sidebar"
+          class="btn btn-square btn-ghost"
+        >
           <MenuIcon size={24} />
         </label>
       </div>
 
-      <div class="flex items-center gap-3.5 px-2">
+      <a
+        href="/"
+        class="flex items-center gap-3.5 px-2 hover:opacity-80 transition-opacity"
+      >
         <div class="avatar placeholder">
-          <div class="bg-gradient-to-br from-primary to-accent text-neutral-content rounded-full w-[38px]">
-            <span class="text-sm font-bold">KK</span>
-          </div>
+          <img
+            src="/src/assets/kunal-katre-photo.webp"
+            alt="Kunal Katre"
+            class="rounded-full w-[38px] h-[38px] object-cover border-2 border-base-200/50 hover:border-primary/50 transition-all duration-200 hover:scale-105"
+            loading="lazy"
+          />
         </div>
         <div class="flex flex-col gap-0.5">
-          <span class="text-[0.9rem] font-semibold text-base-content" style="text-wrap: nowrap;">Kunal Katre</span>
-          <span class="text-[0.78rem] text-base-content/60" style="text-wrap: nowrap;">Lead Product Designer</span>
+          <span
+            class="text-[0.9rem] font-semibold text-base-content"
+            style="text-wrap: nowrap;">Kunal Katre</span
+          >
+          <span
+            class="text-[0.78rem] text-base-content/60"
+            style="text-wrap: nowrap;">Lead Product Designer</span
+          >
         </div>
-      </div>
+      </a>
     </div>
 
     <div class="navbar-center hidden lg:flex">
       <ul class="menu menu-horizontal px-1 gap-2">
-        <li>
-          <a href="#hero" class="rounded-full text-base-content/70 hover:text-primary hover:bg-primary/10">
+        <!-- <li>
+          <a href="/#hero" class="rounded-full text-base-content/70 hover:text-primary hover:bg-primary/10">
             <House size={16} />
             Home
           </a>
-        </li>
-        <li>
-          <a href="#work" class="rounded-full text-base-content/70 hover:text-primary hover:bg-primary/10">
+        </li> -->
+        <li class="dropdown dropdown-end">
+          <div
+            tabindex="0"
+            role="button"
+            class="rounded-full text-base-content/70 hover:text-primary hover:bg-primary/10 flex items-center gap-2 px-4 py-2"
+          >
             <Grid2X2 size={16} />
             Work
-          </a>
+            <svg
+              class="w-4 h-4 ml-1"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </div>
+          <ul
+            tabindex="0"
+            class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-64 mt-2"
+          >
+            <li>
+              <a href="/#work" class="flex items-center gap-3">
+                <Grid2X2 size={16} />
+                <div class="flex flex-col">
+                  <span class="font-medium">All Work</span>
+                  <span class="text-xs text-base-content/60"
+                    >View portfolio overview</span
+                  >
+                </div>
+              </a>
+            </li>
+            <li class="menu-title">
+              <span>Case Studies</span>
+            </li>
+            <li>
+              <a href="/case-studies/cowin" class="flex items-center gap-3">
+                <div class="w-2 h-2 rounded-full bg-primary"></div>
+                <div class="flex flex-col">
+                  <span class="font-medium">CoWIN Platform</span>
+                  <span class="text-xs text-base-content/60"
+                    >Vaccination system design</span
+                  >
+                </div>
+              </a>
+            </li>
+            <li>
+              <a
+                href="/case-studies/design-system"
+                class="flex items-center gap-3"
+              >
+                <div class="w-2 h-2 rounded-full bg-secondary"></div>
+                <div class="flex flex-col">
+                  <span class="font-medium">Design System</span>
+                  <span class="text-xs text-base-content/60"
+                    >Component library creation</span
+                  >
+                </div>
+              </a>
+            </li>
+            <li>
+              <a
+                href="/case-studies/heart-rate"
+                class="flex items-center gap-3"
+              >
+                <div class="w-2 h-2 rounded-full bg-accent"></div>
+                <div class="flex flex-col">
+                  <span class="font-medium">Heart Rate Monitor</span>
+                  <span class="text-xs text-base-content/60"
+                    >Health app interface</span
+                  >
+                </div>
+              </a>
+            </li>
+            <li>
+              <a
+                href="/case-studies/web-infrastructure"
+                class="flex items-center gap-3"
+              >
+                <div class="w-2 h-2 rounded-full bg-info"></div>
+                <div class="flex flex-col">
+                  <span class="font-medium">Web Infrastructure</span>
+                  <span class="text-xs text-base-content/60"
+                    >Architecture & scalability</span
+                  >
+                </div>
+              </a>
+            </li>
+          </ul>
         </li>
         <li>
-          <a href="#about" class="rounded-full text-base-content/70 hover:text-primary hover:bg-primary/10">
+          <a
+            href="/#about"
+            class="rounded-full text-base-content/70 hover:text-primary hover:bg-primary/10"
+          >
             <User size={16} />
             About
           </a>
         </li>
         <li>
-          <a href="#contact" class="rounded-full text-base-content/70 hover:text-primary hover:bg-primary/10">
+          <a
+            href="/cv"
+            class="rounded-full text-base-content/70 hover:text-primary hover:bg-primary/10"
+          >
+            <FileText size={16} />
+            CV
+          </a>
+        </li>
+        <li>
+          <a
+            href="/#contact"
+            class="rounded-full text-base-content/70 hover:text-primary hover:bg-primary/10"
+          >
             <Send size={16} />
             Contact
           </a>
@@ -60,10 +191,10 @@ import { House, Grid2X2, User, Send, Moon, Sun, Menu as MenuIcon } from 'lucide-
       <label class="swap swap-rotate btn btn-ghost btn-circle">
         <!-- this hidden checkbox controls the state -->
         <input type="checkbox" class="theme-controller" value="dark" />
-  
+
         <!-- sun icon -->
         <Sun class="swap-off fill-current w-5 h-5" />
-  
+
         <!-- moon icon -->
         <Moon class="swap-on fill-current w-5 h-5" />
       </label>
@@ -73,22 +204,25 @@ import { House, Grid2X2, User, Send, Moon, Sun, Menu as MenuIcon } from 'lucide-
 
 <script>
   // Sync theme controller with current theme
-  const themeController = document.querySelector('.theme-controller') as HTMLInputElement;
-  
+  const themeController = document.querySelector(
+    ".theme-controller",
+  ) as HTMLInputElement;
+
   const syncTheme = () => {
-    const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+    const currentTheme =
+      document.documentElement.getAttribute("data-theme") || "light";
     if (themeController) {
-      themeController.checked = currentTheme === 'dark';
+      themeController.checked = currentTheme === "dark";
     }
   };
 
   syncTheme();
 
   // Listen for changes
-  themeController?.addEventListener('change', (e) => {
-    const newTheme = (e.target as HTMLInputElement).checked ? 'dark' : 'light';
-    document.documentElement.setAttribute('data-theme', newTheme);
-    document.body.setAttribute('data-theme', newTheme);
-    localStorage.setItem('kk-theme', newTheme);
+  themeController?.addEventListener("change", (e) => {
+    const newTheme = (e.target as HTMLInputElement).checked ? "dark" : "light";
+    document.documentElement.setAttribute("data-theme", newTheme);
+    document.body.setAttribute("data-theme", newTheme);
+    localStorage.setItem("kk-theme", newTheme);
   });
 </script>

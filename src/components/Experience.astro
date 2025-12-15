@@ -1,0 +1,258 @@
+---
+import {
+  HeartPulse,
+  Code2,
+  ShoppingBag,
+  CheckCircle2,
+  Landmark,
+} from "lucide-astro";
+---
+
+<section id="experience" class="py-20 px-6 relative overflow-hidden">
+  <style>
+    /* Mobile timeline layout - force all cards to right side */
+    @media (max-width: 768px) {
+      .timeline-end {
+        /* Force timeline-end cards to behave like timeline-start on mobile */
+        --tw-justify: start !important;
+        justify-content: flex-start !important;
+      }
+
+      .timeline-end .timeline-box {
+        /* Move arrow indicator to right side for timeline-end cards on mobile */
+        position: relative;
+      }
+
+      .timeline-end .timeline-box::before {
+        content: "";
+        position: absolute;
+        top: 24px; /* top-6 equivalent */
+        right: -12px; /* -right-3 equivalent */
+        width: 16px; /* w-4 equivalent */
+        height: 16px; /* h-4 equivalent */
+        background-color: white;
+        transform: rotate(45deg);
+        border-top: 1px solid rgba(0, 0, 0, 0.05);
+        border-right: 1px solid rgba(0, 0, 0, 0.05);
+      }
+
+      /* Hide original arrow indicators on mobile */
+      .timeline-end .timeline-box > div:first-child {
+        display: none;
+      }
+    }
+  </style>
+  <div class="max-w-[760px] mx-auto mb-16 text-center fade-in">
+    <h2 class="text-[2.2rem] tracking-tight mb-3 font-bold">Journey so far</h2>
+    <p class="text-[1rem] text-base-content/70 leading-relaxed">
+      Building products that scale from 0 to 1, and 1 to 100.
+    </p>
+  </div>
+
+  <div class="max-w-4xl mx-auto">
+    <ul class="timeline timeline-snap-icon timeline-vertical">
+      <!-- IIT Guwahati -->
+      <li class="group">
+        <div class="timeline-middle">
+          <div
+            class="w-10 h-10 rounded-full bg-info/20 text-info flex items-center justify-center border-4 border-base-100 shadow-xl group-hover:scale-110 transition-transform duration-300"
+          >
+            <Landmark size={18} />
+          </div>
+        </div>
+        <div class="timeline-start mb-10 pl-4 w-full">
+          <div
+            class="glass glass-card p-6 rounded-2xl hover:bg-base-200/50 transition-colors border border-base-content/5 relative group-hover:-translate-y-1 duration-300 timeline-box h-auto"
+          >
+            <div
+              class="absolute top-6 -right-3 w-4 h-4 bg-base-100 rotate-45 border-t border-r border-base-content/5"
+            >
+            </div>
+
+            <time class="font-mono italic text-sm text-info mb-2 block"
+              >Jun 2013 – Jun 2017</time
+            >
+            <h3 class="text-xl font-bold">Bachelor of Design (B.Des)</h3>
+            <h4
+              class="text-base text-base-content/70 mb-4 font-medium flex items-center"
+            >
+              <img
+                src="/src/assets/company-logo/IITG_logo.png"
+                alt="IIT Guwahati logo"
+                class="w-6 h-6 object-contain mr-2 flex-shrink-0"
+              />
+              Indian Institute of Technology (IIT), Guwahati
+            </h4>
+            <p class="text-sm text-base-content/70 mb-2">
+              Minor in Mechanical Engineering
+            </p>
+            <p class="text-sm text-base-content/70 font-medium">CGPI: 8.12</p>
+          </div>
+        </div>
+        <hr class="bg-info/20" />
+      </li>
+
+      <!-- Flipkart -->
+      <li class="group">
+        <hr class="bg-accent/20" />
+        <div class="timeline-middle">
+          <div
+            class="w-10 h-10 rounded-full bg-accent/20 text-accent flex items-center justify-center border-4 border-base-100 shadow-xl group-hover:scale-110 transition-transform duration-300"
+          >
+            <ShoppingBag size={18} />
+          </div>
+        </div>
+        <div class="timeline-end mb-10 pl-4 w-full">
+          <div
+            class="glass glass-card p-6 rounded-2xl hover:bg-base-200/50 transition-colors border border-base-content/5 relative group-hover:-translate-y-1 duration-300 timeline-box h-auto"
+          >
+            <div
+              class="absolute top-6 -left-3 w-4 h-4 bg-base-100 rotate-45 border-b border-l border-base-content/5"
+            >
+            </div>
+
+            <time class="font-mono italic text-sm text-accent mb-2 block"
+              >Aug 2017 – Nov 2019</time
+            >
+            <h3 class="text-xl font-bold">Product Designer 2</h3>
+            <h4
+              class="text-base text-base-content/70 mb-4 font-medium flex items-center"
+            >
+              <img
+                src="/src/assets/company-logo/flipkart.svg"
+                alt="Flipkart logo"
+                class="w-6 h-6 object-contain mr-2 flex-shrink-0"
+              />
+              Flipkart
+            </h4>
+            <ul class="text-sm text-base-content/70 space-y-2 list-none">
+              <li class="flex gap-2">
+                <CheckCircle2 size={16} class="text-accent mt-0.5 shrink-0" />
+                <span>Redesigned seller listing platform (100k+ SKUs).</span>
+              </li>
+              <li class="flex gap-2">
+                <CheckCircle2 size={16} class="text-accent mt-0.5 shrink-0" />
+                <span>Contributed to Marketplace Design System.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <hr class="bg-accent/20" />
+      </li>
+
+      <!-- Crio.Do -->
+      <li class="group">
+        <hr class="bg-secondary/20" />
+        <div class="timeline-middle">
+          <div
+            class="w-10 h-10 rounded-full bg-secondary/20 text-secondary flex items-center justify-center border-4 border-base-100 shadow-xl group-hover:scale-110 transition-transform duration-300"
+          >
+            <Code2 size={18} />
+          </div>
+        </div>
+        <div class="timeline-start mb-10 pl-4 w-full">
+          <div
+            class="glass glass-card p-6 rounded-2xl hover:bg-base-200/50 transition-colors border border-base-content/5 relative group-hover:-translate-y-1 duration-300 timeline-box h-auto"
+          >
+            <div
+              class="absolute top-6 -right-3 w-4 h-4 bg-base-100 rotate-45 border-t border-r border-base-content/5"
+            >
+            </div>
+
+            <time class="font-mono italic text-sm text-secondary mb-2 block"
+              >Nov 2019 – Jan 2021</time
+            >
+            <h3 class="text-xl font-bold">Founding Designer</h3>
+            <h4
+              class="text-base text-base-content/70 mb-4 font-medium flex items-center"
+            >
+              <img
+                src="/src/assets/company-logo/crio.jpeg"
+                alt="Crio.Do logo"
+                class="w-6 h-6 object-contain mr-2 flex-shrink-0"
+              />
+              Crio.Do
+            </h4>
+            <ul
+              class="text-sm text-base-content/70 space-y-2 list-none text-left"
+            >
+              <li class="flex gap-2">
+                <CheckCircle2
+                  size={16}
+                  class="text-secondary mt-0.5 shrink-0"
+                />
+                <span
+                  >Established initial UX for "Learn by Doing" platform.</span
+                >
+              </li>
+              <li class="flex gap-2">
+                <CheckCircle2
+                  size={16}
+                  class="text-secondary mt-0.5 shrink-0"
+                />
+                <span>Supported adoption across 100+ campuses.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <hr class="bg-secondary/20" />
+      </li>
+
+      <!-- Eka.Care -->
+      <li class="group">
+        <div class="timeline-middle">
+          <div
+            class="w-10 h-10 rounded-full bg-primary/20 text-primary flex items-center justify-center border-4 border-base-100 shadow-xl group-hover:scale-110 transition-transform duration-300"
+          >
+            <HeartPulse size={18} />
+          </div>
+        </div>
+        <div class="timeline-end mb-10 pl-4 w-full">
+          <div
+            class="glass glass-card p-6 rounded-2xl hover:bg-base-200/50 transition-colors border border-base-content/5 relative group-hover:-translate-y-1 duration-300 timeline-box h-auto"
+          >
+            <div
+              class="absolute top-6 -left-3 w-4 h-4 bg-base-100 rotate-45 border-b border-l border-base-content/5"
+            >
+            </div>
+
+            <time class="font-mono italic text-sm text-primary mb-2 block"
+              >Jan 2021 – Nov 2025</time
+            >
+            <h3 class="text-xl font-bold">Lead Product Designer</h3>
+            <h4
+              class="text-base text-base-content/70 mb-4 font-medium flex items-center"
+            >
+              <img
+                src="/src/assets/company-logo/eka.png"
+                alt="Eka.Care logo"
+                class="w-6 h-6 object-contain mr-2 flex-shrink-0"
+              />
+              Eka.Care (Orbi.health)
+            </h4>
+            <ul class="text-sm text-base-content/70 space-y-2 list-none">
+              <li class="flex gap-2">
+                <CheckCircle2 size={16} class="text-success mt-0.5 shrink-0" />
+                <span
+                  >Architected Co-WIN vaccine flows flow for 1B+ citizens (#1
+                  Health App).</span
+                >
+              </li>
+              <li class="flex gap-2">
+                <CheckCircle2 size={16} class="text-success mt-0.5 shrink-0" />
+                <span
+                  >Founding designer for patient app (0 → 10M+ installs).</span
+                >
+              </li>
+              <li class="flex gap-2">
+                <CheckCircle2 size={16} class="text-success mt-0.5 shrink-0" />
+                <span>Built token-based Design System & SDUI framework.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <hr class="bg-primary/20" />
+      </li>
+    </ul>
+  </div>
+</section>

@@ -1,99 +1,193 @@
 ---
-import { ShieldCheck, ArrowRight, HeartPulse, FolderGit2 } from 'lucide-astro';
+import {
+  ShieldCheck,
+  ArrowRight,
+  HeartPulse,
+  FolderGit2,
+  Globe,
+} from "lucide-astro";
 ---
 
 <section id="work" class="pt-[4.8rem] px-6">
   <div class="max-w-[760px] mx-auto mb-[2.6rem] text-center fade-in">
-    <h2 class="text-[2.1rem] tracking-tight mb-[0.6rem] font-bold">Selected case studies</h2>
+    <h2 class="text-[2.1rem] tracking-tight mb-[0.6rem] font-bold">
+      Selected case studies
+    </h2>
     <p class="text-[0.98rem] text-base-content/70 leading-[1.75]">
-      A sample of product stories across national‑scale platforms and everyday health
-      tools. Each project balances clarity for patients with reliability for clinicians.
+      A sample of product stories across national‑scale platforms, design
+      systems, and operational infrastructure. Each project balances strategic
+      thinking with practical execution.
     </p>
   </div>
 
-  <div class="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[1.6rem] fade-in">
-    
-    <!-- Case Study 1 -->
-    <article class="glass glass-card rounded-[var(--radius-xl)] overflow-hidden group hover:-translate-y-2 transition-transform duration-500 relative">
-      <!-- Hover Glow -->
-      <div class="absolute -inset-2 bg-gradient-to-r from-aura-blue/20 to-aura-violet/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
-      <div class="card-body p-6 relative">
-        
-        <div class="badge badge-soft gap-1.5 h-auto py-1 px-3 mb-3 relative z-10 shadow-sm">
-          <ShieldCheck size={14} class="text-primary" />
-          Public health · Appointment flows
+  <div
+    class="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 fade-in"
+  >
+    <!-- Case Study 1: CoWIN -->
+    <a href="/case-studies/cowin" class="group">
+      <article
+        class="glass glass-card rounded-[2.5rem] overflow-hidden group-hover:-translate-y-1 transition-transform duration-500 relative min-h-[400px] flex flex-col"
+      >
+        <!-- Image Background -->
+        <div class="absolute inset-0 z-0">
+          <img
+            src="/assets/images/cowin-mockup.png"
+            alt="CoWIN App UI"
+            class="w-full h-full object-cover opacity-100 group-hover:scale-105 transition-transform duration-700"
+          />
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-base-100 via-base-100/50 to-transparent"
+          >
+          </div>
         </div>
-        
-        <h3 class="card-title text-[1.15rem] font-semibold mb-2 relative z-10">CoWIN vaccination journey redesign</h3>
-        <p class="relative z-10 text-[0.92rem] text-base-content/70 leading-[1.7] mb-4">
-          Streamlined discovery, booking and verification for vaccinations so that
-          families could complete crucial steps with confidence even on low‑end devices.
-        </p>
-        
-        <div class="card-actions justify-between items-center relative z-10 mt-auto pt-2">
-          <span class="text-[0.82rem] text-base-content/60">End‑to‑end UX · Mobile & web</span>
-          <a href="/case-studies/cowin" class="link link-primary link-hover inline-flex items-center gap-1.5 font-semibold text-[0.9rem]">
-            Read case study
-            <ArrowRight size={14} />
-          </a>
-        </div>
-      </div>
-    </article>
 
-    <!-- Case Study 2 -->
-    <article class="glass glass-card rounded-[var(--radius-xl)] overflow-hidden group hover:-translate-y-2 transition-transform duration-500 relative">
-      <!-- Hover Glow -->
-      <div class="absolute -inset-2 bg-gradient-to-r from-aura-blue/20 to-aura-violet/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
-      <div class="card-body p-6 relative">
-        
-        <div class="badge badge-soft gap-1.5 h-auto py-1 px-3 mb-3 relative z-10 shadow-sm">
-          <HeartPulse size={14} class="text-primary" />
-          Wearables · Continuous monitoring
-        </div>
-        
-        <h3 class="card-title text-[1.15rem] font-semibold mb-2 relative z-10">Heart‑rate monitoring experience</h3>
-        <p class="relative z-10 text-[0.92rem] text-base-content/70 leading-[1.7] mb-4">
-          Designed a calm, guided flow for capturing and understanding heart‑rate
-          readings, reducing anxiety while keeping clinical accuracy in focus.
-        </p>
-        
-        <div class="card-actions justify-between items-center relative z-10 mt-auto pt-2">
-          <span class="text-[0.82rem] text-base-content/60">Research · Flows · Visual language</span>
-          <a href="/case-studies/heart-rate" class="link link-primary link-hover inline-flex items-center gap-1.5 font-semibold text-[0.9rem]">
-            Read case study
-            <ArrowRight size={14} />
-          </a>
-        </div>
-      </div>
-    </article>
+        <div class="card-body p-8 relative z-10 mt-auto">
+          <div
+            class="badge badge-soft gap-1.5 h-auto py-1.5 px-3.5 mb-4 shadow-sm self-start bg-base-100/80 backdrop-blur-md"
+          >
+            <ShieldCheck size={14} class="text-primary" />
+            Public health scale
+          </div>
 
-    <!-- Case Study 3 -->
-    <article class="glass glass-card rounded-[var(--radius-xl)] overflow-hidden group hover:-translate-y-2 transition-transform duration-500 relative">
-      <!-- Hover Glow -->
-      <div class="absolute -inset-2 bg-gradient-to-r from-aura-blue/20 to-aura-violet/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
-      <div class="card-body p-6 relative">
-        
-        <div class="badge badge-soft gap-1.5 h-auto py-1 px-3 mb-3 relative z-10 shadow-sm">
-          <FolderGit2 size={14} class="text-primary" />
-          Platforms · Design systems
-        </div>
-        
-        <h3 class="card-title text-[1.15rem] font-semibold mb-2 relative z-10">eka.care design system</h3>
-        <p class="relative z-10 text-[0.92rem] text-base-content/70 leading-[1.7] mb-4">
-          Built a shared language of components and patterns to keep multiple health
-          products aligned while shipping faster with fewer regressions.
-        </p>
-        
-        <div class="card-actions justify-between items-center relative z-10 mt-auto pt-2">
-          <span class="text-[0.82rem] text-base-content/60">Foundations · Components · Docs</span>
-          <a href="https://kunalkatre21.github.io/Portfolio/" class="link link-primary link-hover inline-flex items-center gap-1.5 font-semibold text-[0.9rem]" target="_blank" rel="noreferrer">
-            View more work
-            <ArrowRight size={14} />
-          </a>
-        </div>
-      </div>
-    </article>
+          <h3 class="text-2xl font-bold mb-3">CoWIN vaccination redesign</h3>
+          <p class="text-base text-base-content/80 leading-relaxed mb-6">
+            Helping a nation breathe easier. I streamlined the discovery and
+            booking flow for over a billion citizens, focusing on accessibility
+            for low-end devices.
+          </p>
 
+          <div class="flex items-center gap-4">
+            <button class="btn btn-primary rounded-full gap-2 shadow-lg">
+              Read story
+              <ArrowRight size={16} />
+            </button>
+            <span class="text-sm font-medium opacity-60"
+              >Mobile & Web Platform</span
+            >
+          </div>
+        </div>
+      </article>
+    </a>
+
+    <!-- Case Study 2: Heart Rate -->
+    <a href="/case-studies/heart-rate" class="group">
+      <article
+        class="glass glass-card rounded-[2.5rem] overflow-hidden group-hover:-translate-y-1 transition-transform duration-500 relative min-h-[400px] flex flex-col"
+      >
+        <!-- Image Background -->
+        <div class="absolute inset-0 z-0 glass">
+          <img
+            src="/assets/images/heart-rate-mockup.png"
+            alt="Heart Rate UI"
+            class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-700"
+          />
+          <div
+            class="absolute inset-0 bg-gradient-to-b from-base-100/20 via-base-100/40 to-base-100/80"
+          >
+          </div>
+        </div>
+
+        <div class="card-body p-8 relative z-10 mt-auto">
+          <div
+            class="badge badge-soft gap-1.5 h-auto py-1.5 px-3.5 mb-4 shadow-sm self-start bg-base-100/80 backdrop-blur-md"
+          >
+            <HeartPulse size={14} class="text-secondary" />
+            Wearables
+          </div>
+
+          <h3 class="text-2xl font-bold mb-3">Heart health monitoring</h3>
+          <p class="text-base text-base-content/80 leading-relaxed mb-6">
+            Designing a calm, anxiety-free flow for checking vitals.
+          </p>
+
+          <button class="btn btn-primary rounded-full gap-2 shadow-lg w-fit">
+            Read story
+            <ArrowRight size={16} />
+          </button>
+        </div>
+      </article>
+    </a>
+
+    <!-- Case Study 3: Design System -->
+    <a href="/case-studies/design-system" class="group">
+      <article
+        class="glass glass-card rounded-[2.5rem] overflow-hidden group-hover:-translate-y-1 transition-transform duration-500 relative min-h-[400px] flex flex-col"
+      >
+        <div class="absolute inset-0 z-0 bg-base-200">
+          <!-- Abstract Abstract Background -->
+          <img
+            src="/assets/images/design-system-mockup.png"
+            alt="Design System Components"
+            class="absolute right-0 top-0 w-2/3 h-full object-cover opacity-100 mask-image-linear-to-l group-hover:scale-105 transition-transform duration-700"
+            style="-webkit-mask-image: linear-gradient(to left, black 50%, transparent 100%); mask-image: linear-gradient(to left, black 50%, transparent 100%);"
+          />
+        </div>
+
+        <div class="card-body p-8 relative z-10">
+          <div
+            class="badge badge-soft gap-1.5 h-auto py-1.5 px-3.5 mb-4 shadow-sm self-start bg-base-100/80 backdrop-blur-md"
+          >
+            <FolderGit2 size={14} class="text-accent" />
+            Systems
+          </div>
+
+          <h3 class="text-2xl font-bold mb-3">Automating Consistency</h3>
+          <p class="text-base text-base-content/80 leading-relaxed mb-6">
+            I architected a "Traceable Token Pipeline" that transforms Figma
+            into the Single Source of Truth, eliminating the interpretation gap
+            between design and engineering across three platforms.
+          </p>
+
+          <button class="btn btn-primary rounded-full gap-2 shadow-lg w-fit">
+            Read story
+            <ArrowRight size={16} />
+          </button>
+        </div>
+      </article>
+    </a>
+
+    <!-- Case Study 4: Web Infrastructure -->
+    <a href="/case-studies/web-infrastructure" class="group">
+      <article
+        class="glass glass-card rounded-[2.5rem] overflow-hidden group-hover:-translate-y-1 transition-transform duration-500 relative min-h-[400px] flex flex-col"
+      >
+        <div
+          class="absolute inset-0 z-0 bg-gradient-to-br from-primary/20 via-secondary/20 to-accent/20"
+        >
+          <!-- Abstract Web Background -->
+          <div
+            class="absolute right-0 top-0 w-2/3 h-full opacity-100 mask-image-linear-to-l group-hover:scale-105 transition-transform duration-700"
+            style="-webkit-mask-image: linear-gradient(to left, black 50%, transparent 100%); mask-image: linear-gradient(to left, black 50%, transparent 100%);"
+          >
+            <div
+              class="w-full h-full bg-gradient-to-br from-primary/30 to-accent/30"
+            >
+            </div>
+          </div>
+        </div>
+
+        <div class="card-body p-8 relative z-10">
+          <div
+            class="badge badge-soft gap-1.5 h-auto py-1.5 px-3.5 mb-4 shadow-sm self-start bg-base-100/80 backdrop-blur-md"
+          >
+            <Globe size={14} class="text-info" />
+            Web Infrastructure
+          </div>
+
+          <h3 class="text-2xl font-bold mb-3">From Bottleneck to Self-Serve</h3>
+          <p class="text-base text-base-content/80 leading-relaxed mb-6">
+            I architected a Decentralized Publishing Engine that transformed our
+            website from an "Engineering Ticket" to a "Design-Led Operation,"
+            reducing campaign TAT by 80%.
+          </p>
+
+          <button class="btn btn-primary rounded-full gap-2 shadow-lg w-fit">
+            Read story
+            <ArrowRight size={16} />
+          </button>
+        </div>
+      </article>
+    </a>
   </div>
 </section>
 
@@ -101,9 +195,9 @@ import { ShieldCheck, ArrowRight, HeartPulse, FolderGit2 } from 'lucide-astro';
   // Simulate skeleton loading for images if they existed, or just general content
   // Since we don't have images yet, we'll just leave this placeholder script
   // or apply it to the cards themselves initially.
-  document.addEventListener('DOMContentLoaded', () => {
-    const cards = document.querySelectorAll('.card');
-    cards.forEach(card => {
+  document.addEventListener("DOMContentLoaded", () => {
+    const cards = document.querySelectorAll(".card");
+    cards.forEach((card) => {
       // Example: Add a loading state class if desired
       // card.classList.add('skeleton');
       // setTimeout(() => card.classList.remove('skeleton'), 1000);

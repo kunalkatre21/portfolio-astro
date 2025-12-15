@@ -1,0 +1,70 @@
+---
+import LoadingManager from './LoadingManager.astro';
+
+const { loadingManager } = Astro.props as { loadingManager: InstanceType<typeof LoadingManager> };
+
+const isLoading = loadingManager?.getState()?.isLoading || false;
+---
+
+<div class={`hero-skeleton ${isLoading ? 'skeleton-loading' : 'skeleton-loaded'} transition-all duration-500`}>
+  <div class="container mx-auto px-4 py-24">
+    <div class="max-w-4xl mx-auto text-center">
+      <div class="mb-8">
+        <div class="skeleton-avatar w-24 h-24 mx-auto mb-6 rounded-full"></div>
+        <div class="skeleton-name h-8 w-48 mx-auto mb-4 rounded"></div>
+        <div class="skeleton-title h-6 w-64 mx-auto mb-6 rounded"></div>
+        <div class="skeleton-subtitle h-4 w-80 mx-auto rounded"></div>
+      </div>
+      
+      <div class="flex justify-center gap-4 mb-12">
+        <div class="skeleton-button h-10 w-32 rounded-full"></div>
+        <div class="skeleton-button h-10 w-32 rounded-full"></div>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
+        <div class="skeleton-feature h-32 rounded-lg"></div>
+        <div class="skeleton-feature h-32 rounded-lg"></div>
+        <div class="skeleton-feature h-32 rounded-lg"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .skeleton-loading {
+    opacity: 0.7;
+  }
+  
+  .skeleton-loaded {
+    opacity: 1;
+  }
+
+  .skeleton-avatar {
+    background: linear-gradient(90deg, #e5e7eb 25%, #f3f4f6 50%, #e5e7eb 75%);
+    background-size: 200% 100%;
+    animation: skeleton-loading 1.5s infinite;
+  }
+
+  .skeleton-name, .skeleton-title, .skeleton-subtitle {
+    background: linear-gradient(90deg, #e5e7eb 25%, #f3f4f6 50%, #e5e7eb 75%);
+    background-size: 200% 100%;
+    animation: skeleton-loading 1.5s infinite;
+  }
+
+  .skeleton-button {
+    background: linear-gradient(90deg, #e5e7eb 25%, #f3f4f6 50%, #e5e7eb 75%);
+    background-size: 200% 100%;
+    animation: skeleton-loading 1.5s infinite;
+  }
+
+  .skeleton-feature {
+    background: linear-gradient(90deg, #e5e7eb 25%, #f3f4f6 50%, #e5e7eb 75%);
+    background-size: 200% 100%;
+    animation: skeleton-loading 1.5s infinite;
+  }
+
+  @keyframes skeleton-loading {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+  }
+</style>

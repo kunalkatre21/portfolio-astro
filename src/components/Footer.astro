@@ -1,22 +1,108 @@
 ---
-import { Linkedin, Github } from 'lucide-astro';
+import { Linkedin, Github } from "lucide-astro";
 ---
 
-<footer class="footer footer-center p-10 bg-base-200 text-base-content rounded mt-[3.8rem]">
-  <div class="max-w-[1200px] mx-auto flex flex-col md:flex-row justify-between items-center gap-[1.6rem] w-full">
-    <aside>
-      <p class="font-bold">
-        Kunal Katre <br/>
-        <span class="font-normal text-base-content/60">Lead Product Designer</span>
-      </p> 
-      <p>© 2025 · Designed & coded by Kunal Katre.</p>
-    </aside> 
-    <nav>
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Kunal Katre",
+    "jobTitle": "Lead Product Designer",
+    "url": "https://kunalkatre.com",
+    "image": "/assets/kunal-katre-photo.webp",
+    "sameAs": [
+      "https://www.linkedin.com/pub/dir/Kunal/Katre",
+      "https://github.com/kunalkatre21"
+    ]
+  }
+</script>
+
+<footer
+  class="footer text-left p-10 bg-base-200 text-base-content rounded mt-[3.8rem]"
+>
+  <div
+    class="max-w-[1200px] mx-auto flex flex-col md:flex-row justify-between items-start gap-12 w-full"
+  >
+    <section itemscope itemtype="http://schema.org/Person">
+      <p class="font-bold text-left">
+        <span itemprop="name">Kunal Katre</span>
+        <br />
+        <span class="font-normal text-base-content/60" itemprop="jobTitle"
+          >Lead Product Designer</span
+        >
+      </p>
+      <p>
+        © 2025 · Designed & coded by <span itemprop="name">Kunal Katre</span>.
+      </p>
+    </section>
+    <nav
+      aria-label="Internal navigation"
+      class="flex flex-col md:flex-row w-full gap-12"
+    >
+      <div>
+        <h3 class="font-bold mb-2">Navigation</h3>
+        <ul class="flex flex-col gap-2 text-left">
+          <li><a href="/#hero" aria-label="Go to Home section">Home</a></li>
+          <li><a href="/#work" aria-label="Go to Work section">Work</a></li>
+          <li><a href="/#about" aria-label="Go to About section">About</a></li>
+          <li><a href="/cv" aria-label="View CV page">CV</a></li>
+          <li>
+            <a href="/#contact" aria-label="Go to Contact section">Contact</a>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="font-bold mb-2">Case Studies</h3>
+        <ul class="flex flex-col gap-2 text-left">
+          <li>
+            <a href="/case-studies/cowin" aria-label="View CoWIN case study"
+              >CoWIN</a
+            >
+          </li>
+          <li>
+            <a
+              href="/case-studies/design-system"
+              aria-label="View Design System case study">Design System</a
+            >
+          </li>
+          <li>
+            <a
+              href="/case-studies/heart-rate"
+              aria-label="View Heart Rate Monitor case study"
+              >Heart Rate Monitor</a
+            >
+          </li>
+          <li>
+            <a
+              href="/case-studies/web-infrastructure"
+              aria-label="View Web Infrastructure case study"
+              >Web Infrastructure</a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <nav aria-label="Social media profiles">
+      <h3 class="font-bold mb-2">Connect</h3>
       <div class="grid grid-flow-col gap-4">
-        <a href="https://www.linkedin.com/pub/dir/Kunal/Katre" class="btn btn-ghost btn-circle" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+        <a
+          href="https://www.linkedin.com/pub/dir/Kunal/Katre"
+          rel="me"
+          class="btn btn-ghost btn-circle"
+          target="_blank"
+          rel="noreferrer"
+          aria-label="LinkedIn profile"
+        >
           <Linkedin size={20} />
         </a>
-        <a href="https://github.com/kunalkatre21" class="btn btn-ghost btn-circle" target="_blank" rel="noreferrer" aria-label="GitHub">
+        <a
+          href="https://github.com/kunalkatre21"
+          rel="me"
+          class="btn btn-ghost btn-circle"
+          target="_blank"
+          rel="noreferrer"
+          aria-label="GitHub profile"
+        >
           <Github size={20} />
         </a>
       </div>

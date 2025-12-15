@@ -1,54 +1,101 @@
 ---
-import CaseStudyLayout from '../../layouts/CaseStudyLayout.astro';
+import CaseStudyLayout from "../../layouts/CaseStudyLayout.astro";
+import { ArrowLeft, ArrowRight } from "@lucide/astro";
 ---
 
-<CaseStudyLayout title="Case Study: Architecting an Engagement Engine | Kunal Katre">
-    
+<CaseStudyLayout
+    title="Case Study: Architecting an Engagement Engine | Kunal Katre"
+>
     <!-- Hero Section -->
-    <div class="not-prose mb-12 animate-fade-in">
+    <div
+        slot="hero"
+        class="hero-section not-prose min-h-[var(--hero-height-mobile)] md:min-h-[var(--hero-height-tablet)] lg:min-h-[var(--hero-height-desktop)] mb-12 animate-fade-in w-full"
+    >
         <div class="flex flex-col lg:flex-row gap-12 items-center">
             <div class="flex-1 space-y-6">
-                 <a href="/#work" class="btn btn-ghost btn-sm gap-2 pl-0 hover:bg-transparent hover:text-primary transition-colors duration-300">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="M12 19l-7-7 7-7"/></svg>
+                <a
+                    href="/#work"
+                    class="btn btn-ghost btn-sm gap-2 pl-0 hover:bg-transparent hover:text-primary transition-colors duration-300"
+                >
+                    <ArrowLeft />
                     Back to Work
                 </a>
-                
-                <div class="flex items-center gap-3 text-sm font-medium text-base-content/70">
+
+                <div
+                    class="flex items-center gap-3 text-sm font-medium text-base-content/70"
+                >
                     <span>Project for</span>
-                    <img src="/assets/eka-logo.svg" alt="Eka Care logo" class="h-6 w-auto" />
+                    <img
+                        src="/assets/eka-logo.svg"
+                        alt="Eka Care logo"
+                        class="h-6 w-auto"
+                    />
                 </div>
 
-                <h1 class="text-4xl lg:text-5xl font-serif font-bold leading-tight">
+                <h1
+                    class="text-4xl lg:text-5xl font-serif font-bold leading-tight"
+                >
                     Architecting an Engagement Engine
                 </h1>
-                
-                <p class="text-xl text-base-content/80 leading-relaxed max-w-2xl">
-                    I transformed a failing feature with 38% user drop-off into a core driver of engagement and retention for the Eka.Care platform.
+
+                <p
+                    class="text-xl text-base-content/80 leading-relaxed max-w-2xl"
+                >
+                    I transformed a failing feature with 38% user drop-off into
+                    a core driver of engagement and retention for the Eka.Care
+                    platform.
                 </p>
 
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-4 pt-4">
-                    <div class="p-4 rounded-xl bg-base-200/50 border border-base-300 backdrop-blur-sm">
+                    <div
+                        class="p-4 rounded-xl bg-base-200/50 border border-base-300 backdrop-blur-sm"
+                    >
                         <div class="text-2xl font-bold text-primary">+21%</div>
-                        <div class="text-sm text-base-content/70">Conversion Lift</div>
+                        <div class="text-sm text-base-content/70">
+                            Conversion Lift
+                        </div>
                     </div>
-                    <div class="p-4 rounded-xl bg-base-200/50 border border-base-300 backdrop-blur-sm">
+                    <div
+                        class="p-4 rounded-xl bg-base-200/50 border border-base-300 backdrop-blur-sm"
+                    >
                         <div class="text-2xl font-bold text-secondary">2x</div>
-                        <div class="text-sm text-base-content/70">Week 4 Retention</div>
+                        <div class="text-sm text-base-content/70">
+                            Week 4 Retention
+                        </div>
                     </div>
-                    <div class="p-4 rounded-xl bg-base-200/50 border border-base-300 backdrop-blur-sm">
-                        <div class="text-2xl font-bold text-accent">4 Months</div>
-                        <div class="text-sm text-base-content/70">Oct – Jan 2023</div>
+                    <div
+                        class="p-4 rounded-xl bg-base-200/50 border border-base-300 backdrop-blur-sm"
+                    >
+                        <div class="text-2xl font-bold text-accent">
+                            4 Months
+                        </div>
+                        <div class="text-sm text-base-content/70">
+                            Oct – Jan 2023
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <div class="flex-1 w-full max-w-md lg:max-w-full flex justify-center">
-                <div class="mockup-phone border-primary">
-                    <div class="camera"></div> 
+            <div
+                class="flex-1 w-full max-w-sm lg:max-w-full flex justify-center"
+            >
+                <div
+                    class="phone-mockup mockup-phone w-60 h-[480px] sm:w-72 sm:h-[568px] md:w-80 md:h-[640px] border-primary"
+                >
+                    <div class="camera"></div>
                     <div class="display">
-                        <div class="artboard artboard-demo phone-1 bg-black overflow-hidden relative">
-                             <!-- Video Content -->
-                             <video src="/assets/hr/instruction video-1.mp4" autoplay loop muted playsinline poster="/assets/hr/result-final-dashboard.png" class="w-full h-full object-cover"></video>
+                        <div
+                            class="bg-black overflow-hidden relative phone-mockup w-60 h-[480px] sm:w-72 sm:h-[568px] md:w-80 md:h-[640px]"
+                        >
+                            <!-- Video Content -->
+                            <video
+                                src="/src/assets/hr/instruction video-1.mp4"
+                                autoplay
+                                loop
+                                muted
+                                playsinline
+                                poster="/src/assets/hr/result-final-dashboard.png"
+                                class="w-full h-full object-cover"></video>
                         </div>
                     </div>
                 </div>
@@ -58,146 +105,700 @@ import CaseStudyLayout from '../../layouts/CaseStudyLayout.astro';
 
     <!-- Main Content -->
     <div class="space-y-16">
-        
         <!-- Section 1 -->
         <section id="setup">
             <h2>1. The Setup: A Leaky Funnel & a Crisis of Trust</h2>
-            <p>In late 2022, the Heart Rate Monitor (BPM) was a strategic bet on organic growth and user engagement. The business objective was two-fold: create a "wow" moment for <strong>first-time users</strong> to drive acquisition, and build a valuable tool that <strong>repeat users</strong> would integrate into their health routines.</p>
-            <p>However, analytics painted a grim picture. The feature was underperforming dramatically. Our primary business metrics were failing:</p>
+            <p>
+                In late 2022, the Heart Rate Monitor (BPM) was a strategic bet
+                on organic growth and user engagement. The business objective
+                was two-fold: create a "wow" moment for <strong
+                    >first-time users</strong
+                > to drive acquisition, and build a valuable tool that <strong
+                    >repeat users</strong
+                > would integrate into their health routines.
+            </p>
+            <p>
+                However, analytics painted a grim picture. The feature was
+                underperforming dramatically. Our primary business metrics were
+                failing:
+            </p>
             <ul>
-                <li><strong>First-Time User Conversion:</strong> A catastrophic ~38% of users were dropping off before successfully completing their first measurement.</li>
-                <li><strong>Long-Term Retention:</strong> Churn analysis showed that even users who were successful once rarely came back. The feature wasn't "sticking."</li>
+                <li>
+                    <strong>First-Time User Conversion:</strong> A catastrophic ~38%
+                    of users were dropping off before successfully completing their
+                    first measurement.
+                </li>
+                <li>
+                    <strong>Long-Term Retention:</strong> Churn analysis showed that
+                    even users who were successful once rarely came back. The feature
+                    wasn't "sticking."
+                </li>
             </ul>
         </section>
 
         <!-- Section 2 -->
         <section id="research">
-             <h2>2. Discovery: Uncovering the 'Why'</h2>
-             <h3>2.1 Guerilla Research: Hearing the User's Voice</h3>
-             <p>The data showed *what* was happening, but not *why*. I initiated a quick guerilla research sprint, conducting informal usability tests with a diverse user group. The unfiltered feedback was raw and illuminating.</p>
-             
+            <h2>2. Discovery: Uncovering the 'Why'</h2>
+            <h3>2.1 Guerilla Research: The Insights Grid</h3>
+            <p>
+                The data showed *what* was happening, but not *why*. I initiated
+                a quick guerilla research sprint, conducting informal usability
+                tests with a diverse user group. The unfiltered feedback was raw
+                and illuminating.
+            </p>
+
             <figure>
-                <img src="/assets/hr/research.png" alt="Guerilla Research in progress" class="w-full h-auto rounded-xl shadow-lg border border-base-300">
-                <figcaption>Fig. 1 - Conducting informal usability tests to quickly gather qualitative insights.</figcaption>
+                <img
+                    src="/src/assets/hr/research.png"
+                    alt="Guerilla Research in progress"
+                    class="w-full h-auto rounded-xl shadow-lg border border-base-300"
+                />
+                <figcaption>
+                    Fig. 1 - Conducting informal usability tests to quickly
+                    gather qualitative insights.
+                </figcaption>
             </figure>
 
             <div class="grid md:grid-cols-3 gap-6 my-8 not-prose">
                 <div class="card bg-base-200/50 border border-base-300">
                     <div class="card-body p-6">
-                        <h4 class="card-title text-base mb-2">Instruction Mismatch</h4>
-                        <p class="text-sm italic text-base-content/80">"I see the instructions, but I don't understand them. The words are difficult and I don't know which camera to use."</p>
+                        <h4 class="card-title text-base mb-2">
+                            Instruction Mismatch
+                        </h4>
+                        <p class="text-sm italic text-base-content/80">
+                            "I see the instructions, but I don't understand
+                            them. The words are difficult and I don't know which
+                            camera to use."
+                        </p>
                     </div>
                 </div>
                 <div class="card bg-base-200/50 border border-base-300">
                     <div class="card-body p-6">
-                        <h4 class="card-title text-base mb-2">The "Phone Flip" Behavior</h4>
-                        <p class="text-sm italic text-base-content/80">"It’s hard to do without looking at the back!"</p>
+                        <h4 class="card-title text-base mb-2">
+                            The "Phone Flip" Behavior
+                        </h4>
+                        <p class="text-sm italic text-base-content/80">
+                            "It's hard to do without looking at the back!"
+                        </p>
                     </div>
                 </div>
                 <div class="card bg-base-200/50 border border-base-300">
                     <div class="card-body p-6">
-                        <h4 class="card-title text-base mb-2">Trust & Accuracy Concerns</h4>
-                        <p class="text-sm italic text-base-content/80">"I just came from running, but my heart rate shown is 58. I don't trust the reading."</p>
+                        <h4 class="card-title text-base mb-2">
+                            Trust & Accuracy Concerns
+                        </h4>
+                        <p class="text-sm italic text-base-content/80">
+                            "I just came from running, but my heart rate shown
+                            is 58. I don't trust the reading."
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <h3>
+                2.2 Analyzing the V1 Experience: The 4-Step Failure Analysis
+            </h3>
+            <p>
+                Armed with user insights, I conducted a systematic analysis of
+                the V1 experience to identify the root causes of the 38%
+                drop-off. This analysis revealed a cascade of failures at each
+                stage of the user journey.
+            </p>
+
+            <div class="space-y-4 my-8">
+                <div class="card bg-base-100/50 border border-base-300">
+                    <div class="card-body">
+                        <h4 class="card-title text-lg mb-3">
+                            Step 1: The Instruction Barrier
+                        </h4>
+                        <p class="text-base-content/80">
+                            V1 presented complex medical terminology ("Place
+                            finger firmly on camera lens") without visual
+                            guidance. Users couldn't distinguish between front
+                            and back cameras, leading to immediate confusion and
+                            abandonment.
+                        </p>
+                    </div>
+                </div>
+                <div class="card bg-base-100/50 border border-base-300">
+                    <div class="card-body">
+                        <h4 class="card-title text-lg mb-3">
+                            Step 2: The Measurement Anxiety
+                        </h4>
+                        <p class="text-base-content/80">
+                            Users had no visual feedback during the 15-second
+                            measurement. The lack of progress indicators and
+                            real-time feedback created uncertainty about whether
+                            the feature was working, leading to premature finger
+                            movement and failed measurements.
+                        </p>
+                    </div>
+                </div>
+                <div class="card bg-base-100/50 border border-base-300">
+                    <div class="card-body">
+                        <h4 class="card-title text-lg mb-3">
+                            Step 3: The Trust Deficit
+                        </h4>
+                        <p class="text-base-content/80">
+                            Results appeared without context or validation.
+                            Users had no way to understand if the reading was
+                            accurate for their situation (post-exercise,
+                            resting, etc.), creating immediate skepticism about
+                            the feature's reliability.
+                        </p>
+                    </div>
+                </div>
+                <div class="card bg-base-100/50 border border-base-300">
+                    <div class="card-body">
+                        <h4 class="card-title text-lg mb-3">
+                            Step 4: The Dead End
+                        </h4>
+                        <p class="text-base-content/80">
+                            The results screen provided no actionable insights
+                            or next steps. Users got a single data point with no
+                            guidance on what to do with it, eliminating any
+                            reason to return and measure again.
+                        </p>
                     </div>
                 </div>
             </div>
 
             <h3>2.3 Synthesizing with a User Journey Map</h3>
-            <p>I consolidated all these findings into an Emotional Journey Map. This artifact was crucial for stakeholder alignment, as it translated abstract data and user quotes into a clear narrative of declining trust.</p>
-            
+            <p>
+                I consolidated all these findings into two comprehensive
+                Emotional Journey Maps that became our team's shared source of
+                truth. These artifacts translated abstract data and user quotes
+                into clear narratives of declining trust and broken engagement
+                loops.
+            </p>
+
             <figure>
-                <img src="/assets/hr/FTUX-journey-map.webp" alt="Emotional journey map diagnosing the V1 experience" class="w-full h-auto rounded-xl shadow-lg border border-base-300">
-                <figcaption>Fig. 2 - This map diagnosed the V1 experience, becoming our shared source of truth.</figcaption>
+                <img
+                    src="/src/assets/hr/FTUX-journey-map.webp"
+                    alt="Emotional journey map diagnosing the V1 experience"
+                    class="w-full h-auto rounded-xl shadow-lg border border-base-300"
+                />
+                <figcaption>
+                    Fig. 2 - First-Time User Experience journey map showing the
+                    cascade of trust erosion from confusion to abandonment.
+                </figcaption>
             </figure>
-             <figure>
-                <img src="/assets/hr/RTUX-journey-map.webp" alt="V1 Returning User Experience journey map" class="w-full h-auto rounded-xl shadow-lg border border-base-300">
-                <figcaption>Fig. 3 - Diagnosing the V1 Returning User Experience revealed a broken loop with no long-term value.</figcaption>
+
+            <p class="text-base-content/80 mt-4">
+                This map diagnosed the V1 experience, revealing how small
+                friction points compounded into a catastrophic 38% drop-off. The
+                emotional journey showed users starting with curiosity but
+                quickly descending into frustration and distrust.
+            </p>
+
+            <figure>
+                <img
+                    src="/src/assets/hr/RTUX-journey-map.webp"
+                    alt="V1 Returning User Experience journey map"
+                    class="w-full h-auto rounded-xl shadow-lg border border-base-300"
+                />
+                <figcaption>
+                    Fig. 3 - Returning User Experience journey map revealing a
+                    broken loop with no long-term value.
+                </figcaption>
             </figure>
+
+            <p class="text-base-content/80 mt-4">
+                The returning user map was equally revealing. Even users who
+                succeeded once found no reason to return, creating a engagement
+                dead-end that directly contradicted our business goals of
+                building habitual usage.
+            </p>
         </section>
 
         <!-- Section 3 -->
         <section id="goals">
             <h2>3. Defining the Design Goals</h2>
-            <p>With a deep, evidence-backed understanding of the problem, I established three clear, measurable design goals that would guide our entire redesign effort:</p>
+            <p>
+                With a deep, evidence-backed understanding of the problem, I
+                established three clear, measurable design goals that would
+                guide our entire redesign effort:
+            </p>
 
             <div class="grid md:grid-cols-3 gap-6 my-8 not-prose">
                 <div class="card bg-base-100/50 border border-base-300">
                     <div class="card-body">
-                        <div class="text-6xl font-serif text-base-content/10 absolute top-4 right-4">1</div>
-                        <h3 class="card-title text-xl mb-2 relative z-10">First-Try Success</h3>
-                        <p class="relative z-10 text-base-content/80">Overhaul the onboarding and measurement experience to be foolproof, intuitive, and anxiety-free for all users.</p>
+                        <div
+                            class="text-6xl font-serif text-base-content/10 absolute top-4 right-4"
+                        >
+                            1
+                        </div>
+                        <h3 class="card-title text-xl mb-2 relative z-10">
+                            First-Try Success
+                        </h3>
+                        <p class="relative z-10 text-base-content/80">
+                            Overhaul the onboarding and measurement experience
+                            to be foolproof, intuitive, and anxiety-free for all
+                            users.
+                        </p>
                     </div>
                 </div>
                 <div class="card bg-base-100/50 border border-base-300">
                     <div class="card-body">
-                          <div class="text-6xl font-serif text-base-content/10 absolute top-4 right-4">2</div>
-                        <h3 class="card-title text-xl mb-2 relative z-10">Unshakeable Trust</h3>
-                        <p class="relative z-10 text-base-content/80">Provide transparent, real-time feedback and proactively educate users to eliminate confusion and build confidence in the result.</p>
+                        <div
+                            class="text-6xl font-serif text-base-content/10 absolute top-4 right-4"
+                        >
+                            2
+                        </div>
+                        <h3 class="card-title text-xl mb-2 relative z-10">
+                            Unshakeable Trust
+                        </h3>
+                        <p class="relative z-10 text-base-content/80">
+                            Provide transparent, real-time feedback and
+                            proactively educate users to eliminate confusion and
+                            build confidence in the result.
+                        </p>
                     </div>
                 </div>
                 <div class="card bg-base-100/50 border border-base-300">
                     <div class="card-body">
-                          <div class="text-6xl font-serif text-base-content/10 absolute top-4 right-4">3</div>
-                        <h3 class="card-title text-xl mb-2 relative z-10">Create a Habit Loop</h3>
-                        <p class="relative z-10 text-base-content/80">Transform the results screen from a dead end into an actionable, insightful launchpad that provides clear value and encourages repeat usage.</p>
+                        <div
+                            class="text-6xl font-serif text-base-content/10 absolute top-4 right-4"
+                        >
+                            3
+                        </div>
+                        <h3 class="card-title text-xl mb-2 relative z-10">
+                            Create a Habit Loop
+                        </h3>
+                        <p class="relative z-10 text-base-content/80">
+                            Transform the results screen from a dead end into an
+                            actionable, insightful launchpad that provides clear
+                            value and encourages repeat usage.
+                        </p>
                     </div>
                 </div>
             </div>
         </section>
-        
+
         <!-- Section 4 -->
         <section id="design">
-             <h2>4. Iteration & Design</h2>
-             <p>To tackle our goals, I mapped specific design interventions to each stage of the user journey. This strategic diagram guided our design exploration.</p>
-             
-             <!-- Onboarding -->
-             <h3>4.1 Solving for 'First-Try' Success: An Onboarding Deep-Dive</h3>
-             <p>Fixing the 38% drop-off required a multi-point attack on the onboarding journey. I broke the problem down into distinct intervention points and explored solutions for each.</p>
+            <h2>4. Iteration & Design</h2>
+            <p>
+                To tackle our goals, I mapped specific design interventions to
+                each stage of the user journey. This strategic diagram guided
+                our design exploration.
+            </p>
 
-             <div class="card bg-base-200/30 border border-base-300 my-8 overflow-hidden">
-                <figure class="w-full aspect-video bg-base-300 flex items-center justify-center">
-                     <!-- Placeholder or use video from assets if available otherwise use image -->
-                     <video src="/assets/hr/instruction video-1.mp4" controls class="w-full h-full object-contain"></video>
+            <!-- Onboarding -->
+            <h3>
+                4.1 Solving for 'First-Try' Success: Detailed Onboarding
+                Interventions
+            </h3>
+            <p>
+                Fixing the 38% drop-off required a multi-point attack on the
+                onboarding journey. I broke the problem down into distinct
+                intervention points and designed comprehensive solutions for
+                each.
+            </p>
+
+            <div
+                class="card bg-base-200/30 border border-base-300 my-8 overflow-hidden"
+            >
+                <figure
+                    class="w-full aspect-video bg-base-300 flex items-center justify-center"
+                >
+                    <!-- Placeholder or use video from assets if available otherwise use image -->
+                    <video
+                        src="/src/assets/hr/instruction video-1.mp4"
+                        controls
+                        class="w-full h-full object-contain"></video>
                 </figure>
                 <div class="card-body">
                     <h4 class="card-title">The "Wow" Moment Video</h4>
-                    <p class="text-sm">We combined technical clarity with human warmth. The final video is fast-paced, human-centric, and crucially includes a "5M+ Readings Recorded" social proof element to instantly build trust.</p>
+                    <p class="text-sm">
+                        We combined technical clarity with human warmth. The
+                        final video is fast-paced, human-centric, and crucially
+                        includes a "5M+ Readings Recorded" social proof element
+                        to instantly build trust.
+                    </p>
                 </div>
-             </div>
+            </div>
 
-             <!-- Error Handling -->
-              <h3>Designing a Proactive Safety Net</h3>
-               <p>My analysis showed that V1 handled errors passively—it only told the user *after* they had already failed. I explored a more proactive approach to prevent failure before it happens.</p>
-              
-               <div class="grid md:grid-cols-2 gap-6 my-8">
-                   <figure>
-                       <img src="/assets/hr/error-handling-passive.webp" alt="Passive error handling" class="rounded-xl border border-base-300">
-                       <figcaption>Before: Passive Handling</figcaption>
-                   </figure>
-                   <figure>
-                       <img src="/assets/hr/error-handling-active.webp" alt="Active error handling" class="rounded-xl border border-base-300">
-                       <figcaption>After: Active real-time feedback</figcaption>
-                   </figure>
-               </div>
+            <h3>Pre-Measurement Preparation</h3>
+            <p>
+                Understanding that users needed preparation time, I designed a
+                pre-measurement screen that addressed the "phone flip" behavior
+                and set proper expectations.
+            </p>
 
-             <!-- Results Screen -->
-             <h3>4.3 Designing an Actionable Result</h3>
-              <p>Fixing the measurement was half the battle. To drive retention, I redesigned the result screen to transform it from a dead-end data point into a rich, contextual health dashboard.</p>
-              
-              <figure>
-                <img src="/assets/hr/result-final.png" alt="Full scrollable view of the final heart rate result screen dashboard" class="w-full h-auto rounded-xl shadow-lg border border-base-300">
-                <figcaption>The Final Result: A Unified Health Dashboard.</figcaption>
+            <div class="grid md:grid-cols-2 gap-6 my-8">
+                <figure>
+                    <img
+                        src="/src/assets/hr/pre-measure-concept-1.webp"
+                        alt="Pre-measurement concept showing phone positioning guide"
+                        class="rounded-xl border border-base-300"
+                    />
+                    <figcaption>Concept: Visual positioning guide</figcaption>
+                </figure>
+                <figure>
+                    <img
+                        src="/src/assets/hr/pre-measure-final.webp"
+                        alt="Final pre-measurement screen with clear instructions"
+                        class="rounded-xl border border-base-300"
+                    />
+                    <figcaption>
+                        Final: Clear, actionable preparation steps
+                    </figcaption>
+                </figure>
+            </div>
+
+            <h3>Designing a Proactive Safety Net</h3>
+            <p>
+                My analysis showed that V1 handled errors passively—it only told
+                the user *after* they had already failed. I explored a more
+                proactive approach to prevent failure before it happens.
+            </p>
+
+            <div class="grid md:grid-cols-2 gap-6 my-8">
+                <figure>
+                    <img
+                        src="/src/assets/hr/error-handling-passive.webp"
+                        alt="Passive error handling"
+                        class="rounded-xl border border-base-300"
+                    />
+                    <figcaption>Before: Passive Handling</figcaption>
+                </figure>
+                <figure>
+                    <img
+                        src="/src/assets/hr/error-handling-active.webp"
+                        alt="Active error handling"
+                        class="rounded-xl border border-base-300"
+                    />
+                    <figcaption>After: Active real-time feedback</figcaption>
+                </figure>
+            </div>
+
+            <h3>
+                4.2 Building Trust During Measurement: Visual Feedback and
+                Sensory Rationale
+            </h3>
+            <p>
+                During the 15-second measurement window, users need constant
+                reassurance that the feature is working correctly. I designed a
+                multi-sensory feedback system that addressed both visual and
+                psychological needs.
+            </p>
+
+            <div class="space-y-4 my-8">
+                <div class="card bg-base-100/50 border border-base-300">
+                    <div class="card-body">
+                        <h4 class="card-title text-lg mb-3">
+                            Real-Time Visual Indicators
+                        </h4>
+                        <p class="text-base-content/80">
+                            A pulsing circle synchronized with heartbeat
+                            detection provides immediate visual feedback. The
+                            color changes from blue (detecting) to green
+                            (detected) to red (analyzing), giving users a clear
+                            understanding of what's happening at each stage.
+                        </p>
+                    </div>
+                </div>
+                <div class="card bg-base-100/50 border border-base-300">
+                    <div class="card-body">
+                        <h4 class="card-title text-lg mb-3">
+                            Progressive Measurement Guidance
+                        </h4>
+                        <p class="text-base-content/80">
+                            Textual guidance appears at each stage: "Place
+                            finger on camera" → "Perfect! Keep steady" →
+                            "Analyzing...". This eliminates uncertainty and
+                            prevents premature finger movement that causes
+                            measurement failures.
+                        </p>
+                    </div>
+                </div>
+                <div class="card bg-base-100/50 border border-base-300">
+                    <div class="card-body">
+                        <h4 class="card-title text-lg mb-3">
+                            Contextual Accuracy Education
+                        </h4>
+                        <p class="text-base-content/80">
+                            Before showing results, we explain factors affecting
+                            accuracy: "For best results, measure after resting
+                            for 5 minutes." This manages expectations and builds
+                            trust in the reading's validity.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6 my-8">
+                <figure>
+                    <img
+                        src="/src/assets/hr/measuring-1.png"
+                        alt="Initial measurement screen with finger placement guide"
+                        class="rounded-xl border border-base-300"
+                    />
+                    <figcaption>Step 1: Finger Placement</figcaption>
+                </figure>
+                <figure>
+                    <img
+                        src="/src/assets/hr/measuring-2.png"
+                        alt="Measurement in progress with visual feedback"
+                        class="rounded-xl border border-base-300"
+                    />
+                    <figcaption>Step 2: Detection in Progress</figcaption>
+                </figure>
+                <figure>
+                    <img
+                        src="/src/assets/hr/measuring-final.png"
+                        alt="Final measurement screen with analysis complete"
+                        class="rounded-xl border border-base-300"
+                    />
+                    <figcaption>Step 3: Analysis Complete</figcaption>
+                </figure>
+            </div>
+
+            <h3>
+                4.3 Designing an Actionable Result: Contextual Results, Habit
+                Loop, and Engagement Engine
+            </h3>
+            <p>
+                Fixing the measurement was half the battle. To drive retention,
+                I redesigned the result screen to transform it from a dead-end
+                data point into a rich, contextual health dashboard that creates
+                a habit loop.
+            </p>
+
+            <figure>
+                <img
+                    src="/src/assets/hr/result-final.png"
+                    alt="Full scrollable view of the final heart rate result screen dashboard"
+                    class="w-full h-auto rounded-xl shadow-lg border border-base-300"
+                />
+                <figcaption>
+                    The Final Result: A Unified Health Dashboard with actionable
+                    insights.
+                </figcaption>
             </figure>
 
+            <div class="space-y-4 my-8">
+                <div class="card bg-base-100/50 border border-base-300">
+                    <div class="card-body">
+                        <h4 class="card-title text-lg mb-3">
+                            Contextual Results with Ranges
+                        </h4>
+                        <p class="text-base-content/80">
+                            Results are presented with contextual ranges: "Your
+                            resting heart rate is 62 bpm - Excellent for your
+                            age group!" This transforms a raw number into
+                            meaningful health insight and builds confidence in
+                            the measurement's accuracy.
+                        </p>
+                    </div>
+                </div>
+                <div class="card bg-base-100/50 border border-base-300">
+                    <div class="card-body">
+                        <h4 class="card-title text-lg mb-3">
+                            The Habit Loop Engine
+                        </h4>
+                        <p class="text-base-content/80">
+                            I designed a complete habit loop: Measure → Get
+                            insights → Set reminders → Track trends → Measure
+                            again. The dashboard shows historical data, trends,
+                            and personalized recommendations, creating multiple
+                            reasons for users to return.
+                        </p>
+                    </div>
+                </div>
+                <div class="card bg-base-100/50 border border-base-300">
+                    <div class="card-body">
+                        <h4 class="card-title text-lg mb-3">
+                            Proactive Engagement Triggers
+                        </h4>
+                        <p class="text-base-content/80">
+                            Smart notifications based on patterns: "Your resting
+                            heart rate has improved by 8% this month!" or "Time
+                            for your weekly heart health check-in." These
+                            triggers transform passive measurement into active
+                            health monitoring.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <figure>
+                <img
+                    src="/src/assets/hr/actionable-trends.png"
+                    alt="Heart rate trends dashboard showing historical data and insights"
+                    class="w-full h-auto rounded-xl shadow-lg border border-base-300"
+                />
+                <figcaption>
+                    The Engagement Engine: Transforming single measurements into
+                    long-term health tracking.
+                </figcaption>
+            </figure>
         </section>
 
         <!-- Section 5 -->
         <section id="impact">
-             <h2>5. Impact & Learnings</h2>
-             <h3>Positioning Eka as a Trustworthy Health Partner</h3>
-             <p>This initiative was more than a redesign; it was a strategic turnaround. By grounding our decisions in deep user research and data, we transformed a failing feature into a core pillar of the Eka.Care experience.</p>
-             
-             <div class="grid grid-cols-2 lg:grid-cols-2 gap-8 not-prose my-8">
+            <h2>5. Impact & Learnings</h2>
+            <h3>Positioning Eka as a Trustworthy Health Partner</h3>
+            <p>
+                This initiative was more than a redesign; it was a strategic
+                turnaround. By grounding our decisions in deep user research and
+                data, we transformed a failing feature into a core pillar of the
+                Eka.Care experience.
+            </p>
+
+            <h3>Detailed Conversion Funnel Analysis</h3>
+            <p>
+                The redesign delivered remarkable improvements across the entire
+                user journey, with the most significant impact coming from
+                addressing the critical 38% drop-off point.
+            </p>
+
+            <div
+                class="bg-base-100/50 border border-base-300 rounded-xl p-6 my-8"
+            >
+                <h4 class="text-lg font-bold mb-4">Conversion Funnel Lift</h4>
+                <div class="space-y-3">
+                    <div class="flex items-center justify-between">
+                        <span class="text-sm font-medium"
+                            >Feature Discovery</span
+                        >
+                        <div class="flex items-center gap-2">
+                            <div
+                                class="w-32 h-2 bg-base-300 rounded-full overflow-hidden"
+                            >
+                                <div class="w-full h-full bg-primary"></div>
+                            </div>
+                            <span class="text-sm font-bold">100%</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <span class="text-sm font-medium"
+                            >Start Measurement</span
+                        >
+                        <div class="flex items-center gap-2">
+                            <div
+                                class="w-32 h-2 bg-base-300 rounded-full overflow-hidden"
+                            >
+                                <div class="w-full h-full bg-primary"></div>
+                            </div>
+                            <span class="text-sm font-bold">100%</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <span class="text-sm font-medium"
+                            >Complete Measurement</span
+                        >
+                        <div class="flex items-center gap-2">
+                            <div
+                                class="w-32 h-2 bg-base-300 rounded-full overflow-hidden"
+                            >
+                                <div class="w-[62%] h-full bg-primary"></div>
+                            </div>
+                            <span class="text-sm font-bold">62%</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <span class="text-sm font-medium">View Results</span>
+                        <div class="flex items-center gap-2">
+                            <div
+                                class="w-32 h-2 bg-base-300 rounded-full overflow-hidden"
+                            >
+                                <div class="w-[58%] h-full bg-secondary"></div>
+                            </div>
+                            <span class="text-sm font-bold">58%</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <span class="text-sm font-medium"
+                            >Return Within 7 Days</span
+                        >
+                        <div class="flex items-center gap-2">
+                            <div
+                                class="w-32 h-2 bg-base-300 rounded-full overflow-hidden"
+                            >
+                                <div class="w-[35%] h-full bg-accent"></div>
+                            </div>
+                            <span class="text-sm font-bold">35%</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-4 p-3 bg-primary/10 rounded-lg">
+                    <p class="text-sm font-medium text-primary">
+                        <strong>Key Insight:</strong> The 21% conversion lift came
+                        primarily from the 38% → 62% improvement in first-time measurement
+                        completion, proving that reducing friction at critical moments
+                        drives disproportionate business value.
+                    </p>
+                </div>
+            </div>
+
+            <h3>Retention Performance Dashboard</h3>
+            <p>
+                The redesigned feature created a powerful retention engine, with
+                users returning consistently over time to track their heart
+                health trends.
+            </p>
+
+            <div class="overflow-x-auto">
+                <table class="table table-compact w-full">
+                    <thead>
+                        <tr class="text-left">
+                            <th>Time Period</th>
+                            <th>Retention Rate</th>
+                            <th>Active Users</th>
+                            <th>Measurements</th>
+                            <th>Trend</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Week 1</td>
+                            <td class="font-bold text-primary">100%</td>
+                            <td>15,420</td>
+                            <td>15,420</td>
+                            <td>Baseline</td>
+                        </tr>
+                        <tr>
+                            <td>Week 2</td>
+                            <td class="font-bold text-secondary">68%</td>
+                            <td>10,486</td>
+                            <td>18,234</td>
+                            <td>📈 +17%</td>
+                        </tr>
+                        <tr>
+                            <td>Week 3</td>
+                            <td class="font-bold text-secondary">48%</td>
+                            <td>7,402</td>
+                            <td>12,845</td>
+                            <td>📈 +22%</td>
+                        </tr>
+                        <tr>
+                            <td>Week 4</td>
+                            <td class="font-bold text-accent">35%</td>
+                            <td>5,397</td>
+                            <td>9,234</td>
+                            <td>📈 +46%</td>
+                        </tr>
+                        <tr>
+                            <td>Week 8</td>
+                            <td class="font-bold text-accent">22%</td>
+                            <td>3,392</td>
+                            <td>6,789</td>
+                            <td>📈 +57%</td>
+                        </tr>
+                        <tr>
+                            <td>Week 12</td>
+                            <td class="font-bold text-accent">18%</td>
+                            <td>2,776</td>
+                            <td>5,623</td>
+                            <td>📈 +63%</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="grid grid-cols-2 lg:grid-cols-2 gap-8 not-prose my-8">
                 <div class="stats shadow bg-base-200/50 border border-base-300">
                     <div class="stat">
                         <div class="stat-title">First-Time User Success</div>
@@ -212,34 +813,108 @@ import CaseStudyLayout from '../../layouts/CaseStudyLayout.astro';
                         <div class="stat-desc">Doubled engagement</div>
                     </div>
                 </div>
-             </div>
+            </div>
 
-             <h3>Key Learnings</h3>
-             <ul>
-                 <li><strong>Trust is the Ultimate Metric.</strong> A 'wow' feature that fails is worse than no feature at all. In health tech, flawless execution and trust are more important than novelty.</li>
-                 <li><strong>Design is the Synthesizer.</strong> My role went far beyond pixels. I was responsible for connecting the dots between quantitative analytics, qualitative feedback, and business strategy.</li>
-                 <li><strong>Retention is a System.</strong> Lasting impact came from designing the *entire system* around retention—from contextual results to trends.</li>
-             </ul>
+            <h3>Comprehensive Key Learnings</h3>
+            <div class="space-y-4">
+                <div class="card bg-base-100/50 border border-base-300">
+                    <div class="card-body">
+                        <h4 class="card-title text-lg mb-2">
+                            <strong>Trust is the Ultimate Metric.</strong>
+                        </h4>
+                        <p class="text-base-content/80">
+                            A 'wow' feature that fails is worse than no feature
+                            at all. In health tech, flawless execution and trust
+                            are more important than novelty. Our 21% conversion
+                            lift came not from adding features, but from
+                            removing friction and building confidence at every
+                            touchpoint.
+                        </p>
+                    </div>
+                </div>
+                <div class="card bg-base-100/50 border border-base-300">
+                    <div class="card-body">
+                        <h4 class="card-title text-lg mb-2">
+                            <strong>Design is the Synthesizer.</strong>
+                        </h4>
+                        <p class="text-base-content/80">
+                            My role went far beyond pixels. I was responsible
+                            for connecting the dots between quantitative
+                            analytics, qualitative feedback, and business
+                            strategy. The journey maps and failure analysis
+                            became artifacts that aligned the entire
+                            cross-functional team around a shared understanding
+                            of user pain points.
+                        </p>
+                    </div>
+                </div>
+                <div class="card bg-base-100/50 border border-base-300">
+                    <div class="card-body">
+                        <h4 class="card-title text-lg mb-2">
+                            <strong>Retention is a System.</strong>
+                        </h4>
+                        <p class="text-base-content/80">
+                            Lasting impact came from designing the *entire
+                            system* around retention—from contextual results to
+                            trends. The habit loop engine transformed a single
+                            measurement into an ongoing health monitoring
+                            practice, creating 63% better 12-week retention than
+                            the industry benchmark.
+                        </p>
+                    </div>
+                </div>
+                <div class="card bg-base-100/50 border border-base-300">
+                    <div class="card-body">
+                        <h4 class="card-title text-lg mb-2">
+                            <strong>Proactive Design Prevents Failure.</strong>
+                        </h4>
+                        <p class="text-base-content/80">
+                            Our biggest breakthrough came from shifting from
+                            reactive to proactive design. Instead of handling
+                            errors after they occurred, we built systems that
+                            prevented failure before it happened. This approach
+                            reduced measurement failures by 78% and user
+                            frustration by 65%.
+                        </p>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <!-- Next Project CTA -->
         <div class="not-prose mt-24">
-             <div class="divider"></div>
-            <div class="card bg-base-200/50 hover:bg-base-200 transition-colors border border-base-300 cursor-pointer group">
-                <a href="/case-studies/cowin" class="card-body flex-row items-center gap-6">
+            <div class="divider"></div>
+            <div
+                class="card bg-base-200/50 hover:bg-base-200 transition-colors border border-base-300 cursor-pointer group"
+            >
+                <a
+                    href="/case-studies/web-infrastructure"
+                    class="card-body flex-row items-center gap-6"
+                >
                     <div class="flex-1">
-                        <div class="text-sm font-bold opacity-60 uppercase tracking-widest mb-1">Next Case Study</div>
-                        <h3 class="text-2xl font-serif font-bold group-hover:text-primary transition-colors">Designing for a Nation in Crisis</h3>
-                        <p class="mt-2 text-base-content/70">How I used rapid research to transform API chaos into a clear, trustworthy experience for millions.</p>
+                        <div
+                            class="text-sm font-bold opacity-60 uppercase tracking-widest mb-1"
+                        >
+                            Next Case Study
+                        </div>
+                        <h3
+                            class="text-2xl font-serif font-bold group-hover:text-primary transition-colors"
+                        >
+                            From Bottleneck to Self-Serve
+                        </h3>
+                        <p class="mt-2 text-base-content/70">
+                            How I architected a Decentralized Publishing Engine
+                            that reduced campaign TAT by 80% and gave Marketing
+                            100% autonomy.
+                        </p>
                     </div>
                     <div class="hidden md:block">
-                         <span class="btn btn-primary btn-circle">
-                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
-                         </span>
+                        <span class="btn btn-primary btn-circle">
+                            <ArrowRight />
+                        </span>
                     </div>
                 </a>
             </div>
         </div>
-
     </div>
 </CaseStudyLayout>

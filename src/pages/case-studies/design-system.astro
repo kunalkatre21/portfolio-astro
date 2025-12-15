@@ -1,0 +1,517 @@
+---
+import CaseStudyLayout from "../../layouts/CaseStudyLayout.astro";
+import {
+    ArrowLeft,
+    ArrowRight,
+    AlertTriangle,
+    Info,
+    HelpCircle,
+    XCircle,
+    CheckCircle,
+    Package,
+    Users,
+    TriangleAlert,
+    Package as PackageIcon,
+    Users as UsersIcon,
+} from "@lucide/astro";
+---
+
+<CaseStudyLayout
+    title="Case Study: Automating Consistency Through Design Systems | Kunal Katre"
+>
+    <!-- Hero Section -->
+    <div
+        slot="hero"
+        class="hero-section not-prose min-h-[var(--hero-height-mobile)] md:min-h-[var(--hero-height-tablet)] lg:min-h-[var(--hero-height-desktop)] mb-12 animate-fade-in w-full"
+    >
+        <div class="flex flex-col lg:flex-row gap-12 items-center">
+            <div class="flex-1 space-y-6">
+                <a
+                    href="/#work"
+                    class="btn btn-ghost btn-sm gap-2 pl-0 hover:bg-transparent hover:text-primary transition-colors duration-300"
+                >
+                    <ArrowLeft />
+                    Back to Work
+                </a>
+
+                <div
+                    class="flex items-center gap-3 text-sm font-medium text-base-content/70"
+                >
+                    <span>Project for</span>
+                    <img
+                        src="/assets/eka-logo.svg"
+                        alt="Eka Care logo"
+                        class="h-6 w-auto"
+                    />
+                </div>
+
+                <h1
+                    class="text-4xl lg:text-5xl font-serif font-bold leading-tight"
+                >
+                    Automating Consistency
+                </h1>
+
+                <p
+                    class="text-xl text-base-content/80 leading-relaxed max-w-2xl"
+                >
+                    I architected a "Traceable Token Pipeline" that transforms
+                    Figma into the Single Source of Truth, eliminating the
+                    interpretation gap between design and engineering across
+                    three platforms.
+                </p>
+
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 pt-4">
+                    <div
+                        class="p-4 rounded-xl bg-base-200/50 border border-base-300 backdrop-blur-sm"
+                    >
+                        <div class="text-2xl font-bold text-primary">Zero</div>
+                        <div class="text-sm text-base-content/70">
+                            Handoff Errors
+                        </div>
+                    </div>
+                    <div
+                        class="p-4 rounded-xl bg-base-200/50 border border-base-300 backdrop-blur-sm"
+                    >
+                        <div class="text-2xl font-bold text-secondary">3x</div>
+                        <div class="text-sm text-base-content/70">
+                            Platforms Connected
+                        </div>
+                    </div>
+                    <div
+                        class="p-4 rounded-xl bg-base-200/50 border border-base-300 backdrop-blur-sm"
+                    >
+                        <div class="text-2xl font-bold text-accent">
+                            3 Months
+                        </div>
+                        <div class="text-sm text-base-content/70">
+                            Core Infrastructure
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div
+                class="flex-1 w-full max-w-sm lg:max-w-full flex justify-center"
+            >
+                <div
+                    class="phone-mockup mockup-phone border-primary w-60 h-[480px] sm:w-72 sm:h-[568px] md:w-80 md:h-[640px]"
+                >
+                    <div class="camera"></div>
+                    <div class="display">
+                        <div
+                            class="phone-mockup bg-base-100 w-60 h-[480px] sm:w-72 sm:h-[568px] md:w-80 md:h-[640px]"
+                        >
+                            <img
+                                src="/assets/images/design_system_components_1765625577971.png"
+                                alt="Design System Components"
+                                class="w-full h-full object-cover"
+                            />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="space-y-16">
+        <!-- Section 1 -->
+        <section id="setup">
+            <h2>
+                1. The Executive Summary: From Static Library to Living System
+            </h2>
+            <p>
+                Most design systems are static "reference libraries" that drift
+                out of sync with production code. At Eka Care, supporting three
+                distinct platforms (Android, iOS, Web) meant that "visual drift"
+                was inevitable and expensive.
+            </p>
+
+            <div
+                class="alert shadow-lg bg-base-200/80 border-l-4 border-primary not-prose my-8"
+            >
+                <div>
+                    <h3 class="font-bold text-lg mb-2">The Core Innovation</h3>
+                    <p class="text-base-content/80">
+                        I architected a <strong
+                            >"Traceable Token Pipeline"</strong
+                        >—a system where Figma is not just a drawing tool, but
+                        the <strong>Single Source of Truth</strong> that compiles
+                        directly to production code. By treating design tokens as
+                        a software dependency, I reduced the "interpretation gap"
+                        between design and engineering to zero for connected components.
+                    </p>
+                </div>
+            </div>
+
+            <h3>The Business Problem: The "Drifting" UI & Native Friction</h3>
+            <p>
+                Eka Care operates in a high-trust domain: Healthcare. Users
+                trust apps that feel "native" and secure. Our previous attempts
+                at a "One Size Fits All" system created two critical failures:
+            </p>
+
+            <div class="grid md:grid-cols-2 gap-6 my-8">
+                <div class="card bg-base-200/50 border border-base-300">
+                    <div class="card-body">
+                        <div
+                            class="w-10 h-10 rounded-lg bg-error/10 text-error flex items-center justify-center mb-4"
+                        >
+                            <XCircle />
+                        </div>
+                        <h4 class="card-title text-base mb-2">Visual Drift</h4>
+                        <p class="text-sm italic text-base-content/80">
+                            Developers manually copied Hex codes, leading to 50+
+                            shades of "Brand Blue" and inconsistent spacing
+                            across platforms.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="card bg-base-200/50 border border-base-300">
+                    <div class="card-body">
+                        <div
+                            class="w-10 h-10 rounded-lg bg-warning/10 text-warning flex items-center justify-center mb-4"
+                        >
+                            <TriangleAlert />
+                        </div>
+                        <h4 class="card-title text-base mb-2">
+                            The "Uncanny Valley" of UX
+                        </h4>
+                        <p class="text-sm italic text-base-content/80">
+                            We were forcing web-like components onto mobile. An
+                            iOS user expects a specific "push/pop" navigation;
+                            giving them a web modal eroded trust.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div
+                class="alert shadow-lg bg-warning/10 border-l-4 border-warning not-prose my-8"
+            >
+                <div>
+                    <h3 class="font-bold text-lg mb-2">
+                        The Stakeholder Pitch
+                    </h3>
+                    <p class="text-base-content/80">
+                        <strong
+                            >"We are wasting 20% of every sprint fixing UI bugs
+                            that shouldn't exist. We need a system that enforces
+                            consistency <em>automatically</em>, not manually."</strong
+                        >
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2 -->
+        <section id="strategy">
+            <h2>2. The Strategy: "Native-First" & Automation</h2>
+            <p>
+                I established two core architectural principles that would guide
+                the entire system:
+            </p>
+
+            <div class="grid md:grid-cols-2 gap-8 my-8">
+                <div class="card bg-base-100/50 border border-base-300">
+                    <div class="card-body">
+                        <div
+                            class="text-6xl font-serif text-base-content/10 absolute top-4 right-4"
+                        >
+                            1
+                        </div>
+                        <h3 class="card-title text-xl mb-2 relative z-10">
+                            Semantic Abstraction
+                        </h3>
+                        <p class="relative z-10 text-base-content/80">
+                            We won't just name colors <code>Blue/500</code>. We
+                            will name them <code>Action/Primary/Background</code
+                            >. This allows us to re-theme the entire app for a
+                            hospital partner (white-labeling) without touching a
+                            single line of feature code.
+                        </p>
+                    </div>
+                </div>
+                <div class="card bg-base-100/50 border border-base-300">
+                    <div class="card-body">
+                        <div
+                            class="text-6xl font-serif text-base-content/10 absolute top-4 right-4"
+                        >
+                            2
+                        </div>
+                        <h3 class="card-title text-xl mb-2 relative z-10">
+                            The "Zero-Handoff" Pipeline
+                        </h3>
+                        <p class="relative z-10 text-base-content/80">
+                            Design decisions should flow to code without human
+                            intervention.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <h3>The Tech Stack (My "Design Engineering" Contribution)</h3>
+            <div class="my-8 not-prose">
+                <div class="overflow-x-auto">
+                    <table class="table w-full">
+                        <thead>
+                            <tr>
+                                <th>Layer</th>
+                                <th>Technology</th>
+                                <th>Purpose</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Input</strong></td>
+                                <td><code>Figma + Tokens Studio</code></td>
+                                <td>Managing multi-dimensional themes</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Middleware</strong></td>
+                                <td
+                                    ><code
+                                        >GitHub Actions + Style Dictionary</code
+                                    ></td
+                                >
+                                <td>Transforming JSON to platform code</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Output</strong></td>
+                                <td><code>Native binaries</code></td>
+                                <td
+                                    ><code>.xml</code> for Android, <code
+                                        >.swift</code
+                                    > for iOS, <code>.css</code> for Web</td
+                                >
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div
+                class="alert shadow-lg bg-info/10 border-l-4 border-info not-prose my-8"
+            >
+                <div>
+                    <h3 class="font-bold text-lg mb-2">Self-Correction/Note</h3>
+                    <p class="text-base-content/80">
+                        I initially faced bandwidth constraints. Instead of
+                        waiting for a full engineering team, I built the Proof
+                        of Concept (PoC) myself using AI tools to write the
+                        transformation scripts, proving the value before asking
+                        for resources.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3 -->
+        <section id="execution">
+            <h2>3. Execution: The "Button" Pilot</h2>
+            <p>
+                I chose the humble <strong>Button</strong> component as the "Tracer
+                Bullet" to prove the system.
+            </p>
+
+            <h3>Step A: The Token Taxonomy (Standardization)</h3>
+            <p>
+                I audited our existing messy styles and restructured them using
+                the <strong>C.T.I. (Category-Type-Item)</strong> standard:
+            </p>
+
+            <div class="grid md:grid-cols-2 gap-6 my-8">
+                <div class="card bg-error/10 border border-error/20">
+                    <div class="card-body">
+                        <h4 class="card-title text-error mb-2">
+                            ❌ Old System
+                        </h4>
+                        <ul class="text-sm space-y-1">
+                            <li><code>EkaBlue</code></li>
+                            <li><code>Red-Error</code></li>
+                            <li><code>ButtonPrimary</code></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card bg-success/10 border border-success/20">
+                    <div class="card-body">
+                        <h4 class="card-title text-success mb-2">
+                            ✅ New System
+                        </h4>
+                        <ul class="text-sm space-y-1">
+                            <li><code>sys.color.action.primary</code></li>
+                            <li><code>sys.color.feedback.critical</code></li>
+                            <li>
+                                <code>sys.component.button.variant.primary</code
+                                >
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Step B: The Pipeline Build</h3>
+            <p>
+                I configured a GitHub Action that listens for changes in the
+                Figma Token JSON file:
+            </p>
+
+            <div class="mockup-code bg-base-300 not-prose my-6">
+                <pre><code>Trigger: I push a new color update in Figma
+       ↓
+Action: The build script runs Style Dictionary
+       ↓
+Result: A Pull Request is automatically created in Android, iOS, and Web repos with updated code files</code></pre>
+            </div>
+
+            <h3>Step C: Native Mapping</h3>
+            <p>
+                Instead of building custom components from scratch, I mapped our
+                tokens to <strong>Material 3 (Android)</strong> and <strong
+                    >UIKit (iOS)</strong
+                >.
+            </p>
+
+            <div
+                class="alert shadow-lg bg-base-200/80 border-l-4 border-accent not-prose my-8"
+            >
+                <div>
+                    <h3 class="font-bold text-lg mb-2">Why This Matters</h3>
+                    <p class="text-base-content/80">
+                        This ensures we inherit all accessibility features
+                        (screen readers, dynamic type) and native interaction
+                        patterns (ripples, haptics) for free.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4 -->
+        <section id="impact">
+            <h2>4. The Outcome & "So What?"</h2>
+            <p>
+                While we didn't track "time saved" explicitly, the qualitative
+                impact was binary:
+            </p>
+
+            <div class="grid md:grid-cols-3 gap-6 my-8 not-prose">
+                <div class="card bg-success/10 border border-success/20">
+                    <div class="card-body p-6">
+                        <div
+                            class="w-12 h-12 rounded-lg bg-success/20 text-success flex items-center justify-center mb-4"
+                        >
+                            <CheckCircle />
+                        </div>
+                        <h4 class="card-title text-base mb-2">
+                            Zero Handoff Errors
+                        </h4>
+                        <p class="text-sm italic text-base-content/80">
+                            It is now <em>impossible</em> for a developer to use the
+                            wrong color for a connected component. The system enforces
+                            it.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="card bg-primary/10 border border-primary/20">
+                    <div class="card-body p-6">
+                        <div
+                            class="w-12 h-12 rounded-lg bg-primary/20 text-primary flex items-center justify-center mb-4"
+                        >
+                            <PackageIcon />
+                        </div>
+                        <h4 class="card-title text-base mb-2">
+                            Multi-Brand Ready
+                        </h4>
+                        <p class="text-sm italic text-base-content/80">
+                            This architecture laid the groundwork for our
+                            white-label business. We can now spin up a "Hospital
+                            X" themed app simply by swapping the Token JSON
+                            file.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="card bg-secondary/10 border border-secondary/20">
+                    <div class="card-body p-6">
+                        <div
+                            class="w-12 h-12 rounded-lg bg-secondary/20 text-secondary flex items-center justify-center mb-4"
+                        >
+                            <UsersIcon />
+                        </div>
+                        <h4 class="card-title text-base mb-2">
+                            Engineering Trust
+                        </h4>
+                        <p class="text-sm italic text-base-content/80">
+                            By speaking their language (JSON, GitHub, CI/CD), I
+                            bridged the gap between Design and Dev, transforming
+                            the Design System from a "nuance" into a
+                            "dependency."
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Key Learnings</h3>
+            <ul>
+                <li>
+                    <strong>Design Systems are Infrastructure.</strong> Treating design
+                    tokens as software dependencies fundamentally changes the relationship
+                    between design and development.
+                </li>
+                <li>
+                    <strong>Proof of Concept Before Pitch.</strong> Building the PoC
+                    myself using AI tools proved the value faster than any presentation
+                    could.
+                </li>
+                <li>
+                    <strong>Native-First Thinking.</strong> Mapping to native design
+                    systems (Material 3, UIKit) gives you accessibility and interaction
+                    patterns for free.
+                </li>
+                <li>
+                    <strong>Systems Thinking Scales.</strong> The same pipeline that
+                    solves button consistency can solve theming, spacing, and multi-brand
+                    scenarios.
+                </li>
+            </ul>
+        </section>
+
+        <!-- Next Project CTA -->
+        <div class="not-prose mt-24">
+            <div class="divider"></div>
+            <div
+                class="card bg-base-200/50 hover:bg-base-200 transition-colors border border-base-300 cursor-pointer group"
+            >
+                <a
+                    href="/case-studies/web-infrastructure"
+                    class="card-body flex-row items-center gap-6"
+                >
+                    <div class="flex-1">
+                        <div
+                            class="text-sm font-bold opacity-60 uppercase tracking-widest mb-1"
+                        >
+                            Next Case Study
+                        </div>
+                        <h3
+                            class="text-2xl font-serif font-bold group-hover:text-primary transition-colors"
+                        >
+                            From Bottleneck to Self-Serve
+                        </h3>
+                        <p class="mt-2 text-base-content/70">
+                            How I architected a Decentralized Publishing Engine
+                            that reduced campaign TAT by 80% and gave Marketing
+                            100% autonomy.
+                        </p>
+                    </div>
+                    <div class="hidden md:block">
+                        <span class="btn btn-primary btn-circle">
+                            <ArrowRight />
+                        </span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</CaseStudyLayout>

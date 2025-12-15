@@ -1,90 +1,488 @@
 ---
 import "../styles/global.css";
+const { title } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Kunal Katre – Lead Product Designer</title>
-		<!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
-	</head>
-	<body class="antialiased font-sans" data-theme="light">
-		<!-- Background handled by body CSS (Aura Atmosphere) -->
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title || "Kunal Katre – Lead Product Designer"}</title>
 
-		<div class="page-shell relative z-0">
-		<!-- Drawer Wrapper -->
-    <div class="drawer">
-      <input id="main-drawer" type="checkbox" class="drawer-toggle" />
-      <div class="drawer-content flex flex-col">
-        <!-- Page Content -->
-        <slot />
+    <!-- SEO Meta Tags -->
+    <meta
+      name="description"
+      content="Kunal Katre is a Lead Product Designer specializing in user experience design, product strategy, and innovative design solutions."
+    />
+    <meta
+      name="keywords"
+      content="product design, UX design, portfolio, lead product designer, user experience, design systems"
+    />
+    <meta name="author" content="Kunal Katre" />
+
+    <!-- Open Graph Meta Tags -->
+    <meta
+      property="og:title"
+      content={title || "Kunal Katre – Lead Product Designer"}
+    />
+    <meta
+      property="og:description"
+      content="Kunal Katre is a Lead Product Designer specializing in user experience design, product strategy, and innovative design solutions."
+    />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:image"
+      content={new URL("/assets/kunal-katre-photo.webp", Astro.url.origin)}
+    />
+    <meta property="og:url" content={Astro.url.href} />
+    <meta property="og:site_name" content="Kunal Katre Portfolio" />
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content={title || "Kunal Katre – Lead Product Designer"}
+    />
+    <meta
+      name="twitter:description"
+      content="Kunal Katre is a Lead Product Designer specializing in user experience design, product strategy, and innovative design solutions."
+    />
+    <meta
+      name="twitter:image"
+      content={new URL("/assets/kunal-katre-photo.webp", Astro.url.origin)}
+    />
+    <meta name="twitter:creator" content="@kunal_katre" />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href={Astro.url.href} />
+
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#ffffff" />
+
+    <!-- Structured Data -->
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        name: "Kunal Katre Portfolio",
+        url: Astro.url.origin,
+        description: "Portfolio of Kunal Katre, Lead Product Designer",
+        author: {
+          "@type": "Person",
+          name: "Kunal Katre",
+        },
+      })}
+    />
+
+    <!-- Preload Profile Image -->
+    <link rel="preload" href="/assets/kunal-katre-photo.webp" as="image" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="antialiased font-sans" data-theme="light">
+    <!-- Background handled by body CSS (Aura Atmosphere) -->
+
+    <div class="page-shell relative z-0">
+      <!-- Drawer Wrapper -->
+      <div class="drawer">
+        <input id="main-drawer" type="checkbox" class="drawer-toggle" />
+        <div class="drawer-content flex flex-col">
+          <!-- Page Content -->
+          <slot />
+        </div>
+        <div class="drawer-side z-40">
+          <label
+            for="main-drawer"
+            aria-label="close sidebar"
+            class="drawer-overlay"></label>
+          <ul
+            class="menu bg-gradient-to-b from-base-200 to-base-300 min-h-full w-80 p-6 gap-1"
+          >
+            <!-- Sidebar content here -->
+            <li class="mb-6">
+              <div
+                class="flex items-center gap-3 px-4 py-3 bg-gradient-to-r from-primary/10 to-accent/10 rounded-xl border border-primary/20 backdrop-blur-sm"
+              >
+                <div class="avatar placeholder">
+                  <div
+                    class="bg-gradient-to-br from-primary to-accent text-neutral-content rounded-full w-10"
+                  >
+                    <span class="text-xs font-bold">KK</span>
+                  </div>
+                </div>
+                <div class="flex flex-col gap-0.5">
+                  <span class="text-lg font-bold text-base-content"
+                    >Kunal Katre</span
+                  >
+                  <span class="text-xs text-base-content/70"
+                    >Lead Product Designer</span
+                  >
+                </div>
+              </div>
+            </li>
+
+            <li>
+              <a
+                href="/#hero"
+                class="menu-item text-lg font-medium relative overflow-hidden group"
+              >
+                <span class="relative z-10 flex items-center gap-3 px-4 py-3">
+                  <div
+                    class="w-2 h-2 rounded-full bg-primary opacity-0 group-hover:opacity-100 transition-opacity"
+                  >
+                  </div>
+                  <span>Home</span>
+                </span>
+                <div
+                  class="absolute inset-0 bg-gradient-to-r from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity transform -translate-x-full group-hover:translate-x-0"
+                >
+                </div>
+              </a>
+            </li>
+
+            <li class="menu-title my-4 px-4">
+              <span
+                class="text-base font-semibold text-primary/80 uppercase tracking-wider"
+                >Work</span
+              >
+            </li>
+
+            <li>
+              <a
+                href="/#work"
+                class="menu-item text-base relative overflow-hidden group"
+              >
+                <span class="relative z-10 flex items-center gap-3 px-4 py-3">
+                  <div
+                    class="w-2 h-2 rounded-full bg-primary opacity-0 group-hover:opacity-100 transition-opacity"
+                  >
+                  </div>
+                  <span>All Work</span>
+                </span>
+                <div
+                  class="absolute inset-0 bg-gradient-to-r from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity transform -translate-x-full group-hover:translate-x-0"
+                >
+                </div>
+              </a>
+            </li>
+
+            <li class="menu-title my-4 px-4">
+              <span
+                class="text-sm font-semibold text-secondary/80 uppercase tracking-wider"
+                >Case Studies</span
+              >
+            </li>
+
+            <li>
+              <a
+                href="/case-studies/cowin"
+                class="menu-item text-base relative overflow-hidden group"
+              >
+                <span class="relative z-10 flex items-center gap-3 px-4 py-3">
+                  <div
+                    class="w-2 h-2 rounded-full bg-primary opacity-0 group-hover:opacity-100 transition-opacity"
+                  >
+                  </div>
+                  <div class="flex flex-col">
+                    <span class="font-medium">CoWIN Platform</span>
+                    <span class="text-xs text-base-content/60"
+                      >Vaccination system design</span
+                    >
+                  </div>
+                </span>
+                <div
+                  class="absolute inset-0 bg-gradient-to-r from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity transform -translate-x-full group-hover:translate-x-0"
+                >
+                </div>
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="/case-studies/design-system"
+                class="menu-item text-base relative overflow-hidden group"
+              >
+                <span class="relative z-10 flex items-center gap-3 px-4 py-3">
+                  <div
+                    class="w-2 h-2 rounded-full bg-secondary opacity-0 group-hover:opacity-100 transition-opacity"
+                  >
+                  </div>
+                  <div class="flex flex-col">
+                    <span class="font-medium">Design System</span>
+                    <span class="text-xs text-base-content/60"
+                      >Component library creation</span
+                    >
+                  </div>
+                </span>
+                <div
+                  class="absolute inset-0 bg-gradient-to-r from-secondary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity transform -translate-x-full group-hover:translate-x-0"
+                >
+                </div>
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="/case-studies/heart-rate"
+                class="menu-item text-base relative overflow-hidden group"
+              >
+                <span class="relative z-10 flex items-center gap-3 px-4 py-3">
+                  <div
+                    class="w-2 h-2 rounded-full bg-accent opacity-0 group-hover:opacity-100 transition-opacity"
+                  >
+                  </div>
+                  <div class="flex flex-col">
+                    <span class="font-medium">Heart Rate Monitor</span>
+                    <span class="text-xs text-base-content/60"
+                      >Health app interface</span
+                    >
+                  </div>
+                </span>
+                <div
+                  class="absolute inset-0 bg-gradient-to-r from-accent/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity transform -translate-x-full group-hover:translate-x-0"
+                >
+                </div>
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="/case-studies/web-infrastructure"
+                class="menu-item text-base relative overflow-hidden group"
+              >
+                <span class="relative z-10 flex items-center gap-3 px-4 py-3">
+                  <div
+                    class="w-2 h-2 rounded-full bg-info opacity-0 group-hover:opacity-100 transition-opacity"
+                  >
+                  </div>
+                  <div class="flex flex-col">
+                    <span class="font-medium">Web Infrastructure</span>
+                    <span class="text-xs text-base-content/60"
+                      >Architecture & scalability</span
+                    >
+                  </div>
+                </span>
+                <div
+                  class="absolute inset-0 bg-gradient-to-r from-info/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity transform -translate-x-full group-hover:translate-x-0"
+                >
+                </div>
+              </a>
+            </li>
+
+            <li class="divider my-4"></li>
+
+            <li>
+              <a
+                href="/#about"
+                class="menu-item text-lg font-medium relative overflow-hidden group"
+              >
+                <span class="relative z-10 flex items-center gap-3 px-4 py-3">
+                  <div
+                    class="w-2 h-2 rounded-full bg-primary opacity-0 group-hover:opacity-100 transition-opacity"
+                  >
+                  </div>
+                  <span>About</span>
+                </span>
+                <div
+                  class="absolute inset-0 bg-gradient-to-r from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity transform -translate-x-full group-hover:translate-x-0"
+                >
+                </div>
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="/cv"
+                class="menu-item text-lg font-medium relative overflow-hidden group"
+              >
+                <span class="relative z-10 flex items-center gap-3 px-4 py-3">
+                  <div
+                    class="w-2 h-2 rounded-full bg-primary opacity-0 group-hover:opacity-100 transition-opacity"
+                  >
+                  </div>
+                  <span>CV</span>
+                </span>
+                <div
+                  class="absolute inset-0 bg-gradient-to-r from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity transform -translate-x-full group-hover:translate-x-0"
+                >
+                </div>
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="/#contact"
+                class="menu-item text-lg font-medium relative overflow-hidden group"
+              >
+                <span class="relative z-10 flex items-center gap-3 px-4 py-3">
+                  <div
+                    class="w-2 h-2 rounded-full bg-primary opacity-0 group-hover:opacity-100 transition-opacity"
+                  >
+                  </div>
+                  <span>Contact</span>
+                </span>
+                <div
+                  class="absolute inset-0 bg-gradient-to-r from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity transform -translate-x-full group-hover:translate-x-0"
+                >
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
-      <div class="drawer-side z-40">
-        <label for="main-drawer" aria-label="close sidebar" class="drawer-overlay"></label>
-        <ul class="menu bg-base-200 min-h-full w-80 p-4 gap-2">
-          <!-- Sidebar content here -->
-          <li><a href="#hero" class="text-lg font-medium">Home</a></li>
-          <li><a href="#work" class="text-lg font-medium">Work</a></li>
-          <li><a href="#about" class="text-lg font-medium">About</a></li>
-          <li><a href="#contact" class="text-lg font-medium">Contact</a></li>
-        </ul>
-      </div>
-    </div>
 
-    <script is:inline>
-      // Theme initialization
-      // Check localStorage first, then system preference
-      const getTheme = () => {
-        const stored = localStorage.getItem('kk-theme');
-        if (stored) return stored;
-        return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-      };
+      <script is:inline>
+        // Theme initialization
+        // Check localStorage first, then system preference
+        const getTheme = () => {
+          const stored = localStorage.getItem("kk-theme");
+          if (stored) return stored;
+          return window.matchMedia("(prefers-color-scheme: dark)").matches
+            ? "dark"
+            : "light";
+        };
 
-      const theme = getTheme();
-      document.body.setAttribute('data-theme', theme);
-      document.documentElement.setAttribute('data-theme', theme); // DaisyUI often checks root
-    </script>
+        const theme = getTheme();
+        document.body.setAttribute("data-theme", theme);
+        document.documentElement.setAttribute("data-theme", theme); // DaisyUI often checks root
+      </script>
 
-    <script>
-      // Intersection Observer for fade-in animations
-      const observerOptions = {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.1
-      };
+      <script>
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+          root: null,
+          rootMargin: "0px",
+          threshold: 0.1,
+        };
 
-      const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            observer.unobserve(entry.target); // Only animate once
-          }
+        const observer = new IntersectionObserver((entries, observer) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              observer.unobserve(entry.target); // Only animate once
+            }
+          });
+        }, observerOptions);
+
+        document.addEventListener("DOMContentLoaded", () => {
+          const fadeElements = document.querySelectorAll(".fade-in");
+          fadeElements.forEach((el) => observer.observe(el));
         });
-      }, observerOptions);
+      </script>
 
-      document.addEventListener('DOMContentLoaded', () => {
-        const fadeElements = document.querySelectorAll('.fade-in');
-        fadeElements.forEach(el => observer.observe(el));
-      });
-    </script>
+      <style>
+        .fade-in {
+          opacity: 0;
+          transform: translateY(28px);
+          transition:
+            opacity 0.7s ease,
+            transform 0.7s ease;
+        }
+        .fade-in.visible {
+          opacity: 1;
+          transform: translateY(0);
+        }
 
-		<style>
-			.fade-in {
-				opacity: 0;
-				transform: translateY(28px);
-				transition: opacity 0.7s ease, transform 0.7s ease;
-			}
-			.fade-in.visible {
-				opacity: 1;
-				transform: translateY(0);
-			}
-		</style>
-	</body>
+        /* Enhanced mobile drawer styles */
+        .drawer-side {
+          backdrop-filter: blur(10px);
+          background: linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.95) 0%,
+            rgba(249, 250, 251, 0.95) 100%
+          );
+          box-shadow: -10px 0 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .menu-item {
+          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+          border-radius: 12px;
+          margin-bottom: 4px;
+          position: relative;
+          overflow: hidden;
+        }
+
+        .menu-item:hover {
+          transform: translateX(8px);
+          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .menu-item::before {
+          content: "";
+          position: absolute;
+          left: 0;
+          top: 0;
+          height: 100%;
+          width: 3px;
+          background: linear-gradient(180deg, var(--tw-gradient-stops));
+          --tw-gradient-from: var(--color-primary);
+          --tw-gradient-to: var(--color-accent);
+          transform: scaleY(0);
+          transition: transform 0.3s ease;
+        }
+
+        .menu-item:hover::before {
+          transform: scaleY(1);
+        }
+
+        .menu-title {
+          font-weight: 600;
+          letter-spacing: 0.05em;
+          text-transform: uppercase;
+          color: var(--color-primary);
+          opacity: 0.8;
+          margin: 1rem 0 0.5rem 0;
+        }
+
+        .drawer-overlay {
+          background: rgba(0, 0, 0, 0.3);
+          backdrop-filter: blur(5px);
+        }
+
+        /* Smooth drawer animation */
+        .drawer {
+          transition: all 0.3s ease;
+        }
+
+        .drawer-content {
+          transition: margin-left 0.3s ease;
+        }
+
+        .drawer-side {
+          transition: transform 0.3s ease;
+        }
+
+        /* Enhanced avatar styling */
+        .avatar {
+          transition: transform 0.3s ease;
+        }
+
+        .avatar:hover {
+          transform: scale(1.1);
+        }
+
+        /* Divider styling */
+        .divider {
+          height: 1px;
+          background: linear-gradient(
+            90deg,
+            transparent,
+            var(--color-primary/20),
+            transparent
+          );
+          margin: 1.5rem 0;
+        }
+      </style>
+    </div>
+  </body>
 </html>

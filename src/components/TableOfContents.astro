@@ -1,0 +1,67 @@
+---
+---
+<nav class="toc hidden lg:block sticky top-24 self-start max-h-[calc(100vh-8rem)] overflow-y-auto pl-4 border-l border-base-content/10">
+  <h3 class="text-sm font-bold uppercase tracking-wider opacity-50 mb-4">On this page</h3>
+  <ul id="toc-list" class="space-y-2 text-sm">
+    <!-- Links will be injected here via JS -->
+  </ul>
+</nav>
+
+<script>
+  function generateTOC() {
+    const article = document.querySelector('article');
+    const tocList = document.getElementById('toc-list');
+    
+    if (!article || !tocList) return;
+
+    // Find all h2 and h3
+    const headings = article.querySelectorAll('h2, h3');
+    
+    headings.forEach((heading, index) => {
+      // Ensure heading has ID
+      if (!heading.id) {
+        heading.id = `section-${index}`;
+      }
+
+      const li = document.createElement('li');
+      const a = document.createElement('a');
+      
+      a.href = `#${heading.id}`;
+      a.textContent = heading.textContent;
+      a.className = 'block text-base-content/60 hover:text-primary transition-colors duration-200 border-l-2 border-transparent hover:border-primary pl-3 -ml-[17px]';
+      
+      // Indent h3
+      if (heading.tagName === 'H3') {
+        a.classList.add('ml-2', 'text-xs');
+      }
+
+      li.appendChild(a);
+      tocList.appendChild(li);
+    });
+
+    // Intersection Observer for active state
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        const id = entry.target.getAttribute('id');
+        const link = tocList.querySelector(`a[href="#${id}"]`);
+        
+        if (entry.isIntersecting) {
+          // Remove active class from all
+          tocList.querySelectorAll('a').forEach(l => {
+            l.classList.remove('text-primary', 'font-medium', '!border-primary');
+          });
+          // Add to current
+          if (link) {
+            link.classList.add('text-primary', 'font-medium', '!border-primary');
+          }
+        }
+      });
+    }, { rootMargin: '-100px 0px -66%' });
+
+    headings.forEach(h => observer.observe(h));
+  }
+
+  // Run on load and on view transitions
+  document.addEventListener('astro:page-load', generateTOC);
+  document.addEventListener('DOMContentLoaded', generateTOC);
+</script>

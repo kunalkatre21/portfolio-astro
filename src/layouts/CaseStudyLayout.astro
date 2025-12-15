@@ -1,30 +1,48 @@
 ---
-import Layout from './Layout.astro';
-import Navbar from '../components/Navbar.astro';
-import Footer from '../components/Footer.astro';
+import Layout from "./Layout.astro";
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+import TableOfContents from "../components/TableOfContents.astro";
 const { title, frontmatter } = Astro.props;
 const pageTitle = title || frontmatter?.title || "Case Study";
 ---
 
 <Layout title={pageTitle}>
   <Navbar />
+
   <div class="pt-24 pb-16 min-h-screen">
-    <div class="container mx-auto px-4 max-w-4xl">
-        <article class="prose prose-lg prose-invert max-w-none
+    <!-- Hero Header Slot -->
+    <div class="container mx-auto px-4 max-w-[1200px] mb-12">
+      <slot name="hero" />
+    </div>
+
+    <!-- Main Content Grid -->
+    <div class="container mx-auto px-4 max-w-[1200px]">
+      <div class="grid grid-cols-1 lg:grid-cols-[1fr_250px] gap-12 items-start">
+        <!-- Main Content -->
+        <article
+          class="prose prose-lg prose-invert max-w-none min-w-0
             prose-headings:font-serif prose-headings:font-bold prose-headings:text-base-content
-            prose-h1:!text-4xl prose-h1:mb-8 prose-h1:leading-tight
-            prose-h2:!text-3xl prose-h2:mt-12 prose-h2:mb-6 prose-h2:text-primary
-            prose-h3:!text-2xl prose-h3:mt-8 prose-h3:mb-4
-            prose-h4:!text-xl prose-h4:mt-6 prose-h4:mb-3
-            prose-p:text-base-content/80 prose-p:leading-relaxed
+            prose-h1:!text-4xl prose-h1:leading-tight
+            prose-h2:!text-3xl prose-h2:text-primary
+            prose-h3:!text-2xl
+            prose-h4:!text-xl
+            [&>h1]:mb-8 [&>h2]:mt-12 [&>h2]:mb-6 [&>h3]:mt-8 [&>h3]:mb-4 [&>h4]:mt-6 [&>h4]:mb-3
+            prose-p:text-base-content/70 prose-p:leading-relaxed
             prose-a:text-primary prose-a:no-underline prose-a:font-medium hover:prose-a:text-primary-content hover:prose-a:underline
             prose-strong:text-base-content prose-strong:font-semibold
             prose-blockquote:border-l-4 prose-blockquote:border-accent prose-blockquote:bg-base-200/50 prose-blockquote:p-4 prose-blockquote:italic prose-blockquote:rounded-r-lg
             prose-img:rounded-xl prose-img:shadow-lg prose-img:border prose-img:border-base-300
-            prose-li:text-base-content/80
-            ">
-            <slot />
+            prose-li:text-base-content/70"
+        >
+          <slot />
         </article>
+
+        <!-- Sticky Sidebar -->
+        <aside class="hidden lg:block h-full sticky top-24 self-start">
+          <TableOfContents />
+        </aside>
+      </div>
     </div>
   </div>
   <Footer />
@@ -35,28 +53,32 @@ const pageTitle = title || frontmatter?.title || "Case Study";
   .prose h1 {
     font-size: 2.25rem !important; /* text-4xl */
     line-height: 2.5rem !important;
-    margin-bottom: 2rem !important;
   }
-  
+
   .prose h2 {
     font-size: 1.875rem !important; /* text-3xl */
     line-height: 2.25rem !important;
-    margin-top: 3rem !important;
-    margin-bottom: 1.5rem !important;
     color: var(--color-primary);
   }
-  
+
   .prose h3 {
     font-size: 1.5rem !important; /* text-2xl */
     line-height: 2rem !important;
-    margin-top: 2rem !important;
-    margin-bottom: 1rem !important;
   }
 
   .prose h4 {
     font-size: 1.25rem !important; /* text-xl */
     line-height: 1.75rem !important;
-    margin-top: 1.5rem !important;
+  }
+
+  .prose p {
+    font-size: 1rem !important; /* text-xl */
+    line-height: 1.25rem !important;
+  }
+
+  .prose li {
+    font-size: 1rem !important; /* text-xl */
+    line-height: 1.25rem !important;
     margin-bottom: 0.75rem !important;
   }
 </style>

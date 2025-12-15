@@ -1,0 +1,194 @@
+---
+import type { AstroGlobal } from 'astro';
+import { onMount } from 'astro:client:component';
+
+interface LoadingState {
+  isLoading: boolean;
+  startTime: number;
+  minimumDisplayTime: number;
+  navigationTarget: string | null;
+}
+
+export class LoadingManager {
+  private state: LoadingState = {
+    isLoading: false,
+    startTime: 0,
+    minimumDisplayTime: 500, // 500ms minimum display time
+    navigationTarget: null
+  };
+
+  private subscribers: Set<(state: LoadingState) => void> = new Set();
+
+  constructor() {
+    // Initialize from localStorage if available
+    const savedState = localStorage.getItem('loadingState');
+    if (savedState) {
+      try {
+        const parsed = JSON.parse(savedState);
+        this.state = { ...this.state, ...parsed };
+      } catch (e) {
+        console.warn('Failed to parse loading state from localStorage');
+      }
+    }
+  }
+
+  // Get current loading state
+  getState() {
+    return { ...this.state };
+  }
+
+  // Start loading
+  startLoading(target?: string) {
+    this.state.isLoading = true;
+    this.state.startTime = Date.now();
+    this.state.navigationTarget = target || null;
+    this.notifySubscribers();
+    this.saveToLocalStorage();
+  }
+
+  // Stop loading
+  stopLoading() {
+    const elapsedTime = Date.now() - this.state.startTime;
+    const remainingTime = Math.max(0, this.state.minimumDisplayTime - elapsedTime);
+    
+    // Ensure minimum display time
+    setTimeout(() => {
+      this.state.isLoading = false;
+      this.state.navigationTarget = null;
+      this.notifySubscribers();
+      this.saveToLocalStorage();
+    }, remainingTime);
+  }
+
+  // Check if should show loading
+  shouldShowLoading() {
+    return this.state.isLoading;
+  }
+
+  // Subscribe to state changes
+  subscribe(callback: (state: LoadingState) => void) {
+    this.subscribers.add(callback);
+    return () => this.subscribers.delete(callback);
+  }
+
+  // Notify all subscribers
+  private notifySubscribers() {
+    this.subscribers.forEach(callback => callback(this.getState()));
+  }
+
+  // Save state to localStorage
+  private saveToLocalStorage() {
+    try {
+      localStorage.setItem('loadingState', JSON.stringify(this.state));
+    } catch (e) {
+      console.warn('Failed to save loading state to localStorage');
+    }
+  }
+
+  // Handle navigation
+  handleNavigation(href: string) {
+    this.startLoading(href);
+  }
+
+  // Handle page load completion
+  handlePageLoad() {
+    this.stopLoading();
+  }
+}
+
+// Create a singleton instance
+const loadingManager = new LoadingManager();
+
+// Export the singleton instance
+export const getLoadingManager = () => loadingManager;
+
+interface Props {
+  astro: AstroGlobal;
+}
+
+const { astro } = Astro.props as Props;
+
+onMount(() => {
+  // Handle navigation events
+  document.addEventListener('astro:page-load', () => {
+    loadingManager.handlePageLoad();
+  });
+
+  // Handle link clicks
+  document.addEventListener('click', (e) => {
+    const target = e.target as HTMLElement;
+    const anchor = target.closest('a');
+    
+    if (anchor && anchor.href && anchor.href.startsWith(window.location.origin)) {
+      e.preventDefault();
+      const href = anchor.href;
+      
+      // Update URL without reload
+      history.pushState({}, '', href);
+      
+      // Start loading
+      loadingManager.handleNavigation(href);
+      
+      // Simulate page load (in real app, this would be handled by Astro)
+      setTimeout(() => {
+        loadingManager.handlePageLoad();
+      }, 1000); // Simulate network delay
+    }
+  });
+
+  // Initial load
+  loadingManager.handlePageLoad();
+});
+
+// Export the manager instance for client-side use
+export const loadingManagerInstance = loadingManager;
+---
+
+<div id="loading-overlay" class="fixed inset-0 z-50 bg-base-100/90 backdrop-blur-sm transition-opacity duration-300" style="opacity: 0;">
+  <div class="flex items-center justify-center min-h-screen">
+    <div class="loading-spinner">
+      <div class="spinner"></div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .loading-spinner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .spinner {
+    width: 50px;
+    height: 50px;
+    border: 3px solid rgba(59, 130, 246, 0.3);
+    border-top: 3px solid #3b82f6;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  #loading-overlay.loading {
+    opacity: 1;
+  }
+</style>
+
+<script>
+  // Client-side script to handle loading state
+  const loadingManager = loadingManagerInstance;
+  const overlay = document.getElementById('loading-overlay');
+  
+  loadingManager.subscribe((state) => {
+    if (state.isLoading) {
+      overlay?.classList.add('loading');
+    } else {
+      overlay?.classList.remove('loading');
+    }
+  });
+</script>
